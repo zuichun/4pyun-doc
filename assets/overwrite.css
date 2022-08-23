@@ -1,0 +1,24 @@
+.gitbook-link {
+    display: none !important;
+}
+.book .book-summary .book-logo {
+    padding: 12px 20px !important
+}
+.book-summary ul.summary li.active>a {
+    color: #00bf70;
+}
+
+#book-search-input {
+    background: #fff !important;
+}
+#book-search-input input {
+    text-align: center;
+}
+
+.code-wrapper pre {
+    background: #2A2A2A;
+}
+
+.book-summary ul.summary li a:hover {
+    text-decoration: none;
+}

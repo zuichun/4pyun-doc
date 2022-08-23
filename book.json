@@ -1,0 +1,54 @@
+{
+    "title": "P云开放平台",
+    "description": "P云开放平台开发者文档",
+    "author": "dev@660pp.com",
+    "language": "zh-hans",
+    "styles":{
+        "website": "/assets/overwrite.css"
+    },
+    "plugins": [
+        "-fontsettings",
+        "-sharing",
+        "-lunr",
+        "-search",
+        "-highlight",
+        "prism",
+        "prism-themes",
+        "code",
+        "favicon-absolute",
+        "insert-logo",
+        "back-to-top-button",
+        "edit-link",
+        "splitter",
+        "advanced-emoji",
+        "-signature",
+        "chapter-fold",
+        "tbfed-pagefooter",
+        "flexible-alerts",
+        "search-pro"
+    ],
+    "pluginsConfig": {
+        "insert-logo": {
+            "url": "/assets/logo.png",
+            "style": "background: none; height: 40px"
+        },
+        "edit-link": {
+            "base": "https://github.com/4PYun/4pyun-doc/blob/master",
+            "label": "编辑该页面"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"&copy 2022 Shenzhen ChinaRoad Technology Co., Ltd.",
+            "modify_label": "更新于",
+            "modify_format": "YYYY/MM/DD HH:mm:ss"
+        },
+        "prism": {
+            "css": [
+                "prism-themes/themes/prism-xonokai.css"
+            ]
+        },
+        "favicon-absolute":{
+            "favicon": "/assets/favicon.ico",
+            "appleTouchIconPrecomposed152": "/assets/apple-touch-icon-precomposed.png"
+        }
+    }
+}
