@@ -33,7 +33,7 @@
             "style": "background: none; height: 40px"
         },
         "edit-link": {
-            "base": "https://github.com/4PYun/4pyun-doc/blob/master",
+            "base": "https://github.com/4PYun/4pyun-doc/blob/main",
             "label": "编辑该页面"
         },
         "tbfed-pagefooter": {
