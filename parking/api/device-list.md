@@ -41,8 +41,8 @@ P云在需要停车场本地文件业务处理时通过本协议获取指定文�
 | --- | --- | --- | ---|
 | name | string | Y | 设备名称 |
 | type | int | Y | 设备类型:<br/>1 相机<br/>2 入口通道控制器<br/>3 出口通道控制器<br/> 4 出入口通道控制器 |
-| no | string | N | 设备编号 |
-| uuid | string | N | 设备ID |
+| no | string | Y | 设备编号 |
+| uuid | string | Y | 设备ID(若是通道为出入口通道ID) |
 | vendor | string | N | 制造商, 例如: 大华/海康 |
 | model | string | N | 设备型号, 例如: TZ-O1 |
 | status | int | Y | 状态:<br/> -1 已离线<br/> 0 未知<br/> 1 正常运行 |
