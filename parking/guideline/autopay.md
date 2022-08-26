@@ -1,14 +1,32 @@
-# 无感支付接入指引
+# 无感停车接入指引
 
-无感需要你们对接:
-1. 出入场推送(若对接了可忽略)，你们提供接口或者直接对接我们的接口
-- https://pptingche.coding.net/s/0aaef07d-832e-4fbf-ae60-ed8c9fad6547/86
-- https://pptingche.coding.net/s/0aaef07d-832e-4fbf-ae60-ed8c9fad6547/87
-2. 无感扣款接口
-- https://pptingche.coding.net/s/0aaef07d-832e-4fbf-ae60-ed8c9fad6547/68
-3. 无感状态下发接口
-- https://pptingche.coding.net/s/0aaef07d-832e-4fbf-ae60-ed8c9fad6547/67
-4. 无感支付结果异步通知
-- https://pptingche.coding.net/s/0aaef07d-832e-4fbf-ae60-ed8c9fad6547/66
+无感停车流程:
 
-大致流程是你推送入场给我，我会去微信判断无感状态，是无感会下发无感状态接口给你(中途用户关闭/开通也会通知)，你根据本地收到的无感状态是开启的在出口调用无感扣款接口，发起扣款。支付完成之后异步通知支付结果
+|接口|调用方|必须接入|说明|
+|---|---|---|---|
+|[入场推送](./../api/parking-enter.html)|车场|Y|车场同步车辆入场记录推送到平台|
+|[离场推送](./../api/parking-leave.html)|车场|Y|车场同步车辆离场记录推送到平台|
+|[无感状态同步](./../api/parking-prepay.html)|平台|Y|平台下发车辆无感状态到车场, 例如场内开启/关闭无感会多次下发, 已最新收到状态为准|
+|[无感扣款请求](./../api/payment-prepay.html)|车场|Y|出口根据无感状态发起无感扣款请求|
+|[临停缴费结果同步](./../api/payment-notify.html)|平台|Y|扣款成功后通过该接口异步同步扣款结果|
+
+``` sequence
+Title: 无感交互流程
+车场->P云: 入场记录
+Note right of P云: 检查车场无感配置
+P云->无感平台: 入场记录
+无感平台-->P云: 车辆无感状态
+Note right of P云: 异步同步无感状态(可能多次)
+P云->车场: 车辆无感状态
+
+Note right of 车场: 停车中...
+
+车场->车场: 出口判断车辆无感状态
+车场->P云: 无感扣款请求
+P云->无感平台: 无感扣款请求
+
+Note right of 车场: 等待支付结果\n支付成功自动方行
+
+车场->P云: 离场记录
+P云-->无感平台: 离场记录
+```

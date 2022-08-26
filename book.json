@@ -15,6 +15,7 @@
         "prism",
         "prism-themes",
         "code",
+        "js-sequence-diagram-full",
         "favicon-absolute",
         "insert-logo",
         "back-to-top-button",
@@ -44,6 +45,9 @@
         "prism": {
             "css": [
                 "prism-themes/themes/prism-xonokai.css"
+            ],
+            "ignore": [
+                "sequence"
             ]
         },
         "favicon-absolute":{

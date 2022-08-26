@@ -33,11 +33,12 @@
 
 * [车场接入文档](parking/README.md)
   - [1 接入指引](parking/guideline/README.md)
-    - [1.1 无感停车接入指引](parking/guideline/autopay.md)
-    - [1.2 远程开闸接入指引](parking/guideline/gate-control.md)
-    - [1.3 现金找零接入指引](parking/guideline/change.md)
-    - [1.4 C#接入指引](parking/guideline/sdk-csharp.md)
-    - [1.5 SDK安全更新](parking/guideline/sdk-security.md)
+    - [1.1 城市平台接入指引](parking/guideline/reporting.md)
+    - [1.2 无感停车接入指引](parking/guideline/autopay.md)
+    - [1.3 远程开闸接入指引](parking/guideline/gate-control.md)
+    - [1.4 现金找零接入指引](parking/guideline/change.md)
+    - [1.5 C#接入指引](parking/guideline/sdk-csharp.md)
+    - [1.6 SDK安全更新](parking/guideline/sdk-security.md)
 
   - [2 临停缴费](parking/payment.md)
     - [2.1 获取临停缴费订单](parking/api/payment-billing.md)
