@@ -1,6 +1,10 @@
 # Summary
 
 * [平台简介](README.md)
+* [商户管理平台](merchant/README.md)
+  - [1 聚合支付业务](merchant/payment/README.md)
+    - [1.1 交易退款操作说明](merchant/payment/trade-refund.md)
+
 * [开放平台文档](openapi/README.md)
   - [1 接入指引](openapi/guideline/README.md)
     - [1.1 小程序插件支付接入](openapi/guideline/payment-wechatapp.md)
