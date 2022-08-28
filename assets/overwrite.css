@@ -8,6 +8,26 @@
     color: #00bf70;
 }
 
+.book-header .btn:hover {
+    color: #00bf70;
+}
+
+.markdown-section a {
+    color: #00bf70;
+}
+
+.markdown-section a:hover {
+    text-decoration: none;
+}
+
+.alert.callout.tip {
+    border-left-color: #00bf70 !important;
+}
+
+.alert.callout.tip .title {
+    color: #00bf70;
+}
+
 #book-search-input {
     background: #fff !important;
 }
