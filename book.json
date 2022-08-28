@@ -12,6 +12,7 @@
         "-lunr",
         "-search",
         "-highlight",
+        "terminull",
         "prism",
         "prism-themes",
         "code",
@@ -21,11 +22,10 @@
         "back-to-top-button",
         "edit-link",
         "splitter",
-        "advanced-emoji",
-        "-signature",
         "chapter-fold",
-        "tbfed-pagefooter",
         "flexible-alerts",
+        "bottom-navigation",
+        "page-footer-ex",
         "search-pro"
     ],
     "pluginsConfig": {
@@ -37,22 +37,26 @@
             "base": "https://github.com/4PYun/4pyun-doc/blob/main",
             "label": "编辑该页面"
         },
-        "tbfed-pagefooter": {
-            "copyright":"&copy 2022 Shenzhen ChinaRoad Technology Co., Ltd.",
-            "modify_label": "更新于",
-            "modify_format": "YYYY/MM/DD HH:mm:ss"
-        },
         "prism": {
             "css": [
                 "prism-themes/themes/prism-xonokai.css"
             ],
             "ignore": [
-                "sequence"
+                "sequence",
+                "term"
             ]
         },
         "favicon-absolute":{
             "favicon": "/assets/favicon.ico",
             "appleTouchIconPrecomposed152": "/assets/apple-touch-icon-precomposed.png"
+        },
+        "bottom-navigation": {
+            "borderColor": "#00BF70"
+        },
+        "page-footer-ex": {
+            "copyright":"&copy 2022 Shenzhen ChinaRoad Technology Co., Ltd. © All Rights Reserved",
+            "update_label": "UPDATED",
+            "update_format": "YYYY/MM/DD HH:mm:ss"
         }
     }
 }
