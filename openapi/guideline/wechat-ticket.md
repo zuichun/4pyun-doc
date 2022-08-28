@@ -1,8 +1,7 @@
-
-默认支付成功
-![图片](./media/wechat-ticket-1.png)
+# 点金计划页面定制支持
 
 定制按钮为`我要发票`, 需要在下单的时候在extra字段传入`receipt`字段：
+
 ```java
 public void tradePrepare() throws APIRemoteException, IOException {
         Map<String, String> extra = new HashMap<>();

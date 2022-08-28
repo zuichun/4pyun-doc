@@ -3,7 +3,7 @@
 * [平台简介](README.md)
 * [开放平台文档](openapi/README.md)
   - [1 接入指引](openapi/guideline/README.md)
-    - [1.1 小程序插件支付](openapi/guideline/payment-wechatapp.md)
+    - [1.1 小程序插件支付接入](openapi/guideline/payment-wechatapp.md)
     - [1.2 点金计划页面定制支持](openapi/guideline/wechat-ticket.md)
 
   - [2 聚合支付](openapi/payment.md)
@@ -11,7 +11,7 @@
     - [2.2 发起交易预请求](openapi/api/trade-prepare.md)
     - [2.3 查询交易状态](openapi/api/trade-query.md)
     - [2.4 发起订单退款](openapi/api/trade-refund.md)
-    - [2.5 异步通知支付结果](openapi/api/trade-notify.md)
+    - [2.5 支付结果异步通知](openapi/api/trade-notify.md)
     - [2.6 结算记录同步接口](openapi/api/settlement-sync.md)
 
   - [3 电子发票](openapi/invoice.md)
