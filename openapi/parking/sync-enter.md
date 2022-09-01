@@ -1,0 +1,76 @@
+# 入场记录推送
+
+
+**注意：推送必须基于有效的车牌白名单。**
+
+### 请求方式
+
+`POST`
+
+### 请求
+
+#### 参数
+
+| 参数 | 类型 | 必须 | 描述 | 示例值 |
+|-|-|-|-|-|
+| park_uuid      | string | Y    | 停车场编号       |        |
+| park_name      | string | Y    | 停车场名称       |        |
+| address        | string | Y    | 停车场地址       |        |
+| area_code      | string | Y    | 区域编码         |        |
+| latitude       | string | Y    | 纬度（百度系）   |        |
+| longitude      | string | Y    | 经度（百度系）   |        |
+| parking_serial | string | Y    | 平台停车流水     |        |
+| plate          | string | Y    | 车牌号           |        |
+| plate_color    | string | Y    | 车牌颜色，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8 ||
+| car_type       | string | Y    | 车类，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8 ||
+| car_desc       | string | N    | 车类描述         |        |
+| enter_time     | string | Y    | 入场时间戳，毫秒 |        |
+| enter_image    | string | N    | 入场图片地址     |        |
+| enter_gate     | string | N    | 入场通道编号     |        |
+| enter_security | string | N    | 入口管理员       |        |
+| vehicle_type   | string | N    | 车型，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8||
+| total_space   | string | Y    | 总车位 |        |
+| remain_space   | string | Y | 剩余车位 |        |
+| ...            |        |      |                  |        |
+
+#### 示例
+
+```json
+{
+    "enter_gate": "入口",
+    "park_uuid": "49f0cc52-e8c7-41e3-b54d-af666b8cc11a",
+    "address": "广东省深圳市南山区粤海街道讯美科技广场3号楼",
+    "plate_color": "-1",
+    "area_code": "440305",
+    "latitude": "-1.0",
+    "sign": "8E178615183E9C0123BE254A1730EED6",
+    "parking_serial": "591668151763415041",
+    "vehicle_type": "0",
+    "plate": "川A660P1",
+    "enter_image": "https://660pp.com/img/env_1.jpg",
+    "enter_time": "1618994280000",
+    "park_name": "P云支付体验-停车场",
+    "car_type": "1",
+    "app_id": "op00961963581daa7",
+    "sign_type": "MD5",
+    "car_desc": "",
+    "timestamp": "1618994280545",
+    "longitude": "-1.0"
+}
+```
+
+### 响应
+
+#### 参数
+
+| 参数 | 类型 | 必须 | 描述 | 示例 |
+|-|-|-|-|-|
+| code | string | Y | 状态码 | 1001 |
+
+#### 示例
+
+```json
+{
+    "code": "1001"
+}
+```
