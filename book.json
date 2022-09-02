@@ -43,7 +43,8 @@
             ],
             "ignore": [
                 "sequence",
-                "term"
+                "term",
+                "vb"
             ]
         },
         "favicon-absolute":{
