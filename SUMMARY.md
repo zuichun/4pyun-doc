@@ -96,6 +96,9 @@
     - [7.3 车场通道状态查询](parking/api/gate-status.md)
     - [7.4 车场通道控制](parking/api/gate-control.md)
 
+  - [8 车场进件](parking/apply.md)
+    - [8.1 提交车场进件](parking/api/park-apply-create.md)
+
   - [网络说明](parking/network.md)
   - [常见文件](parking/faq.md)
 
