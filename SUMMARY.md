@@ -81,7 +81,7 @@
     - [5.2 取消预约停车](parking/api/reserve-cancel.md)
 
   - [6 停车管理](parking/parking.md)
-    - [6.1 无牌车入场](parking/api/direct-enter.md)
+    - [6.1 人工/无牌车入场](parking/api/direct-enter.md)
     - [6.2 推送车辆预入场](parking/api/parking-pre-enter.md)
     - [6.3 推送车辆入场](parking/api/parking-enter.md)
     - [6.4 推送车辆离场](parking/api/parking-leave.md)
