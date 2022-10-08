@@ -29,6 +29,7 @@ P云发起请求, 对固定车进行充值续费。
 | pay_source | string | N | 付款来源, 例如: 微信/支付宝/银联 |
 | renewal_start_time | string | Y | 时间类续费开始时间, 格式: `yyyyMMddHHmmss` |
 | renewal_end_time | string | Y | 时间类续费结束时间, 格式: `yyyyMMddHHmmss` |
+| operator | string | N | 操作员姓名, 例如: `小李` |
 
 **说明**
 
