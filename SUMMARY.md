@@ -36,6 +36,8 @@
     - [5.6 推送临停缴费](openapi/parking/sync-payment.md)
     - [5.7 推送固定车续费](openapi/parking/sync-recharge.md)
     - [5.8 推送车辆无感状态](openapi/parking/sync-autopay.md)
+    - [5.9 固定车辆添加](openapi/parking/vip-create.md)
+    - [5.10 固定车辆删除](openapi/parking/vip-delete.md)
 
   - [6 营销平台](openapi/bonus.md)
     - [6.1 营销活动参与申请](openapi/api/bonus-event-apply.md)
