@@ -102,7 +102,7 @@
     - [8.1 提交车场进件](parking/api/park-apply-create.md)
 
   - [网络说明](parking/network.md)
-  - [常见文件](parking/faq.md)
+  - [常见问题](parking/faq.md)
 
 * [知识库](knowledge/README.md)
   - [正确处理HTTPS证书](knowledge/https-certs.md)
