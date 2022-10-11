@@ -1,15 +1,9 @@
 # 车场交互网络信息
 
-1. TCP通信
-xxxx.gate.4pyun.com8661
+|场景|地址|说明|
+|---|---|---|
+|指令下发|tcp://xxxx.gate.4pyun.com:8661|用于本地车场和平台数据交互|
+|数据同步|https://api.4pyun.com/|用于本地推送出入场记录到平台|
+|商户平台|https://mch.4pyun.com/|用于本地访问平台管理车场数据|
 
-2. HTTP通信
-
-https://api.4pyun.com/
-
-http://api.4pyun.com/
-
-3. 管理平台
-https://mch.4pyun.com/
-
-IP请自己PING获取, 可能随业务调整变化，建议绑定域名。
+- IP请自己PING获取, 可能随业务调整变化，建议绑定域名。
