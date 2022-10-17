@@ -52,7 +52,7 @@ P云发起请求, 查询车场固定车类型
 
 | 字段 | 类型 | 必须 | 说明    |
 | --- | --- | --- | ---|
-| id | string | Y | 车场收费规则ID. |
+| id | string | Y | 车场收费规则ID. <br>对应 3.1 3.6接口里面的charge_type值|
 | name | string | Y | 收费规则名称|
 | vip_type| int | Y | 适用固定车类型:<br/>1 月卡<br/>2 储值<br/>3 储次<br/>4 储天<br/>5 年卡<br/>6 季度卡<br/>7 半年卡<br/>0 免费停车  |
 | desc | string | Y | 固定车收费描述 |
