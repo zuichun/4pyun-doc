@@ -22,7 +22,7 @@ P云发起请求, 将指定车辆设置为车场固定车
 | card_id | string | N | 固定车卡ID |
 | start_time | string | Y | 开始时间, 格式: `yyyyMMddHHmmss` |
 | end_time | string | Y | 结束时间, 格式: `yyyyMMddHHmmss` |
-| charge_type | string | Y | 收费类型 |
+| charge_type | string | Y | 收费类型 对应3.3里面返回的id 也对应3.1里面的charge_type |
 | value | int | Y | 续费金额:<br/>储值: 续费金额, 单位分;<br/>储次:续费次数;<br/>储天:续费天数;<br/>月卡/年卡/半年卡/季度卡: 续费天数. |
 | quantity | int | Y | 续费数量:<br/>储值: 续费金额, 单位分;<br/>储次:续费次数;<br/>储天:续费天数;<br/>月卡:续费月数;<br/>年卡:续费年数;<br/>半年卡:续费半年数;<br/>季度卡:续费季度数.|
 | origin_value | int | Y | 原始价格, 单位分 |
