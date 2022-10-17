@@ -4,7 +4,7 @@
 
 ### 1.1) 请求地址
 
-	https://api.4pyun.com/gate/1.0/parking/vip
+	https://api.4pyun.com/gate/1.0/parking/parking/vip
 
 ### 1.2) 调用方式
 
@@ -87,7 +87,7 @@
                 form.add(key, map.get(key));
             }
             form.add("sign", sign);
-            Response response = Request.Post("https://api.4pyun.com/gate/1.0/parking/vip")
+            Response response = Request.Post("https://api.4pyun.com/gate/1.0/parking/parking/vip")
                     .bodyForm(form.build(), Charset.forName("utf-8"))
                     .execute();
             HttpResponse response1 = response.returnResponse();
@@ -130,7 +130,7 @@
 	"hint": "`merchant` Required!",
 	"seqno": "94929a9b0874aa46",
 	"data_node": "CN-South/HS3-2",
-	"path": "POST /gate/1.0/parking/vip"
+	"path": "POST /gate/1.0/parking/parking/vip"
 }
 ```
 
