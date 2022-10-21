@@ -11,7 +11,7 @@
     - [1.2 点金计划页面定制支持](openapi/guideline/wechat-ticket.md)
 
   - [2 聚合支付](openapi/payment.md)
-    - [2.1 发起交易请求](openapi/api/trade-create.md)
+    - [2.1 被扫发起交易请求](openapi/api/trade-create.md)
     - [2.2 发起交易预请求](openapi/api/trade-prepare.md)
     - [2.3 查询交易状态](openapi/api/trade-query.md)
     - [2.4 发起订单退款](openapi/api/trade-refund.md)
