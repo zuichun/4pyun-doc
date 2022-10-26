@@ -95,6 +95,7 @@
     - [6.8 查询车场车位](parking/api/parking-realtime.md)
     - [6.9 固定车同步](parking/api/vip-sync.md)
     - [6.10 黑名单车辆同步](parking/api/blacklist-sync.md)
+    - [6.11 固定车续费记录同步](parking/api/vip-recharge-sync.md)
 
   - [7 设备管理](parking/device.md)
     - [7.1 车场设备列表](parking/api/device-list.md)
