@@ -93,6 +93,7 @@
     - [6.6 获取停车记录详情](parking/api/parking-detail.md)
     - [6.7 更新场内车辆信息](parking/api/parking-update.md)
     - [6.8 查询车场车位](parking/api/parking-realtime.md)
+    - [6.9 固定车同步](parking/api/vip-sync.md)
 
   - [7 设备管理](parking/device.md)
     - [7.1 车场设备列表](parking/api/device-list.md)
