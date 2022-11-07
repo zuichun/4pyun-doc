@@ -81,8 +81,9 @@
     "plate": "川A660P1",
     "channel": "200102",
     "identity": "5aeV05nlt6/ig4LplITisYg=",
-    "[{\"type\":1,\"token\":\"1234\",\"openid\":\"abc\",\"mobile\":\"18000000000\",\"relief_amount\":10,\"relief_value\":10},{\"type\":2,\"token\":\"1234\",\"openid\":\"abc\",\"mobile\":\"18000000001\",\"relief_amount\":10,\"relief_value\":10}]"
+    "identity": "[{\"type\":1,\"token\":\"1234\",\"openid\":\"abc\",\"mobile\":\"18000000000\",\"relief_amount\":10,\"relief_value\":10},{\"type\":2,\"token\":\"1234\",\"openid\":\"abc\",\"mobile\":\"18000000001\",\"relief_amount\":10,\"relief_value\":10}]"
 }
+
 ```
 
 ### 响应
