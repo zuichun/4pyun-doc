@@ -5,7 +5,7 @@
 
 ### 请求方式
 
-`POST`
+`HTTP POST FORM 表单提交`
 
 ### 请求
 
