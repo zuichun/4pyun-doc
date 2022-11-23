@@ -41,6 +41,8 @@
 | pay_type    | 支付类型<br/>1: 现金支付;<br/>2:在线支付;                    |  int   |  Y   |       |
 | value       | 支付面额: 储值卡为金额, 次卡为次数, 时间卡为天数             | string |  N   |       |
 | pay_time    | 支付时间, 时间戳单位ms                                       | string |  N   |       |
+| renewal_start_time    | 续费开始时间, UTC时间 示例时间代表2022-10-01 00:00:00 | string |  N   | 2022-09-30T16:00:00Z      |
+| renewal_end_time    | 续费结束时间, UTC时间 示例时间代表2022-10-31 23:59:59  | string |  N   |  2022-10-31T15:59:59Z     |
 | pay_value   | 支付金额, 单位分                                             |  int   |  N   |       |
 | operator    | 操作员                                                       | string |  N   |       |
 
