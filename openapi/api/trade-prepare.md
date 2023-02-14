@@ -30,7 +30,7 @@
 | deduct_mode  | 扣款模式: 车主服务传入(透传无感同步接口4.4返回的值)          | string |  N   | PROACTIVE                                 |
 | callback_url | 支付成功返回前端页面                                         | string |  N   | https://a.b.c/backurl                     |
 | notify_url   | 后端支付回调地址                                             | string |  Y   | https://a.b.c/notify                      |
-|expire_time|交易失效时间, 单位ms, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z'|string|N|2021-09-02T09:36:46.020Z|
+|expire_time|交易失效时间, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z' <br>特别说明UTC时间和普通时间差8小时因为我们在东八区 2022-09-01T00:00:00.000Z 对应时间的时间是 2022-09-01 08:00:00|string|N|2021-09-02T09:36:46.020Z|
 | extra        | 额外附加参数Map结构(微信引导开通无感用到)                    | string |  N   | {\"key1\":\"value1\",\"key2\":\"value2\"} |
 | sign         | 请求数据签名                                                 | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39          |
 
