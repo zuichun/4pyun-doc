@@ -95,7 +95,7 @@
     - [6.5 无感停车状态同步](parking/api/parking-prepay.md)
     - [6.6 获取停车记录详情](parking/api/parking-detail.md)
     - [6.7 更新场内车辆信息](parking/api/parking-update.md)
-    - [6.8 查询车场车位](parking/api/parking-realtime.md)
+    - [6.8 查询车场状态(车位/收费标准)](parking/api/parking-realtime.md)
 
   - [7 设备管理](parking/device.md)
     - [7.1 车场设备列表](parking/api/device-list.md)
