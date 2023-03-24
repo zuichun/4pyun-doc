@@ -456,6 +456,38 @@ P云接口需要传递日期/时间的参数，统一采用**UTC时间格式**�
 ## 4. 支付渠道申请链接：
 ### 4.1 链接传参说明
 
+**跳转链接示例**：https://mch.4pyun.com/external/payment/channel/config?merchant=xxx&park_code=xxx&token=xxx
+
+**说明**：跳转链接前需保证车场已在平台创建(调用[3.1 停车场创建接口](#3.1))
+
+**URL**: https://b.4pyun.com/external/channel/list
+
+**参数**：
+
+- merchant: 平台分配厂商编码
+
+- park_code: P云平台车场商户号(调用[3.1 停车场创建接口](#3.1)返回park_code参数)
+
+- token: 请求令牌
+
+<h1 id=4.2></h1>
+### 4.2 令牌生成规则
+
+```javascript
+let content = JSON.stringify({
+                iss: 'op01958c1095c8bf4', // 应用ID
+                iat: (+new Date() / 1000).toFixed(0), // 令牌生成时间戳(单位秒)
+                exp: ((+new Date() + 24 * 60 * 60 * 1000) / 1000).toFixed(0), // 令牌过期时间(单位秒)
+            })
+let secret = "79B0F3E6E956A6F272D9E74FABD95EDE"; //应用ID密钥
+let signature = MD5.hashBinary(content + "&key=" + secret); // 生成签名
+let token = "Basic " + Base64.encode(content) + "." + signature; //生成令牌(注意"Basic"后有一空格)
+token = encodeURI(token) // UrlEncode
+```
+
+## 5. ～～支付渠道申请链接(老平台，即将废弃)：～～
+### 5.1 链接传参说明
+
 **跳转链接示例**：https://b.4pyun.com/external/channel/list?app\_id=op01958c1095c8bf4&merchant=PV123422&api\_park\_uuid=WDH123456&token=Basic%20eyJpc3MiOiJvcDAxOTU4YzEwOTVjOGJmNCIsImlhdCI6MTU5NDcwOTk1MCwiZXhwIjoxNTk0Nzk2MzUwfQ%3D%3D.99AD7461C82A43907388EE00D3801702
 
 **说明**：跳转链接前需保证车场已在平台创建(调用[3.1 停车场创建接口](#3.1))
@@ -473,7 +505,7 @@ P云接口需要传递日期/时间的参数，统一采用**UTC时间格式**�
 - token: 请求令牌
 
 <h1 id=4.2></h1>
-### 4.2 令牌生成规则
+### 5.2 令牌生成规则
 
 ```javascript
 let content = JSON.stringify({
