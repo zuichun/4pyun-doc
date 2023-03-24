@@ -485,7 +485,7 @@ let token = "Basic " + Base64.encode(content) + "." + signature; //生成令牌(
 token = encodeURI(token) // UrlEncode
 ```
 
-## 5. ～～支付渠道申请链接(老平台，即将废弃)：～～
+## 5. ~~支付渠道申请链接(老平台，即将废弃)：~~
 ### 5.1 链接传参说明
 
 **跳转链接示例**：https://b.4pyun.com/external/channel/list?app\_id=op01958c1095c8bf4&merchant=PV123422&api\_park\_uuid=WDH123456&token=Basic%20eyJpc3MiOiJvcDAxOTU4YzEwOTVjOGJmNCIsImlhdCI6MTU5NDcwOTk1MCwiZXhwIjoxNTk0Nzk2MzUwfQ%3D%3D.99AD7461C82A43907388EE00D3801702
