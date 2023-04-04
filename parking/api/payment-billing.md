@@ -10,7 +10,7 @@
 
 - <p style="color:red">若为无牌车入场, 虚拟车牌会在支付结果同步时传递给车场系统。</p>
 - <p style="color:red">若无牌车通道扫码没有压地感, 需要返回1500并在将原因设置到message中，不可返回1002。</p>
-- <p style="color:red">若确认传入passport已经立场则必须返回1002状态码。</p>
+- <p style="color:red">若确认传入passport已经离场则必须返回1002状态码。</p>
 
 
 **时段月卡/多车共位**
