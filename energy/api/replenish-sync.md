@@ -20,6 +20,11 @@ HTTP FORM 表单提交
 2. 一次充电单号唯一；
 3. 下发停车优惠时 `vin` 需上传车牌；
 
+**参数说明：**
+
+1. `appId` 和 `appSecret` 由P云平台分配；
+2. `station_uuid` 为P云平台 `充电服务商` 板块充电站的编号；
+
 
 ### 请求参数
 
@@ -136,5 +141,63 @@ HTTP FORM 表单提交
     "seqno": "48bf04ea4caa479c",
     "data_node": "CN-South/HS3-2",
     "path": "POST /gate/1.0/energy/internal/replenish"
+}
+```
+
+### 示例代码
+
+```java
+@Test
+public void execute() throws APIRemoteException {
+    // 平台分配的密钥
+    String appId = "op00961963581daa7";
+    String appSecret = "6409292d66625a2a0912acfc61ed956c";
+    // 接口地址
+    String url = "https://dev-api.4pyun.com/gate/1.0/energy/internal/replenish";
+
+    // 请求参数
+    int energyValue = Integer.parseInt(RandomUtils.randomNumeric(3));
+    int feeValue = Integer.parseInt(RandomUtils.randomNumeric(3));
+    TreeMap<String, String> params = new TreeMap<String, String>() {{
+        put("app_id", appId);
+        put("timestamp", String.valueOf(System.currentTimeMillis()));
+
+        put("station_uuid", "8f5fdb60-9374-4c11-bdc2-a32d8369258c");
+        put("device_no", "S1");
+        put("port_no", "1");
+        put("energy_code", "CN_AC");
+        put("replenish_order", DateUtils.format(new Date(), DateUtils.DEFAULT_TIME_FORMAT) + RandomUtils.randomAlphanumeric(6));
+        put("start_time", DateUtils.format(DateTime.now().minusHours(1).toDate(), DateUtils.ISO8601_DATETIME));
+        put("end_time", DateUtils.format(new Date(), DateUtils.ISO8601_DATETIME));
+        put("vin", "川A660N2");
+        put("quantity", RandomUtils.randomNumeric(4));
+        put("energy_value", String.valueOf(energyValue));
+        put("fee_value", String.valueOf(feeValue));
+        put("total_value", String.valueOf(energyValue + feeValue));
+    }};
+
+    /*
+     * 计算签名
+     * S1: 先过滤掉 sign 和值为空的参数；
+     * S2: 在将所有业务参数按照参数名进行升序排序；
+     * S3: 以 `HTTP URL` 风格拼接成待签名的字符串，如：`a=1&b=2&c=123`
+     * S4: 再将密钥以 `&app_secret=您的密钥` 形式拼接到上一步待签名的字符串后面，如：`a=1&b=2&c=123&app_secret=您的密钥`
+     * S5: 使用标准 MD5 算法对上述字符串进行签名（忽略大小写）；
+     * S6: 将其写入 `sign` 进行 `HTTP POST` 请求即可。
+     */
+    String plain = params.entrySet()
+            .stream()
+            .filter(e -> StringUtils.isNotBlank(e.getValue()))
+            .filter(e -> !"sign".equals(e.getKey()))
+            .map(e -> e.getKey() + "=" + e.getValue())
+            .collect(Collectors.joining("&"));
+    plain += "&app_secret=" + appSecret;
+    String sign = MD5.encryptHEX(plain);
+    params.put("sign", sign);
+    // plain: app_id=op00961963581daa7&device_no=S1&end_time=2023-04-11T09:20:00Z&energy_code=CN_AC&energy_value=207&fee_value=975&port_no=1&quantity=6556&replenish_order=202304110920004SfjdX&start_time=2023-04-11T08:20:00Z&station_uuid=8f5fdb60-9374-4c11-bdc2-a32d8369258c&timestamp=1681176000816&total_value=1182&vin=川A660N2&app_secret=6409292d66625a2a0912acfc61ed956c, sign: 90A80901298B87DC9E15DE9F236FD164
+    log.info("plain: {}, sign: {}", plain, sign);
+
+    // HTTP 请求
+    this.doPost(url, params);
 }
 ```
