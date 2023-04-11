@@ -84,38 +84,35 @@ HTTP FORM 表单提交
 
 ```json
 {
-    "code": "200",
-    "message": "OK",
-    "seqno": "abc6c253b93cc940",
-    "data_node": "CN-South/HS3-1",
-    "vehicle_violation_count": 0,
-    "vehicle_inspect_state": 1,
-    "vehicle_insurance_state": 1
+    "code": "1001",
+    "seqno": "32632654459897019054641535481549",
+    "data_node": "CN-South/DEV-1",
+    "time_cost": 148
 }
 ```
 
-> 正常返回 带hint 对接过程中要特别注意这种情况，正式上线了这种也直接视为成功，防止一直卡在一条数据上面
+> 签名错误。参考 `hint`
 
 ```json
 {
-    "code": "200",
-    "message": "已忽略当前请求",
-    "hint": "签名验证不通过",
-    "seqno": "e820972bdf2eaf19",
-    "data_node": "CN-South/HS3-3",
+    "code": "401",
+    "message": "请求签名校验不通过",
+    "hint": "app_id=op00961963581daa7&device_no=S1&end_time=2023-04-11T14:07:39Z&energy_code=CN_AC&energy_value=310&fee_value=102&port_no=1&quantity=1003&replenish_order=20230411140739AD7ln7&start_time=2023-04-11T13:07:39Z&station_uuid=8f5fdb60-9374-4c11-bdc2-a32d8369258c&timestamp=1681193259128&total_value=412&vin=川A660N2&app_secret=***",
+    "seqno": "02118331862997565649094193731652",
+    "data_node": "CN-South/DEV-1",
     "path": "POST /gate/1.0/energy/internal/replenish"
 }
 ```
 
-> 参数错误
+> 参数错误。参考 `hint`
 
 ```json
 {
     "code": "400",
     "message": "请求参数错误",
-    "hint": "`start_time` required~",
-    "seqno": "48bf04ea4caa479c",
-    "data_node": "CN-South/HS3-2",
+    "hint": "`device_no` required~",
+    "seqno": "01645210617331334902890840957848",
+    "data_node": "CN-South/DEV-1",
     "path": "POST /gate/1.0/energy/internal/replenish"
 }
 ```
