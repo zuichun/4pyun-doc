@@ -27,12 +27,14 @@
 | plate | string | N | 车牌号码, 当无牌车付费入场时为虚拟车牌. |
 | pay_serial | string | Y | P云支付流水, 对账可用. |
 | pay_time | string | Y | 支付时间, 格式:`yyyyMMddHHmmss`. |
-| value | int | Y | 支付金额(单位分), 不含优惠金额 . |
-| free_value | int | N | 优惠金额(单位分) . |
+| value | int | Y | 订单应付金额(单位分), 不含优惠金额. |
+| free_value | int | N | 车场优惠金额(单位分) . |
 | pay_origin | int | Y | 值 含义<br/>0    P云<br/>4   支付宝<br/>8    微信<br/>-     兼容其他未定义|
 | pay_origin_desc | string | Y | 支付到账说明, 例如:P云|
 | pay_source | string | N | 付款来源, 例如: 微信/支付宝/银联 |
 | autopay_type | short | N | 自动扣费类型: 0非自动扣费, 1先出后扣, 2先扣后出 |
+| pay_value | int | Y | 实际支付金额(单位分) |
+| reduce_value | int | N | 其他(例如会员抵扣)抵扣金额(单位分) |
 
 *请求示例*
 ```json
