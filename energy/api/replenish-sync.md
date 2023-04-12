@@ -45,6 +45,7 @@ HTTP FORM 表单提交
 | fee_value | string | Y    | 服务费，分 |1|
 | total_value | string | Y | 总金额，分 |2|
 | energy_code | string | Y    | 充电类型；CN_AC：慢充；CN_DC：快充 |CN_AC|
+| mobile | string | Y | 手机号码 | 12345678901 |
 | ...            |        |      |                  |        |
 
 ### 请求示例
@@ -65,7 +66,8 @@ HTTP FORM 表单提交
     "station_uuid": "8f5fdb60-9374-4c11-bdc2-a32d8369258c",
     "app_id": "op00961963581daa7",
     "timestamp": "1681122776000",
-    "port_no": "1"
+    "port_no": "1",
+    "mobile": "19925333063"
 }
 ```
 
@@ -171,6 +173,7 @@ public void execute() throws APIRemoteException {
         put("energy_value", String.valueOf(energyValue));
         put("fee_value", String.valueOf(feeValue));
         put("total_value", String.valueOf(energyValue + feeValue));
+        put("total_value", "19925333063");
     }};
 
     /*
