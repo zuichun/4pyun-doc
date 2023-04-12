@@ -49,6 +49,10 @@
     - [6.5 营销奖励领取回调](openapi/api/bonus-value-grant.md)
     - [6.6 营销奖励核销回调](openapi/api/bonus-value-apply.md)
 
+* [充电接入文档](energy/README.md)
+  - [1 充电记录](energy/README.md)
+    - [1.1 推送充电记录](energy/api/replenish-sync.md)
+
 * [车场接入文档](parking/README.md)
   - [1 接入指引](parking/guideline/README.md)
     - [1.1 C++/Delphi/VB6.X SDK接入指引](parking/guideline/sdk-cplus.md)
