@@ -32,5 +32,5 @@ P云将以固定频率调用该接口获取总停车位和收费标准的获取.
 | --- | --- | --- | --- |
 | total | int | Y | 停车场总车位数. |
 | parking | int | Y | 当前场中车辆数量. |
-| charge_json | string | Y | 计费规则数据JSON格式字符串, 按合作方自行组装, 例如: {"free_time":15,"max":3000,"more":{"price":300,"unit":60},"type":1} |
-| charge_depict | string | Y | 计费规则文字描述, 例如: 入场15分钟免费, 3元/小时。 |
+| charge_json | string | Y | 收费规则数据JSON格式字符串, 按合作方自行组装, 例如: {"free_time":15,"max":3000,"more":{"price":300,"unit":60},"type":1} |
+| charge_depict | string | Y | 收费规则文字描述, 例如: 入场15分钟免费, 3元/小时。 |
