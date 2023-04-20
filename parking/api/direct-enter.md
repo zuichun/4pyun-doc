@@ -22,6 +22,7 @@
 | mobile | string | N | 用户手机号 |
 | enter_time | string | N | 入场时间, 格式: `yyyyMMddHHmmss`. |
 | operator | string | N | 操作员 |
+| reason | string | N | 入场说明 |
 
 **应答参数:**
 
