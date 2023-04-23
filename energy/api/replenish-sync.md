@@ -1,5 +1,7 @@
 # 充电记录推送
 
+![充电停车优惠流程](https://coding-net-production-file-ci.codehub.cn/0378dc80-29f0-4ad7-898b-529de1ad1b74.png?sign=4NSods9HcSK4BGFVeSYAoo1lNW5hPTEyNTcyNDI1OTkmaz1BS0lERkk1Y3NzYjRIRHNHWWFLbzB2WnczdVVucWQ5TksxU2ImZT0xNjgyMjM1OTQ5JnQ9MTY4MjIzNDE0OSZyPTE3OTA1ODEwJmY9LzEyNTcyNDI1OTkvY29kaW5nLW5ldC1wcm9kdWN0aW9uLWZpbGUvMDM3OGRjODAtMjlmMC00YWQ3LTg5OGItNTI5ZGUxYWQxYjc0LnBuZyZiPWNvZGluZy1uZXQtcHJvZHVjdGlvbi1maWxl)
+
 ### 请求地址
 
 ```
