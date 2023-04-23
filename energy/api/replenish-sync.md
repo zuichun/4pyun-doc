@@ -2,12 +2,9 @@
 
 ``` sequence
 title: 充电停车优惠下发流程
-participant 充电桩 as D
-participant P云 as PP
-participant 停车场 as P
 
-D  -> PP : 充电完成上报充电记录
-PP -> P  : 根据充电信息下发停车优惠
+充电桩  -> P云 : 充电完成上报充电记录
+P云 -> 停车场  : 根据充电信息下发停车优惠
 ```
 
 ### 请求地址
