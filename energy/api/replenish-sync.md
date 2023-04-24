@@ -1,5 +1,12 @@
 # 充电记录推送
 
+``` sequence
+title: 充电停车优惠下发流程
+
+充电桩  -> P云 : 充电完成上报充电记录
+P云 -> 停车场  : 根据充电信息下发停车优惠
+```
+
 ### 请求地址
 
 ```
@@ -173,7 +180,7 @@ public void execute() throws APIRemoteException {
         put("energy_value", String.valueOf(energyValue));
         put("fee_value", String.valueOf(feeValue));
         put("total_value", String.valueOf(energyValue + feeValue));
-        put("total_value", "19925333063");
+        put("mobile", "19925333063");
     }};
 
     /*
@@ -194,7 +201,7 @@ public void execute() throws APIRemoteException {
     plain += "&app_secret=" + appSecret;
     String sign = MD5.encryptHEX(plain);
     params.put("sign", sign);
-    // plain: app_id=op00961963581daa7&device_no=S1&end_time=2023-04-11T09:20:00Z&energy_code=CN_AC&energy_value=207&fee_value=975&port_no=1&quantity=6556&replenish_order=202304110920004SfjdX&start_time=2023-04-11T08:20:00Z&station_uuid=8f5fdb60-9374-4c11-bdc2-a32d8369258c&timestamp=1681176000816&total_value=1182&vin=川A660N2&app_secret=6409292d66625a2a0912acfc61ed956c, sign: 90A80901298B87DC9E15DE9F236FD164
+    // plain: app_id=op00961963581daa7&device_no=S1&end_time=2023-04-12T09:40:18Z&energy_code=CN_AC&energy_value=676&fee_value=341&mobile=19925333063&port_no=1&quantity=9033&replenish_order=20230412094017HYynTf&start_time=2023-04-12T08:40:18Z&station_uuid=8f5fdb60-9374-4c11-bdc2-a32d8369258c&timestamp=1681263617993&total_value=1017&vin=川A660N2&app_secret=6409292d66625a2a0912acfc61ed956c, sign: D47024DF345A1143F080401FC50A2B8D
     log.info("plain: {}, sign: {}", plain, sign);
 
     // HTTP 请求
