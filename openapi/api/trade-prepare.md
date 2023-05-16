@@ -24,7 +24,6 @@
 | pay_order    | 发起支付订单号同一个app_id下唯一不能重复                     | string |  Y   | PAYORDER-XXXXXXXX                         |
 | subject      | 商品名称                                                     | string |  Y   | 支付XX项目                                |
 | value        | 支付金额, 单位分                                             | string |  Y   | 100                                       |
-| channel      | 支付渠道<br>被扫的时候不传<br>微信传200201<br>支付宝传100102<br>其它找研发同事提供 | string |  N   | 100001                                    |
 | body         | 商品描述                                                     | string |  N   | XXX停车场XXX车牌停车缴费XX元              |
 | payer        | 付款方: 传入微信/支付宝/其他openid                           | string |  N   | XXXXXXXXXXX                               |
 | deduct_mode  | 扣款模式: 车主服务传入(透传无感同步接口4.4返回的值)          | string |  N   | PROACTIVE                                 |
