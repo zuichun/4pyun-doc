@@ -49,7 +49,6 @@
     - [7.3 停车场列表查询](openapi/iov/park-list.md)
     - [7.4 停车场详情查询](openapi/iov/park-detail.md)
     - [7.5 根据车牌查询停车信息并试算费用](openapi/iov/calculate.md)
-  - [附录](openapi/appendix.md)
 * [充电接入文档](energy/README.md)
   - [1 充电记录](energy/README.md)
     - [1.1 推送充电记录](energy/api/replenish-sync.md)
@@ -118,3 +117,4 @@
   - [基于Redis实现分布式任务调度](knowledge/redis.md)
   - [彻底搞清楚SSL和TLS](knowledge/ssl-tls.md)
   - [MySQL索引](knowledge/mysql-index.md)
+* [附录](appendix/README.md)
