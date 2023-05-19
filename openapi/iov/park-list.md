@@ -66,7 +66,7 @@
 | remain_space       | int      | Y    | 剩余车位数                                                   | 30                                        |
 | charge_desc        | string   | Y    | 收费规则描述                                                 | 首小时4元, 之后1元/小时, 全天最高收费10元 |
 | charge_simple_desc | string   | Y    | 收费规则简单描述                                             | 首小时4元,之后1元/小时                    |
-| charge_json        | string   | Y    | 收费规则JSON数据                                             |                                           |
+| charge_depict      | string   | Y    | 收费规则JSON数据                                             |                                           |
 | enter_free_time    | int      | Y    | 入场免费时间，分钟                                           | 30                                        |
 | leave_buffer_time  | int      | Y    | 出场预留时间，分钟                                           | 10                                        |
 | image_url          | string[] | Y    | 车场图片集合                                                 |                                           |
@@ -247,7 +247,7 @@
     <td>离场预留时间</td>
   </tr>
   <tr>
-    <td>charge_json</td>
+    <td>charge_depict</td>
     <td>计费规则JSON数据</td>
     <td rowspan="1">计费规则JSON数据（8级）</td>
   </tr>
