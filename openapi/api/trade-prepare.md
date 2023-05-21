@@ -1,21 +1,18 @@
 # 发起交易预请求
 
-### 2.1) 请求地址
+### 2.1 请求地址
 
-	https://api.4pyun.com/gate/1.0/payment/trade/prepare
+	POST https://api.4pyun.com/gate/1.0/payment/trade/prepare
 
-### 2.2) 调用方式
+### 2.2 特殊说明
 
-	HTTP POST FORM 表单提交
+	1. app_id,app_secret 用户身份id和加密密钥由平台方提供，对接方需提供公司全称然后给到商务提交给研发申请
+	2. 无感支付场景必须传递extra具体参考测试用例
+	3. deduct_mode是无感状态同步接口返回的值，该值平台不关注具体值是多少,对接方也无需关心，微信或者支付宝透传给平台，平台再透传给调用方调用方再透传给到微信或者支付宝
+	4. 该接口必须后端发起请求不能直接在前端调用该接口
+	5. `callback_url`在小程序调用场景，仅支持当前小程序内页面跳转，需传入例如`/pages/index/index`！
 
-### 2.3) 特殊说明
-
-	1:app_id,app_secret 用户身份id和加密密钥由平台方提供，对接方需提供公司全称然后给到商务提交给研发申请
-	2:无感支付场景必须传递extra具体参考测试用例
-	3:deduct_mode是无感状态同步接口返回的值，该值平台不关注具体值是多少,对接方也无需关心，微信或者支付宝透传给平台，平台再透传给调用方调用方再透传给到微信或者支付宝
-	4:该接口必须后端发起请求不能直接在前端调用该接口
-
-### 2.4) 请求参数
+### 2.3 请求参数
 
 | 字段名称     | 字段说明                                                     |  类型  | 必填 | 示例                                      |
 | :----------- | :----------------------------------------------------------- | :----: | :--: | :---------------------------------------- |
@@ -26,14 +23,12 @@
 | value        | 支付金额, 单位分                                             | string |  Y   | 100                                       |
 | body         | 商品描述                                                     | string |  N   | XXX停车场XXX车牌停车缴费XX元              |
 | payer        | 付款方: 传入微信/支付宝/其他openid                           | string |  N   | XXXXXXXXXXX                               |
-| deduct_mode  | 扣款模式: 车主服务传入(透传无感同步接口4.4返回的值)          | string |  N   | PROACTIVE                                 |
+| deduct_mode  | 扣款模式: 车主服务传入(透传无感同步接口4.4返回的值          | string |  N   | PROACTIVE                                 |
 | callback_url | 支付成功返回前端页面                                         | string |  N   | https://a.b.c/backurl                     |
 | notify_url   | 后端支付回调地址                                             | string |  Y   | https://a.b.c/notify                      |
 |expire_time|交易失效时间, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z' <br>特别说明UTC时间和普通时间差8小时因为我们在东八区 2022-09-01T00:00:00.000Z 对应时间的时间是 2022-09-01 08:00:00|string|N|2021-09-02T09:36:46.020Z|
-| extra        | 额外附加参数Map结构(微信引导开通无感用到)                    | string |  N   | {\"key1\":\"value1\",\"key2\":\"value2\"} |
+| extra        | 额外附加参数Map结构(微信引导开通无感用到                    | string |  N   | {\"key1\":\"value1\",\"key2\":\"value2\"} |
 | sign         | 请求数据签名                                                 | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39          |
-
-
 
 Extra map字段
 
@@ -49,7 +44,7 @@ Extra map字段
 | receipt   | 微信点金计划页面显示按钮为`我要开票`, 1 显示, 其他无效 | string |  N   | 1          |
 
 
-### 2.5）请求示例
+### 2.4 请求示例
 
 ```
 签名前字符串
@@ -87,18 +82,18 @@ Extra map字段
         extraMap.put("parking_time", "175");
         map.put("extra", JSON.toJSONString(extraMap));
         StringBuilder builder = new StringBuilder();
-        for (String key : map.keySet()) {
-            builder.append(key + "=" + map.get(key) + "&");
+        for (String key : map.keySet( {
+            builder.append(key + "=" + map.get(key + "&");
         }
         String appSecret = "6409292d66625a2a12342134";
-        String encriptStr = builder.toString() + "app_secret=" + appSecret;
+        String encriptStr = builder.toString( + "app_secret=" + appSecret;
         System.out.println(encriptStr);
         String sign = MD5.encryptHEX(encriptStr);
-        String keyStr = builder.toString() + "sign=" + sign;
+        String keyStr = builder.toString( + "sign=" + sign;
         System.out.println(keyStr);
         try {
             Form form = Form.form();
-            for (String key : map.keySet()) {
+            for (String key : map.keySet( {
                 form.add(key, map.get(key));
             }
             form.add("sign", sign);
@@ -109,14 +104,14 @@ Extra map字段
             System.out.println(response1.getStatusLine());
             String text = IOUtils.toString(response1.getEntity().getContent(), "utf-8");
             System.out.println(text);
-        } catch (IOException e) {
+        } catch (IOException e {
             e.printStackTrace();
         }
     }
 ```
 
 
-### 2.6) 请求返回结果参数说明
+### 2.6 请求返回结果参数说明
 | 字段名称 | 字段说明                     |  类型  | 必填 | 备注                                                    |
 | :------- | :--------------------------- | :----: | :--: | :------------------------------------------------------ |
 | code     | 请求状态码                   | string |  Y   | 1001:扣款成功<br>400:参数错误<br>其它状态码:读取message |
@@ -127,7 +122,7 @@ Extra map字段
 | pay_id   | 支付平台订单ID成功状态必返回 | string |  N   | 20210712215150075521111111                              |
 
 
-### 2.7) 请求返回结果示例:
+### 2.7 请求返回结果示例:
 
 
 ```
