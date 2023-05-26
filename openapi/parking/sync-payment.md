@@ -20,7 +20,6 @@
 | pay_time       | string | Y    | 支付时间戳，毫秒 |        |
 | plate          | string | Y    | 车牌             |        |
 | channel        | string | Y    | 支付渠道         |        |
-| identity       | string | Y    | 平台用户标识     |        |
 | discounts      | []     | N | 当前订单使用折扣信息         |        |
 | mcoupons | [] | N | 停车商户优惠信息 | |
 | ...            |        |      |                  |        |
