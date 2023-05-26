@@ -23,8 +23,6 @@
 | start_time | string | Y    | 时间类固定车续费开始时间 |                                                |
 | end_time   | string | Y    | 时间类固定车续费结束时间 |                                                |
 | channel    | string | Y    | 支付渠道                 |                                                |
-| identity   | string | Y    | 平台用户标识             |                                                
-
 #### 示例
 
 ```json
