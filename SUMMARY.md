@@ -37,6 +37,7 @@
     - [5.12 黑名单车辆添加](openapi/parking/blacklist-create.md)
     - [5.13 黑名单车辆删除](openapi/parking/blacklist-delete.md)
     - [5.14 预约停车申请](openapi/parking/reserve-apply.md)
+    - [5.15 预约取消申请](openapi/parking/reserve-cancel.md)
   - [6 营销平台](openapi/bonus.md)
     - [6.1 营销活动参与申请](openapi/api/bonus-event-apply.md)
     - [6.2 查询营销活动查询奖励](openapi/api/bonus-bonus.md)
