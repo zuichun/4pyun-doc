@@ -2,11 +2,11 @@
 
 ### 1.1) 请求地址
 
- https://api.4pyun.com/gate/1.0/parking/reserve/apply
+https://api.4pyun.com/gate/1.0/parking/reserve/apply/cancel
 
 ### 1.2) 调用方式
 
-` HTTP DELETE `
+ HTTP POST FORM 表单提交
 
 ### 1.3) 特殊说明
 
