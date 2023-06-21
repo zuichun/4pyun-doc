@@ -78,9 +78,10 @@
     - [3.5 删除黑名单车辆](parking/api/blacklist-delete.md)
     - [3.6 新增固定车辆](parking/api/vip-create.md)
     - [3.7 删除固定车辆](parking/api/vip-delete.md)
-    - [3.8 固定车同步](parking/api/vip-sync.md)
-    - [3.9 黑名单车辆同步](parking/api/blacklist-sync.md)
-    - [3.10 固定车续费记录同步](parking/api/vip-recharge-sync.md)
+    - [3.8 固定车被动同步](parking/api/vip-sync-query.md)
+    - [3.9 固定车主动同步](parking/api/vip-sync.md)
+    - [3.10 黑名单车辆主动同步](parking/api/blacklist-sync.md)
+    - [3.11 固定车续费记录主动同步](parking/api/vip-recharge-sync.md)
 
   - [4 停车优惠](parking/mcoupon.md)
     - [4.1 发放停车优惠](parking/api/mcoupon-create.md)
