@@ -1,14 +1,15 @@
 # 被扫发起交易请求
 
-### 1.1 请求地址
+```
+POST https://api.4pyun.com/gate/1.0/payment/trade/create
+```
 
-	POST https://api.4pyun.com/gate/1.0/payment/trade/create
+**接口说明**
 
-### 1.2 特殊说明
 	1:app_id,app_secret 用户身份id和加密密钥由平台方提供，对接方需提供公司全称然后给到商务提交给研发申请
 	2:如果是微信支付宝被扫必须传auth_code注意这种情况下不传channel平台自动识别微信支付宝，如果是银行相关被扫主动联系研发确认具体银行的被扫channel值需要调用方那边配置写死
 
-### 1.3 请求参数
+**请求参数**
 
 | 字段名称     | 字段说明     |  类型  | 必填 | 示例  |
 | :--- | :--- | :---: | :--: | :--- |
@@ -24,13 +25,34 @@
 | auth_code    | 扣款授权码: 微信付款码/支付宝授权码(被扫必传    | string |  N   | 2012312313213123213     |
 | notify_url   | 后端支付回调地址   | string |  Y   | https://a.b.c/notify    |
 |expire_time|交易失效时间, 单位ms, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z'|string|N|2021-09-02T09:36:46.020Z|
-| extra  | 额外附加参数Map结构(微信无感  | string |  N   | {\"key1\":\"value1\",\"key2\":\"value2\"} |
+|trade_scene| 交易场景值, 根据商户交易按要求传递, 未按要求传递将无法正常支付 | string | Y | -|
+| extra  | 根据支付场景值传递  | string |  N | {\"key1\":\"value1\",\"key2\":\"value2\"} |
 | sign   | 请求数据签名 | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39    |
 
+**支付场景**
+
+|场景值|说明|
+|---|---|
+|PARKING|停车缴费(临停续费)|
+|ENERGY|充电业务|
+
+**业务参数**
+```
+PARKING 场景填写到extra字段
+```
+| 字段名称 | 字段说明 |  类型  | 必填 | 示例  |
+| :--- | --- | :---: | :--: | :--- |
+| plate  | 支付车牌 | string |  Y | 粤TXXXXX  |
+| plate_color  | 车牌颜色: 1.蓝色, 2.黄色, 3.白色, <br>4.黑色, 5.绿色, -1 未知 | string |  Y | 1 |
+| parking_serial | 一次停车唯一ID | string |  Y | XXXXX-ID  |
+| park_name  | 停车场名称 | string |  Y | XXXX-停车场 |
+| enter_time | 入场时间, 单位毫秒 | string |  Y | 1552976318722 |
+| parking_time | 停车时长, 单位秒 | string |  Y | 3600  |
+| free_value | 车场优惠金额, 单位分 | int |  Y | 100  |
+| receipt | 微信点金计划页面显示按钮为`我要开票`, 1 显示, 其他无效 | string |  N | 1  |
 
 
-
-### 1.5 请求示例
+**请求示例**
 
 ```
 被扫示例
@@ -89,7 +111,8 @@
 
 
 
-### 1.6 请求返回结果参数说明
+**请求返回结果参数说明**
+
 | 字段名称   | 字段说明     |  类型  | 必填 | 备注   |
 | :--- | :--- | :---: | :--: | :--- |
 | code | 请求状态码   | string |  Y   | 1000:扣款受理成功<br>1001:扣款成功<br>400:参数错误<br>其它状态码:读取message |
@@ -99,7 +122,7 @@
 | pay_serial | 支付平台订单号成功调用必返回   | string |  N   | 20210712215150075521111111     |
 
 
-### 1.7 请求返回结果示例:
+**请求返回结果示例:**
 
 ```
 被扫正常返回扣款已经受理
