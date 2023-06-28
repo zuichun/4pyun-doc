@@ -45,6 +45,8 @@ PARKING 场景填写到extra字段
 | :--- | --- | :---: | :--: | :--- |
 | plate  | 支付车牌 | string |  Y | 粤TXXXXX  |
 | plate_color  | 车牌颜色: 1.蓝色, 2.黄色, 3.白色, <br>4.黑色, 5.绿色, -1 未知 | string |  Y | 1 |
+| card_id  | 停车卡ID, 无车牌可传递 | string |  N | ABDDS  |
+| gate_id  | 缴费通道ID | string |  N | 001  |
 | parking_serial | 一次停车唯一ID | string |  Y | XXXXX-ID  |
 | park_name  | 停车场名称 | string |  Y | XXXX-停车场 |
 | enter_time | 入场时间, 单位毫秒 | string |  Y | 1552976318722 |
