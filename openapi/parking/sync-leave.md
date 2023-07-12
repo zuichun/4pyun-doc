@@ -17,8 +17,8 @@
 | park_name      | string | Y    | 停车场名称         |        |
 | address        | string | Y    | 停车场地址         |        |
 | area_code      | string | Y    | 区域编码           |        |
-| latitude       | string | Y    | 纬度（百度系）     |        |
-| longitude      | string | Y    | 经度（百度系）     |        |
+| latitude       | string | Y    | 纬度（WGS84） |        |
+| longitude      | string | Y    | 经度（WGS84） |        |
 | parking_serial | string | Y    | 平台停车流水       |        |
 | plate          | string | Y    | 车牌号             |        |
 | plate_color    | string | Y    | 车牌颜色，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8||
@@ -39,7 +39,7 @@
 | autopay_value  | string | N    | 无感支付的金额，分 |        |
 | total_space  | string | Y | 总车位 |        |
 | remain_space | string | Y | 剩余车位 |        |
-| ...            |        |      |                    |        
+| ...            |        |      |                    ||
 
 #### 示例
 

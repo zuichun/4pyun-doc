@@ -22,5 +22,3 @@
 #### 传递方式
 
 > Content-Type=application/x-www-form-urlencoded
-
-通过 `body` 传递签名。`sign=请求签名值`
