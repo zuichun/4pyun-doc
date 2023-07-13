@@ -37,8 +37,6 @@
 | :--- | :--- | :---: | :--: | :--- |
 | app_id  | 平台分配的接入应用ID, 车场本地发起请求可不传递   | string |  N   | op1234567723122|
 | sign | 请求数据签名| string |  N   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
-| enter_image_file | 入场图片文件| string |  N   | 二进制文件流   |
-| enter_plate_image_file | 入场车牌图片文件  | string |  N   | 二进制文件流   |
 | park_uuid  | 平台分配的停车场UUID | string |  Y   | PARKUUID-XXXX-XXX-XXX|
 | api_type   | 接口类型配合app_id使用不传app_id的不传该字段  | string |  Y   | XXX-SERVICE |
 | parking_serial   | 停车场端的停车流水, 一般为入场记录ID | string |  Y   | PARKINGSERIAL-123456789  |
@@ -49,6 +47,8 @@
 | enter_image_file | 入场图片文件| string |  N   | 字节流   |
 | enter_image_hash | 入场图片文件MD5哈希, 传递`enter_image_file`时候必须传递上传文件的哈希值。 | string |  N   | XXXXXXX  |
 | enter_plate_image| 入场车牌图片路径, 任意路径 | string |  N   | https://files.4pyun.com/d/123566  |
+| enter_plate_image_file | 入场车牌图片文件  | string |  N   | 二进制文件流   |
+| enter_plate_image_file | 入场车牌图片文件MD5哈希, 传递`enter_image_file`时候必须传递上传文件的哈希值。 | string |  N   | XXXXXXX  |
 | enter_gate | 入口名称 | string |  N   | 东门入口 |
 | enter_security   | 入口保安 | string |  N   | 张三  |
 | car_type   | 车类: 1.临停车辆, 2.月卡车辆, 3.贵宾车辆(免费车), 4.储值车辆, 0.其他未知 | string |  Y   | 1  |
