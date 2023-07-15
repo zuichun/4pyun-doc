@@ -72,8 +72,6 @@ ENERGY 场景填写到extra字段
 | fee_value    | 服务费，分                                             |  int   |  Y   | 1             |
 | total_value  | 总金额，分                                             |  int   |  Y   | 122           |
 | energy_code  | 充电类型；CN_AC：慢充；CN_DC：快充                     | string |  Y   | CN_AC         |
-| mobile       | 手机号码                                               | string |  Y   | 13800138000   |
-
 
 
 **请求示例**

@@ -52,7 +52,6 @@ HTTP FORM 表单提交
 | fee_value | string | Y    | 服务费，分 |1|
 | total_value | string | Y | 总金额，分 |2|
 | energy_code | string | Y    | 充电类型；CN_AC：慢充；CN_DC：快充 |CN_AC|
-| mobile | string | Y | 手机号码 | 12345678901 |
 | ...            |        |      |                  |        |
 
 ### 请求示例
