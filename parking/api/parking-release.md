@@ -29,7 +29,7 @@
 | parking_serial   | 停车场端的停车流水, 一般为入场记录ID | string |  Y   | PARKINGSERIAL-123456789  |
 | plate| 车牌号码 | string |  Y  | 粤B12345 |
 | plate_color| 车牌颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, -1 未知 | string |  N   | 1  |
-| release_time | 放行时间, 单位ms | string |  Y   | 1552976318722  |
+|release_time|交易失效时间, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z' <br>特别说明UTC时间和普通时间差8小时因为我们在东八区 2022-09-01T00:00:00.000Z 对应时间的时间是 2022-09-01 08:00:00|string|N|2021-09-02T09:36:46.020Z|
 | capture_image | 抓拍图片路径 | string |  N   | 可访问云平台路径-->https://files.4pyun.com/d/123566 |
 | gate_name | 通道名称 | string |  N   | 通道A |
 | gate_id | 通道编号 | string |  N   | 1001 |
