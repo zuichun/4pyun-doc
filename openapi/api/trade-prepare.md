@@ -64,13 +64,7 @@ ENERGY 场景填写到extra字段
 | plate_color  | 车牌颜色                                               |  int   |  Y   | 1             |
 | device_no    | 本地充电桩设备编号                                     | string |  Y   |               |
 | port_no      | 本地充电桩设备枪号                                     | string |  Y   |               |
-| start_time   | 开始充电时间，毫秒                                     | string |  Y   | 1552976318722 |
-| end_time     | 结束充电时间，毫秒                                     | string |  Y   | 1552976318722 |
-| vin          | 车辆标识                                               | string |  Y   |               |
-| quantity     | 充电度数，0.001Kwh，1表示0.001Kwh，例如1度传递1000即可 |  int   |  Y   | 1000          |
-| energy_value | 电费，分                                               |  int   |  Y   | 121           |
-| fee_value    | 服务费，分                                             |  int   |  Y   | 1             |
-| total_value  | 总金额，分                                             |  int   |  Y   | 122           |
+| vin          | 车辆标识                                                | string |  N   |               |
 | energy_code  | 充电类型；CN_AC：慢充；CN_DC：快充                     | string |  Y   | CN_AC         |
 
 
