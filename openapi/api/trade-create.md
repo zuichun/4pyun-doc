@@ -37,6 +37,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 |ENERGY|充电业务|
 
 **业务参数**
+
 ```
 PARKING 场景填写到extra字段
 ```
@@ -52,6 +53,27 @@ PARKING 场景填写到extra字段
 | parking_time | 停车时长, 单位秒 | string |  Y | 3600  |
 | free_value | 车场优惠金额, 单位分 | int |  Y | 100  |
 | receipt | 微信点金计划页面显示按钮为`我要开票`, 1 显示, 其他无效 | string |  N | 1  |
+
+```
+ENERGY 场景填写到extra字段
+```
+
+| 字段名称     | 字段说明                                               |  类型  | 必填 | 示例          |
+| :----------- | ------------------------------------------------------ | :----: | :--: | :------------ |
+| plate        | 车牌                                                   | string |  Y   | 川A660B1      |
+| plate_color  | 车牌颜色                                               |  int   |  Y   | 1             |
+| device_no    | 本地充电桩设备编号                                     | string |  Y   |               |
+| port_no      | 本地充电桩设备枪号                                     | string |  Y   |               |
+| start_time   | 开始充电时间，毫秒                                     | string |  Y   | 1552976318722 |
+| end_time     | 结束充电时间，毫秒                                     | string |  Y   | 1552976318722 |
+| vin          | 车辆标识                                               | string |  Y   |               |
+| quantity     | 充电度数，0.001Kwh，1表示0.001Kwh，例如1度传递1000即可 |  int   |  Y   | 1000          |
+| energy_value | 电费，分                                               |  int   |  Y   | 121           |
+| fee_value    | 服务费，分                                             |  int   |  Y   | 1             |
+| total_value  | 总金额，分                                             |  int   |  Y   | 122           |
+| energy_code  | 充电类型；CN_AC：慢充；CN_DC：快充                     | string |  Y   | CN_AC         |
+| mobile       | 手机号码                                               | string |  Y   | 13800138000   |
+
 
 
 **请求示例**
