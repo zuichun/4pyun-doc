@@ -42,6 +42,7 @@
 | parking_serial   | 停车场端的停车流水, 一般为入场记录ID | string |  Y   | PARKINGSERIAL-123456789  |
 | plate| 车牌号码 | string |  N   | 粤B12345 |
 | plate_color| 车牌颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, -1 未知 | string |  Y   | 1  |
+| plate_type | 车牌类型: 0-中国大陆车牌, 1-境外车牌(含港澳), 2-两轮电动车车牌 | int | N | 1 |
 | enter_time | 入场时间, 单位ms  | string |  Y   | 1552976318722  |
 | enter_image| 入场图片路径, 任意路径  | string |  N   | 可访问云平台路径-->https://files.4pyun.com/d/123566 |
 | enter_image_file | 入场图片文件| string |  N   | 字节流   |
