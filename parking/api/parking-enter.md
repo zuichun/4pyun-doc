@@ -56,7 +56,7 @@
 | car_desc   | 车类描述 | string |  Y   | 临停/月卡A  |
 | car_color  | 车辆颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, 6.银色, 7. 灰色, 8. 橙色, -1 未知 | string |  N   | 1  |
 | charge_type   | 车辆计费标准 | string |  Y   | 1  |
-| vehicle_type  | 车型: 1.小车, 2.大车, -1.未知 | string |  N   | 1  |
+| vehicle_type  | 车型: 1.小车, 2.大车, 3.电动自行车/摩托车, -1.未知 | string |  N   | 1  |
 | idcard_name| 通行证件姓名| string |  N   | 阿Q|
 | idcard_no  | 通行证件号码| string |  N   | 9527123  |
 | idcard_image  | 通行证件图片| string |  N   | https://a.b.c/d.jpg  |

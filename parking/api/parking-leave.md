@@ -58,7 +58,7 @@
 | car_type | 车类: 1.临停车辆, 2.月卡车辆, 3.贵宾车辆(免费车), 4.储值车辆, 0.其他未知 | string | Y | 1 |
 | car_desc | 车类描述 | string | Y | 临停/月卡A |
 | car_color | 车辆颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, 6.银色, 7. 灰色, 8. 橙色, -1 未知 | string | N | 1 |
-| vehicle_type | 车型: 1.小车, 2.大车, -1.未知 | string | N | 1 |
+| vehicle_type  | 车型: 1.小车, 2.大车, 3.电动自行车/摩托车, -1.未知 | string |  N   | 1  |
 | charge_type   | 车辆计费标准 | string |  Y   | 1  |
 | leave_time | 离场时间, 单位ms | string | Y | 1552976318722 |
 | leave_image | 离场图片路径 | string | N | https://files.4pyun.com/d/123566 |
