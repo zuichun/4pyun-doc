@@ -39,7 +39,7 @@
 | :--------------------- | :----------------------------------------------------------- | :----: | :--: | :----------------------------------------------------------- |
 | app_id | 平台分配的接入应用ID, 车场本地发起请求可不传递 | string | N | op1234567723122 |
 | sign | 请求数据签名 | string | N | C65FCAC2D3FB5E2D3D4AD93DD20C8C39 |
-| payment_list | 付记录集合, payment | string | N | [{<br>"pay_origin_desc": "微信",<br>"pay_type": 2,<br>"operator": "张三",<br>"pay_time": "1572410847545",<br>"value": 500,<br>"free_value": 100,<br>"parking_order": "PO201910301247278862",<br>"change_value": 100<br>}] |
+| merchant  | 平台分配的停车场商户号, `merchant`和`park_uuid`二选一必传 | string |  Y/N   | 62626601|
 | park_uuid | 平台分配的停车场UUID | string | Y | PARKUUID-XXXX-XXX-XXX |
 | api_type | 接口类型配合app_id使用不传app_id的不传该字段 | string | Y | XXX-SERVICE |
 | parking_serial | 停车场端的停车流水, 一般为入场记录ID | string | Y | PARKINGSERIAL-123456789 |
@@ -86,6 +86,7 @@
 | leave_release_reason | 离场人工放行原因 | string | N | 免费通行 |
 | total_parking_space | 车场总车位数 | string | N | 100 |
 | remain_parking_space | 剩余可用车位数, 仅当`total_parking_space>0`生效! | string | N | 10 |
+| payment_list | 付记录集合, payment | string | N | [{<br>"pay_origin_desc": "微信",<br>"pay_type": 2,<br>"operator": "张三",<br>"pay_time": "1572410847545",<br>"value": 500,<br>"free_value": 100,<br>"parking_order": "PO201910301247278862",<br>"change_value": 100<br>}] |
 
 <br>
 
