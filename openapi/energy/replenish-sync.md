@@ -72,8 +72,7 @@ HTTP FORM 表单提交
     "station_uuid": "8f5fdb60-9374-4c11-bdc2-a32d8369258c",
     "app_id": "op00961963581daa7",
     "timestamp": "1681122776000",
-    "port_no": "1",
-    "mobile": "19925333063"
+    "port_no": "1"
 }
 ```
 
@@ -179,7 +178,6 @@ public void execute() throws APIRemoteException {
         put("energy_value", String.valueOf(energyValue));
         put("fee_value", String.valueOf(feeValue));
         put("total_value", String.valueOf(energyValue + feeValue));
-        put("mobile", "19925333063");
     }};
 
     /*
