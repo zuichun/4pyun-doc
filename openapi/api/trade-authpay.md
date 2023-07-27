@@ -1,4 +1,4 @@
-# 原生交易请求
+# 被扫交易请求
 
 ```
 POST https://api.4pyun.com/gate/1.0/payment/trade/create
@@ -6,7 +6,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 
 **接口说明**
 
-	适用于APP/小程序通过原生发起交易，改交易方式需和平台方确认是否支持！
+	微信支付宝被扫必须传auth_code注意这种情况下不传channel平台自动识别微信支付宝!
 
 **请求参数**
 
@@ -21,7 +21,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 | body   | 商品描述     | string |  N   | XXX停车场XXX车牌停车缴费XX元  |
 | payer  | 付款方: 传入微信open_id小程序支付时必须传  | string |  N   | XXXXXXXXXXX |
 | callback_url | 支付成功返回前端页面     | string |  N   | https://a.b.c/backurl   |
-| auth_code    | 扣款授权码: 微信付款码/支付宝授权码(被扫必传    | string |  N   | 2012312313213123213     |
+| auth_code    | 扣款授权码: 微信付款码/支付宝授权码(被扫必传    | string |  Y   | 2012312313213123213     |
 | notify_url   | 后端支付回调地址   | string |  Y   | https://a.b.c/notify    |
 |expire_time|交易失效时间, 单位ms, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z'|string|N|2021-09-02T09:36:46.020Z|
 |trade_scene| 交易场景值, 根据商户交易按要求传递, 未按要求传递将无法正常支付, [参考附录定义](./../appendix.html) | string | Y | -|
