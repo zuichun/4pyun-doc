@@ -13,6 +13,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 | 字段名称     | 字段说明     |  类型  | 必填 | 示例  |
 | :--- | :--- | :---: | :--: | :--- |
 | app_id | 平台分配的接入应用ID     | string |  Y   | op1234567723122   |
+| sub_app_id | 子应用ID: 微信小程序之类传入 | string | N | wx123232 |
 | merchant     | 停车场商户号 | string |  Y   | 6262666666  |
 | pay_order    | 发起支付订单号同一个app_id下唯一不能重复   | string |  Y   | PAYORDER-XXXXXXXX |
 | subject      | 商品名称     | string |  Y   | 支付XX项目  |
