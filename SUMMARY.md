@@ -16,6 +16,7 @@
     - [2.5 发起订单退款](openapi/api/trade-refund.md)
     - [2.6 支付结果异步通知](openapi/api/trade-notify.md)
     - [2.7 结算记录同步接口](openapi/api/settlement-sync.md)
+    - [2.8 结算帐户信息查询接口](openapi/api/bank-account.md)
   - [3 电子发票](openapi/invoice.md)
     - [3.1 提交开票申请](openapi/api/invoice-obtain.md)
     - [3.2 查询开票详情](openapi/api/invoice-query.md)
