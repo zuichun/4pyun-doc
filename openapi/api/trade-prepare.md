@@ -54,8 +54,6 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/prepare
   map.put("body","【川A12345】在【XXXXX-停车场】于【2021-07-01 00:00:00】支付费1.00元");
   // 支付金额, 单位分
   map.put("value","10");
-  // 支付渠道 微信传200201 支付宝传100102
-  map.put("channel","200201");
   // 支付成功返回前端页面
   map.put("callback_url", "https://a.b.c/backurl");
   // 后端支付回调地址
