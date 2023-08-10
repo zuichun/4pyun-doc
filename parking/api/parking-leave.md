@@ -1,10 +1,7 @@
 # 推送车辆离场
 
 ### 请求地址
-	https://api.4pyun.com/gate/1.0/parking/internal/leave
-
-### 调用方式
-	HTTP FORM 表单提交
+	POST https://api.4pyun.com/gate/1.0/parking/internal/leave
 
 ### 特殊说明
 
