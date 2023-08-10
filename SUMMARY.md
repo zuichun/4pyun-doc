@@ -17,6 +17,7 @@
     - [2.6 结算记录同步接口](openapi/api/settlement-sync.md)
     - [2.7 结算帐户信息查询接口](openapi/api/bank-account.md)
     - [2.8 原生交易请求](openapi/api/trade-create.md)
+    - [2.9 支付渠道配置信息查询](openapi/api/channel-config.md)
   - [3 电子发票](openapi/invoice.md)
     - [3.1 提交开票申请](openapi/api/invoice-obtain.md)
     - [3.2 查询开票详情](openapi/api/invoice-query.md)
