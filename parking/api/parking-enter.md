@@ -69,162 +69,113 @@
 
 
 ### 请求示例
-```
-不带文件上传 不传
-签名前字符串
-1.1：签名前字符串
- str=car_color=1&car_desc=临时车&car_type=1&enter_time=1624846777109&park_uuid=49f0cc52-e8c7-41e3-b54d-af666b8cc11a&parking_serial=202106028000000001&plate=粤X88888&plate_color=1&vehicle_type=1&app_secret=123
-1.2：MD5(str)
- sign=C33986A7EC5C3FD830C1B54CC8F5945F
+```java
+import com.chinaroad.foundation.utils.Base64Utils;
+import com.chinaroad.foundation.utils.crypto.MD5;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.fluent.Request;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.util.EntityUtils;
+import org.junit.Test;
 
-  @Test
- public void testEnter2() {
-  // 自动对key进行排序
-  TreeMap<String, String> map = new TreeMap<>();
-  // 平台分配的停车场UUID 实际场景读配置 必传
-  map.put("park_uuid", "49f0cc52-e8c7-41e3-b54d-af666b8cc11a");
-  // 停车场端的停车流水, 一般为入场记录ID 必传
-  map.put("parking_serial", "202106028000000002");
-  map.put("plate", "粤X77777");
-  map.put("plate_color", "1");
-  // 入场时间 , 单位ms 必传
-  map.put("enter_time", System.currentTimeMillis() - 1000 * 60 * 1 + "");
-  // 入场图片
-  map.put("enter_image","https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF");
-  map.put("enter_gate","入口名称");
-  map.put("enter_security","入口保安");
-  // 车类: 1.临停车辆, 2.月卡车辆, 3.贵宾车辆(免费车), 4.储值车辆, 0.其他未知 必传
-  map.put("car_type", "1");
-  // 车类描述 必传
-  map.put("car_desc", "临时车");
-  // 车辆颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, 6.银色, 7. 灰色, 8. 橙色, -1 未知
-  map.put("car_color", "1");
-  // 车型: 1.小车, 2.大车, -1.未知
-  map.put("vehicle_type", "1");
-  // 入场人工放行原因 例如访客访问
-  map.put("enter_release_reason","访问客户");
-  // 总车位
-  map.put("total_parking_space","100");
-  // 剩余车位 如果希望传出入场的时候顺便车位数也同步了可以这里传
-  map.put("remain_parking_space","10");
-  StringBuilder builder = new StringBuilder();
-  for (String key : map.keySet()) {
-builder.append(key + "=" + map.get(key) + "&");
-  }
-  // 签名秘钥实际场景读配置
-  String appSecret = "123";
-  String encriptStr = builder.toString() + "app_secret=" + appSecret;
-  System.out.println(encriptStr);
-  // 算出MD5值
-  String sign = MD5.encryptHEX(encriptStr);
-  String keyStr = builder.toString() + "sign=" + sign;
-  // 纯粹打印出来看一下
-  System.out.println(keyStr);
-  try {
-Form form = Form.form();
-for (String key : map.keySet()) {
- form.add(key, map.get(key));
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
+public class ParkingAPITest {
+
+		// 配置P云提供的车场UUID
+		private final String PARK_UUID = "49f0cc52-e8c7-41e3-b54d-af666b8cc11a";
+		// 签名秘钥实际场景读配置
+    private final String APP_SECRET = "XXXX";
+
+    /**
+     * 1个像素的图片
+     */
+    private final byte[] IMAGE_BYTES = Base64Utils.base64ToBytes("R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=");
+
+    @Test
+    public void name() {
+        // 自动对key进行排序
+        Map<String, String> request = new TreeMap<>();
+        // 平台分配的停车场UUID 实际场景读配置 必传
+        request.put("park_uuid", PARK_UUID);
+        // 停车场端的停车流水, 一般为入场记录ID 必传
+        request.put("parking_serial", "202106028000000002");
+        request.put("plate", "粤X77777");
+        request.put("plate_color", "1");
+        // 入场时间 , 单位ms 必传
+        request.put("enter_time", System.currentTimeMillis() - 1000 * 60 * 1 + "");
+        request.put("enter_gate","入口名称");
+        request.put("enter_security","入口保安");
+        // 车类: 1.临停车辆, 2.月卡车辆, 3.贵宾车辆(免费车), 4.储值车辆, 0.其他未知 必传
+        request.put("car_type", "1");
+        // 车类描述 必传
+        request.put("car_desc", "临时车");
+        // 车辆颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, 6.银色, 7. 灰色, 8. 橙色, -1 未知
+        request.put("car_color", "1");
+        // 车型: 1.小车, 2.大车, -1.未知
+        request.put("vehicle_type", "1");
+        // 入场人工放行原因 例如访客访问
+        request.put("enter_release_reason","访问客户");
+        // 总车位
+        request.put("total_parking_space","100");
+        // 剩余车位 如果希望传出入场的时候顺便车位数也同步了可以这里传
+        request.put("remain_parking_space","10");
+
+        boolean uploadFile = true;
+
+        // 上传图片文件字节流需计算文件HASH, 且仅HASH参与签名, 字节流不参与
+        if (uploadFile) {
+            // 计算文件MD5
+            request.put("enter_image_hash", MD5.encryptHEX(IMAGE_BYTES));
+        } else {
+            request.put("enter_image", "https://files.4pyun.com/d/4907c98b081?t=5614");
+        }
+
+        // 计算签名
+        String plain = request.entrySet().stream()
+                .map(e -> e.getKey() + "=" + e.getValue())
+                .collect(Collectors.joining("&"));
+        // 算出MD5值
+        String sign = MD5.encryptHEX(plain + "&app_secret=" + APP_SECRET);
+        request.put("sign", sign);
+        System.out.println("加密明文: " + plain);
+        System.out.println("加密结果: " + sign);
+
+        MultipartEntityBuilder requestEntity = MultipartEntityBuilder.create()
+                .setCharset(StandardCharsets.UTF_8);
+        request.entrySet().forEach(e -> {
+            requestEntity.addTextBody(e.getKey(), e.getValue(), ContentType.DEFAULT_TEXT.withCharset(StandardCharsets.UTF_8));
+        });
+
+        // 添加图片字节流
+        if (uploadFile) {
+            // 根据接口情况，添加对应的图片信息, 图片名称可以不传递
+            requestEntity.addBinaryBody("enter_image_file", IMAGE_BYTES, ContentType.APPLICATION_OCTET_STREAM, "");
+        }
+
+        try {
+            HttpResponse response = Request.Post("https://dev-api.4pyun.com/gate/1.0/parking/internal/enter")
+                    .body(requestEntity.build())
+                    .execute()
+                    .returnResponse();
+            String body = EntityUtils.toString(response.getEntity());
+            /**
+             * 1. HTTP非200也会返回结果, 故需读取BODY!
+             * 2. 该接口返回code取值200、1001、1000均表示上传成功!
+             */
+            // 打印返回结果
+            System.out.println(body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
-form.add("sign", sign);
-Response response = Request.Post("https://api.4pyun.com/gate/1.0/parking/internal/enter")
-  .bodyForm(form.build(), Charset.forName("utf-8"))
-  .execute();
-HttpResponse response1 = response.returnResponse();
-System.out.println(response1.getStatusLine());
-// 打印返回结果
-String text = IOUtils.toString(response1.getEntity().getContent(), "utf-8");
-System.out.println(text);
-  } catch (IOException e) {
-e.printStackTrace();
-  }
- }
-
-```
-```
-带文件上传
-签名前字符串
-1.1：签名前字符串
- str=car_color=1&car_desc=临时车&car_type=1&enter_gate=入口名称&enter_image=https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF&enter_image_hash=3EF48C1A8A95DF308EFF872082280815&enter_release_reason=访问客户&enter_security=入口保安&enter_time=1624874732253&park_uuid=49f0cc52-e8c7-41e3-b54d-af666b8cc11a&parking_serial=202106028000000007&plate=粤X44444&plate_color=1&remain_parking_space=10&total_parking_space=100&vehicle_type=1&app_secret=123
-1.2：MD5(str)
- sign=F58EDB51E299C99BE0E24D84739994CA
-
-
-@Test
- public void testEnter3() {
-  // 本地图片地址
-  String fileName = "/Users/zhichaoluo/Desktop/abcde.jpeg";
-  try {
-String md5 = MD5Util.md5HashCode32(fileName);
-// 自动对key进行排序
-TreeMap<String, String> map = new TreeMap<>();
-// 平台分配的停车场UUID 实际场景读配置 必传
-map.put("park_uuid", "49f0cc52-e8c7-41e3-b54d-af666b8cc11a");
-// 停车场端的停车流水, 一般为入场记录ID 必传
-map.put("parking_serial", "202106028000000007");
-map.put("plate", "粤X44444");
-map.put("plate_color", "1");
-// 入场时间 , 单位ms 必传
-map.put("enter_time", 1624874792253l - 1000 * 60 * 1 + "");
-// 入场图片
-map.put("enter_image","https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF");
-map.put("enter_gate","入口名称");
-map.put("enter_security","入口保安");
-// 车类: 1.临停车辆, 2.月卡车辆, 3.贵宾车辆(免费车), 4.储值车辆, 0.其他未知 必传
-map.put("car_type", "1");
-// 车类描述 必传
-map.put("car_desc", "临时车");
-// 车辆颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, 6.银色, 7. 灰色, 8. 橙色, -1 未知
-map.put("car_color", "1");
-// 车型: 1.小车, 2.大车, -1.未知
-map.put("vehicle_type", "1");
-// 入场人工放行原因 例如访客访问
-map.put("enter_release_reason","访问客户");
-// 总车位
-map.put("total_parking_space","100");
-// 剩余车位 如果希望传出入场的时候顺便车位数也同步了可以这里传
-map.put("remain_parking_space","10");
-// 图片hash 传了这个值一定要传文件
-map.put("enter_image_hash", md5.toUpperCase());
-StringBuilder builder = new StringBuilder();
-for (String key : map.keySet()) {
- builder.append(key + "=" + map.get(key) + "&");
-}
-// 签名秘钥实际场景读配置
-String appSecret = "123";
-String encriptStr = builder.toString() + "app_secret=" + appSecret;
-System.out.println(encriptStr);
-// 算出MD5值
-String sign = MD5.encryptHEX(encriptStr);
-String keyStr = builder.toString() + "sign=" + sign;
-// 纯粹打印出来看一下
-System.out.println(keyStr);
-try {
- MultipartEntityBuilder builder1 = MultipartEntityBuilder.create()
-.setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
-.setCharset(Charset.forName("utf-8"));
-
- for (String key : map.keySet()) {
-  ContentType contentType = ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8);
-  StringBody stringBody = new StringBody(map.get(key),contentType);
-  builder1.addPart(key, stringBody);
- }
- builder1.addTextBody("sign", sign);
- builder1.addBinaryBody("enter_image_file", new File(fileName));
- //创建表单
- Response response = Request.Post("https://api.4pyun.com/gate/1.0/parking/internal/enter")
-.body(builder1.build())
-.execute();
- HttpResponse response1 = response.returnResponse();
- System.out.println(response1.getStatusLine());
- String text = IOUtils.toString(response1.getEntity().getContent(), "utf-8");
- System.out.println(text);
-} catch (IOException e) {
- e.printStackTrace();
-}
-  } catch (Exception e) {
-e.printStackTrace();
-  }
- }
 
 ```
 
