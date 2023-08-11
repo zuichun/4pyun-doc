@@ -26,6 +26,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 |expire_time|交易失效时间, 单位ms, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z'|string|N|2021-09-02T09:36:46.020Z|
 |trade_scene| 交易场景值, 根据商户交易按要求传递, 未按要求传递将无法正常支付, [参考附录定义](./../appendix.html) | string | Y | -|
 | extra  | 根据交易场景传递, [参考附录定义](./../appendix.html)  | string |  N | {\"key1\":\"value1\",\"key2\":\"value2\"} |
+| manual_settle | 仅聚合到账有效, 手动清算标记: 1-手动清算, 0-自动清算(默认)| int | N | 0 |
 | sign   | 请求数据签名 | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39    |
 
 
