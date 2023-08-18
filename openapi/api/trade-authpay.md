@@ -17,7 +17,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 | pay_order    | 发起支付订单号同一个app_id下唯一不能重复   | string |  Y   | PAYORDER-XXXXXXXX |
 | subject      | 商品名称     | string |  Y   | 支付XX项目  |
 | value  | 支付金额, 单位分   | string |  Y   | 100   |
-| channel      | 支付渠道<br>普通微信支付宝被扫的时候不传其它类型类似银行被扫找研发同事提供 | string |  N   | 100001      |
+| channel      | 支付渠道<br>普通微信支付宝被扫的时候不传其它类型类似银行被扫找研发同事提供, [参考附录定义](./../appendix.html) | string |  N   | 100001      |
 | body   | 商品描述     | string |  N   | XXX停车场XXX车牌停车缴费XX元  |
 | payer  | 付款方: 传入微信open_id小程序支付时必须传  | string |  N   | XXXXXXXXXXX |
 | callback_url | 支付成功返回前端页面     | string |  N   | https://a.b.c/backurl   |
