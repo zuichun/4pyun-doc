@@ -29,7 +29,7 @@
 | pay_mode      | short  | Y    | 到账方式具体参考pay_mode_desc描述    |
 | pay_mode_desc | string | Y    | 到账方式描述, 例如: 微信、支付宝     |
 | fee | int | Y    | 交易手续费, 单位分     |
-| sign         | 请求数据签名  | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39          |
+| sign | string | Y | 请求数据签名   |
 
 ### 4.5) 响应参数
 
