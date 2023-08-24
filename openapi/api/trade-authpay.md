@@ -93,7 +93,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 
 | 字段名称   | 字段说明     |  类型  | 必填 | 备注   |
 | :--- | :--- | :---: | :--: | :--- |
-| code | 请求状态码   | string |  Y   | 1000:扣款受理成功<br>1001:扣款成功<br>400:参数错误<br>其它状态码:读取message |
+| code | 请求状态码 | string |  Y | 1000-交易已受理(待支付)<br>1001-扣款成功<br>1403-支付订单号已存在<br>其它-读取message |
 | message    | 返回描述     | string |  Y   | 返回描述     |
 | hint | 返回错误说明 | string |  N   | 返回具体错描述指导 |
 | seqno      | 服务器日志标示     | string |  Y   | 查日志用到查问题尽量提供这个值 |
