@@ -5,8 +5,10 @@
 |场景值|说明|
 |---|---|
 |PARKING|停车缴费(临停续费)|
+|RECHARGE|停车缴费(固定车续费)|
 |ENERGY|充电业务|
 |LIVING|生活缴费|
+|GENERIC|通用缴费|
 
 ### I.I 停车缴费
 ```
@@ -25,7 +27,23 @@ trade_scend=PARKING 场景填写到extra字段
 | free_value | 车场优惠金额, 单位分 | int | Y | 100 |
 | receipt | 微信点金计划页面显示按钮为`我要开票`, 1 显示, 其他无效 | string | N | 1 |
 
-### I.II 充电业务
+
+### I.II 固定车续费
+```
+trade_scend=RECHARGE 场景填写到extra字段
+```
+| 字段名称 | 字段说明 | 类型 | 必填 | 示例 |
+| :--- | --- | :---: | :--: | :--- |
+| plate | 支付车牌 | string | Y | 粤TXXXXX |
+| plate_color | 车牌颜色: 1.蓝色, 2.黄色, 3.白色, <br>4.黑色, 5.绿色, -1 未知 | string | Y | 1 |
+| type | 固定车类型:<br/>1 月卡<br/>2 储值<br/>3 储次<br/>4 储天<br/>5 年卡<br/>6 季度卡<br/>7 半年卡 | string | Y | 1 |
+| charge_type | 停车场名称 | string | Y | MON_001 |
+| quantity | 续费数量:<br/>储值-续费金额, 单位分<br/>储次-续费次数<br/>储天-续费天数<br/>月卡-续费月数<br/>年卡-续费年数<br/>半年卡-续费半年数<br/>季度卡-续费季度数 | string | Y | 1 |
+|renewal_start_time|时间类续费开始时间, 格式: yyyyMMdd| string | Y | 2023-08-01 |
+|renewal_end_time|时间类续费开始时间, 格式: yyyyMMdd| string | Y | 2023-08-31 |
+| receipt | 微信点金计划页面显示按钮为`我要开票`, 1 显示, 其他无效 | string | N | 1 |
+
+### I.III 充电业务
 ```
 trade_scend=ENERGY 场景填写到extra字段
 ```
@@ -39,7 +57,7 @@ trade_scend=ENERGY 场景填写到extra字段
 | vin | 车辆标识 | string | N | |
 | energy_code | 充电类型；CN_AC：慢充；CN_DC：快充 | string | Y | CN_AC |
 
-### I.III 生活缴费
+### I.IV 生活缴费
 ```
 trade_scend=LIVING 场景填写到extra字段
 ```
@@ -64,3 +82,17 @@ trade_scend=LIVING 场景填写到extra字段
 | 100002 | 支付宝APP支付 |
 | 200001  | 微信APP支付 |
 | 200201  | 微信JSAPI支付 |
+
+
+
+## IV. 固定车类型
+
+| 值    | 描述       |
+| ----- | ---------- |
+| 1 | 月卡 |
+| 2  | 储值卡 |
+| 3  | 储次 |
+| 4  | 储天 |
+| 5  | 年卡 |
+| 6  | 季度卡 |
+| 7  | 半年卡 |
