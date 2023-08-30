@@ -37,7 +37,7 @@ trade_scend=RECHARGE 场景填写到extra字段
 | plate | 支付车牌 | string | Y | 粤TXXXXX |
 | plate_color | 车牌颜色: 1.蓝色, 2.黄色, 3.白色, <br>4.黑色, 5.绿色, -1 未知 | string | Y | 1 |
 | type | 固定车类型:<br/>1 月卡<br/>2 储值<br/>3 储次<br/>4 储天<br/>5 年卡<br/>6 季度卡<br/>7 半年卡 | string | Y | 1 |
-| charge_type | 停车场名称 | string | Y | MON_001 |
+| charge_type | 固定车类型ID | string | Y | MON_001 |
 | quantity | 续费数量:<br/>储值-续费金额, 单位分<br/>储次-续费次数<br/>储天-续费天数<br/>月卡-续费月数<br/>年卡-续费年数<br/>半年卡-续费半年数<br/>季度卡-续费季度数 | string | Y | 1 |
 |renewal_start_time|时间类续费开始时间, 格式: yyyyMMdd| string | Y | 20230801 |
 |renewal_end_time|时间类续费结束时间, 格式: yyyyMMdd| string | Y | 20230831 |
