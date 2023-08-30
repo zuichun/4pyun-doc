@@ -12,7 +12,7 @@
 
 ### I.I 停车缴费
 ```
-trade_scend=PARKING 场景填写到extra字段
+trade_scene=PARKING 场景填写到extra字段
 ```
 | 字段名称 | 字段说明 | 类型 | 必填 | 示例 |
 | :--- | --- | :---: | :--: | :--- |
@@ -30,7 +30,7 @@ trade_scend=PARKING 场景填写到extra字段
 
 ### I.II 固定车续费
 ```
-trade_scend=RECHARGE 场景填写到extra字段
+trade_scene=RECHARGE 场景填写到extra字段
 ```
 | 字段名称 | 字段说明 | 类型 | 必填 | 示例 |
 | :--- | --- | :---: | :--: | :--- |
@@ -45,7 +45,7 @@ trade_scend=RECHARGE 场景填写到extra字段
 
 ### I.III 充电业务
 ```
-trade_scend=ENERGY 场景填写到extra字段
+trade_scene=ENERGY 场景填写到extra字段
 ```
 
 | 字段名称 | 字段说明 | 类型 | 必填 | 示例 |
@@ -59,7 +59,7 @@ trade_scend=ENERGY 场景填写到extra字段
 
 ### I.IV 生活缴费
 ```
-trade_scend=LIVING 场景填写到extra字段
+trade_scene=LIVING 场景填写到extra字段
 ```
 
 | 字段名称 | 字段说明 | 类型 | 必填 | 示例 |
