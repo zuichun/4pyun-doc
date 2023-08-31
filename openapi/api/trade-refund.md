@@ -3,7 +3,7 @@
 
 ### 4.1) 请求地址
 
-	https://api.4pyun.com/gate/1.0/payment/trade/refund
+	https://user-api.4pyun.com/gate/1.0/payment/trade/refund
 
 ### 4.2) 调用方式
 

@@ -2,7 +2,7 @@
 
 ### 3.1) 请求地址
 
-	https://api.4pyun.com/gate/1.0/payment/trade/query
+	https://user-api.4pyun.com/gate/1.0/payment/trade/query
 
 ### 3.2) 请求方式
 
