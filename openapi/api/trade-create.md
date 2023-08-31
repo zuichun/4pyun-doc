@@ -1,7 +1,7 @@
 # 原生交易请求
 
 ```
-POST https://user-api.4pyun.com/gate/1.0/payment/trade/create
+POST https://api.4pyun.com/gate/1.0/payment/trade/create
 ```
 
 **接口说明**
