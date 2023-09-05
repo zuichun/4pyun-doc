@@ -2,11 +2,7 @@
 
 ### 请求地址
 
-    https://api.4pyun.com/gate/1.0/parking/internal/payment
-
-### 调用方式
-
-    HTTP GET
+    GET https://api.4pyun.com/gate/1.0/parking/internal/payment
 
 ### 特殊说明:
 

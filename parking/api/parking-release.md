@@ -2,11 +2,7 @@
 
 ### 请求地址
 
-  https://api.4pyun.com/gate/1.0/parking/internal/release
-
-### 调用方式
-
-  HTTP FORM 表单提交
+  POST https://api.4pyun.com/gate/1.0/parking/internal/release
 
 ### 特殊说明
 
@@ -29,7 +25,7 @@
 | parking_serial   | 停车场端的停车流水, 一般为入场记录ID | string |  Y   | PARKINGSERIAL-123456789  |
 | plate| 车牌号码 | string |  Y  | 粤B12345 |
 | plate_color| 车牌颜色: 1.蓝色, 2.黄色, 3.白色, 4.黑色, 5.绿色, -1 未知 | string |  N   | 1  |
-|release_time|交易失效时间, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z' <br>特别说明UTC时间和普通时间差8小时因为我们在东八区 2022-09-01T00:00:00.000Z 对应时间的时间是 2022-09-01 08:00:00|string|N|2021-09-02T09:36:46.020Z|
+| release_time |放行时间, 格式: yyyy-MM-dd'T'HH:mm:ss'Z' <br>特别说明UTC时间和普通时间差8小时因为我们在东八区 2022-09-01T00:00:00.000Z 对应时间的时间是 2022-09-01 08:00:00|string|N|2021-09-02T09:36:46.020Z|
 | capture_image | 抓拍图片路径 | string |  N   | 可访问云平台路径-->https://files.4pyun.com/d/123566 |
 | gate_name | 通道名称 | string |  N   | 通道A |
 | gate_id | 通道编号 | string |  N   | 1001 |
@@ -40,28 +36,22 @@
 | release_method | 放行方式: 0 - 未知,1 - 手动放行 ,2 - 自动放行,3 - 可疑跟车 | string |  N   | 1 |
 | release_method_desc | 放行方式描述                                                 | string |  N   | 遥控开闸 |
 
-<br>
-
 ### 返回结果参数说明
 | 字段名称 | 字段说明 |  类型  | 必填 | 备注  |
 | :--- | :--- | :---: | :--: | :--- |
-| code  | 请求状态码  | string |  Y   | 200:成功受理<br> 400:参数错误<br> 403:访问被拦截<br>500:服务器内部错误<br>503:服务暂不可用 |
+| code  | 请求状态码  | string |  Y   | 1001-成功受理<br> 400:参数错误<br> 403:访问被拦截<br>500:服务器内部错误<br>503:服务暂不可用 |
 | message  | 返回描述 | string |  Y   | 返回描述 |
 | hint  | 返回错误说明   | string |  N   | 返回具体错描述指导|
 | seqno | 服务器日志标示 | string |  Y   | 查日志用到查问题尽量提供这个值|
-
-<br>
-
 
 
 ### 返回结果示例
 
 
-
 ```
 正常返回
 {
-  "code": "200",
+  "code": "1001",
   "message": "OK",
   "seqno": "abc6c253b93cc940",
   "data_node": "CN-South/HS3-1"
@@ -76,36 +66,5 @@
     "seqno":"17224239894628849085663174788803",
     "data_node":"CN-South/DEV-1",
     "path":"POST /gate/1.0/parking/internal/release"
-}
-```
-
-```
-参数错误
-{
-  "code": "400",
-  "message": "请求参数错误",
-  "hint": "参数`release_time`未传递",
-  "seqno": "48bf04ea4caa479c",
-  "data_node": "CN-South/HS3-2"
-}
-```
-
-```
-服务器内部错误
-{
-  "code": "500",
-  "message": "服务器内部错误",
-  "seqno": "48bf04ea4caa479c",
-  "data_node": "CN-South/HS3-2"
-}
-```
-
-```
-服务器内部错误
-{
-  "code": "503",
-  "message": "服务暂不可用",
-  "seqno": "48bf04ea4caa479c",
-  "data_node": "CN-South/HS3-2"
 }
 ```

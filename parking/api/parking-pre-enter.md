@@ -2,11 +2,7 @@
 
 ###  请求地址
 
-	https://api.4pyun.com/gate/1.0/parking/internal/enter/before
-
-###  调用方式
-
-	HTTP POST  FORM 表单提交
+	POST https://api.4pyun.com/gate/1.0/parking/internal/enter/before
 
 ###  特殊说明
 

@@ -2,11 +2,7 @@
 
 ### 请求地址
 
-    https://api.4pyun.com/gate/1.0/parking/internal/prepay
-
-### 调用方式
-
-    HTTP FORM 表单提交
+    POST https://api.4pyun.com/gate/1.0/parking/internal/prepay
 
 ### 特殊说明:
 
