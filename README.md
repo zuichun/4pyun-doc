@@ -16,7 +16,7 @@
 - 城市平台上报
 - 电子发票
 
-[接入指引](parking/guideline/)
+[接入指引](parking/guideline/index.html)
 
 ### II 聚合支付
 - 为合作伙伴提供快速接入移动端支付能力！
