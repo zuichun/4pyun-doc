@@ -19,7 +19,7 @@
 {
   "plugins": {
     "pay-plugin": {
-      "version": "1.0.7",  //引入插件最新版本号
+      "version": "1.0.8",  //引入插件最新版本号
       "provider": "wx5beb76c5c126875c"  //插件的appid
     }
   }
