@@ -155,7 +155,7 @@ public class ParkingAPITest {
         }
 
         try {
-            HttpResponse response = Request.Post("https://dev-api.4pyun.com/gate/1.0/parking/internal/enter")
+            HttpResponse response = Request.Post("https://api.4pyun.com/gate/1.0/parking/internal/enter")
                     .body(requestEntity.build())
                     .execute()
                     .returnResponse();

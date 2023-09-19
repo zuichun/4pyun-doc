@@ -193,7 +193,7 @@ public class ParkingAPITest {
         }
 
         try {
-            HttpResponse response = Request.Post("https://dev-api.4pyun.com/gate/1.0/parking/internal/leave")
+            HttpResponse response = Request.Post("https://api.4pyun.com/gate/1.0/parking/internal/leave")
                     .body(requestEntity.build())
                     .execute()
                     .returnResponse();

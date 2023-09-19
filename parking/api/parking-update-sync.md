@@ -37,6 +37,56 @@
 | hint  | 返回错误说明   | string |  N   | 返回具体错描述指导|
 | seqno | 服务器日志标示 | string |  Y   | 查日志用到查问题尽量提供这个值|
 
+### 请求示例
+
+```java
+final String APP_SECRET = "XXXXXX";
+
+try {
+    // 自动对key进行排序
+    Map<String, String> request = new TreeMap<>();
+    // 停车场商户号
+    request.put("park_uuid", "XXXXXX");
+    request.put("parking_serial", "2023941102041693796524190");
+    request.put("plate", "川A" + RandomUtils.randomAlphanumeric(5).toUpperCase());
+    request.put("plate_color", String.valueOf(ColorType.Yellow));
+    request.put("flow_no", "UPDATE20230901");
+    request.put("car_type", String.valueOf(CarType.Monthly));
+    request.put("car_desc", "月卡B");
+    request.put("operator", "保安A");
+    request.put("reason", "测试测试");
+
+    // 计算签名
+    String plain = request.entrySet().stream()
+            .map(e -> e.getKey() + "=" + e.getValue())
+            .collect(Collectors.joining("&"));
+    // 算出MD5值
+    String sign = MD5.encryptHEX(plain + "&app_secret=" + APP_SECRET);
+    request.put("sign", sign);
+    System.out.println("加密明文: " + plain);
+    System.out.println("加密结果: " + sign);
+
+    MultipartEntityBuilder requestEntity = MultipartEntityBuilder.create()
+            .setCharset(StandardCharsets.UTF_8);
+    request.entrySet().forEach(e -> {
+        requestEntity.addTextBody(e.getKey(), e.getValue(), ContentType.DEFAULT_TEXT.withCharset(StandardCharsets.UTF_8));
+    });
+
+    HttpResponse response = Request.Post("https://api.4pyun.com/gate/1.0/parking/internal/update")
+            .body(requestEntity.build())
+            .execute()
+            .returnResponse();
+    String body = EntityUtils.toString(response.getEntity());
+    /**
+     * 1. HTTP非200也会返回结果, 故需读取BODY!
+     * 2. 该接口返回code取值200、1001、1000均表示上传成功!
+     */
+    // 打印返回结果
+    System.out.println(body);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
 
 ### 返回结果示例
 
