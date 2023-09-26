@@ -2,7 +2,7 @@
 
 ### 请求方式
 
-`GET` `gate/1.0/parking/realtime/space`
+  GET gate/1.0/parking/realtime/space
 
 ### 请求
 
@@ -10,6 +10,7 @@
 
 | 参数 | 类型 | 必须 | 描述 | 示例 |
 |-|-|-|-|-|
+| app_id | string | Y | 请求应用ID | 1 |
 | park_uuid | string | Y | 平台停车场编号 | 1 |
 
 #### 示例
@@ -24,7 +25,6 @@ https://api.4pyun.com/gate/1.0/parking/realtime/space?app_id=op00961963581daa7&t
 
 | 参数 | 类型 | 必须 | 描述 | 示例 |
 |-|-|-|-|-|
-| merchant | string | Y | 平台停车场商户号 | 62626601 |
 | park_uuid | string | Y | 平台停车场编号 | 49f0cc52-e8c7-41e3-b54d-af666b8cc11a |
 | park_name | string | Y | 平台停车场名称 | P云支付体验-停车场 |
 | total_space | int | Y | 总车位数 | 0 |
