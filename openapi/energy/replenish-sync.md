@@ -26,6 +26,7 @@ HTTP FORM 表单提交
 1. 需在充电结束时触发调用；
 2. 一次充电单号唯一；
 3. 下发停车优惠时 `vin` 需上传车牌；
+4. 充电开始结束时间不止要转换为UTC格式，还要在北京时间的基础上减8小时。例如北京时间 `2023-04-10 12:00:00`，转换UTC后为：`2023-04-10T04:00:00.000Z`；
 
 **参数说明：**
 
@@ -35,24 +36,24 @@ HTTP FORM 表单提交
 
 ### 请求参数
 
-| 参数 | 类型 | 必须 | 描述 | 示例值 |
-|-|-|-|-|-|
-| app_id | string |  Y | 平台分配的接入应用ID | op1234567723122 |
+| 参数 | 类型 | 必须 | 描述                                      | 示例值 |
+|-|-|-|-----------------------------------------|-|
+| app_id | string |  Y | 平台分配的接入应用ID                             | op1234567723122 |
 | timestamp | string |  Y | 请求发送时间戳(ms), 用于防重放攻击服务器直接受和服务器时间差10分钟内的请求。 | 1552976318722 |
-| sign | string | Y | 请求数据签名 | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
-| station_uuid      | string | Y    | 平台充电站编号       | 9b811f5e-df65-46a0-bec6-b56afbbbf8ea |
-| device_no      | string | Y    | 本地设备编号       | DEVICE1 |
-| port_no        | string | Y    | 本地设备枪号       | 1 |
-| replenish_order      | string | Y    | 本地充电单号  |        |
-| start_time | string | Y    | 开始充电，`yyyy-MM-dd'T'HH:mm:ss'Z'` | 2023-04-10T17:37:30Z |
-| end_time | string | Y | 结束充电，`yyyy-MM-dd'T'HH:mm:ss'Z'` | 2023-04-10T17:37:30Z |
-| vin | string | N   | 车辆标识。充电停车优惠场景下该值必须传递停车记录的车牌 | 川A660PP |
-| quantity | string | Y    | 充电度数，0.001Kwh，1表示0.001Kwh，例如1度传递1000即可 | 1000 |
-| energy_value | string | Y    | 电费，分       | 1 |
-| fee_value | string | Y    | 服务费，分 |1|
-| total_value | string | Y | 总金额，分 |2|
-| energy_code | string | Y    | 充电类型；CN_AC：慢充；CN_DC：快充 |CN_AC|
-| ...            |        |      |                  |        |
+| sign | string | Y | 请求数据签名                                  | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
+| station_uuid      | string | Y    | 平台充电站编号                                 | 9b811f5e-df65-46a0-bec6-b56afbbbf8ea |
+| device_no      | string | Y    | 本地设备编号                                  | DEVICE1 |
+| port_no        | string | Y    | 本地设备枪号                                  | 1 |
+| replenish_order      | string | Y    | 本地充电单号                                  |        |
+| start_time | string | Y    | 开始充电，`yyyy-MM-dd'T'HH:mm:ss'Z'`         | 2023-04-10T17:37:30Z |
+| end_time | string | Y | 结束充电，`yyyy-MM-dd'T'HH:mm:ss'Z'`         | 2023-04-10T17:37:30Z |
+| vin | string | N   | 车辆标识。充电停车优惠场景下该值必须传递停车记录的车牌             | 川A660PP |
+| quantity | string | Y    | 充电度数，0.001Kwh，1表示0.001Kwh，例如1度传递1000即可  | 1000 |
+| energy_value | string | Y    | 电费，分                                    | 1 |
+| fee_value | string | Y    | 服务费，分                                   |1|
+| total_value | string | Y | 总金额，分                                   |2|
+| energy_code | string | Y    | 充电类型；CN_AC：慢充；CN_DC：快充                  |CN_AC|
+| ...            |        |      |                                         |        |
 
 ### 请求示例
 
@@ -153,6 +154,9 @@ HTTP FORM 表单提交
 ```java
 @Test
 public void execute() throws APIRemoteException {
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    format.setTimeZone(TimeZone.getTimeZone("UTC"));
+        
     // 平台分配的密钥
     String appId = "op00961963581daa7";
     String appSecret = "6409292d66625a2a0912acfc61ed956c";
@@ -171,8 +175,8 @@ public void execute() throws APIRemoteException {
         put("port_no", "1");
         put("energy_code", "CN_AC");
         put("replenish_order", DateUtils.format(new Date(), DateUtils.DEFAULT_TIME_FORMAT) + RandomUtils.randomAlphanumeric(6));
-        put("start_time", DateUtils.format(DateTime.now().minusHours(1).toDate(), DateUtils.ISO8601_DATETIME));
-        put("end_time", DateUtils.format(new Date(), DateUtils.ISO8601_DATETIME));
+        put("start_time", format.format(DateTime.now().minusHours(1).toDate()));
+        put("end_time", format.format(new Date()));
         put("vin", "川A660N2");
         put("quantity", RandomUtils.randomNumeric(4));
         put("energy_value", String.valueOf(energyValue));
