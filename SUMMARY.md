@@ -66,6 +66,7 @@
     - [1.6 无感停车接入指引](parking/guideline/autopay.md)
     - [1.7 远程开闸接入指引](parking/guideline/gate-control.md)
     - [1.8 现金找零接入指引](parking/guideline/change.md)
+    - [1.9 接入PP停车小程序](parking/guideline/pptc-wxapp.md)
 
   - [2 临停缴费](parking/payment.md)
     - [2.1 获取临停缴费订单](parking/api/payment-billing.md)
