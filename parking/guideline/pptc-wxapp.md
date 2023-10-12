@@ -4,6 +4,8 @@
 
 ## 1. 跳转停车场预付页面
 
+**跳转参数**
+
 |参数|必须|说明|
 |---|---|---|
 |park_uuid|Y|停车场UUID, P云平台创建车场后获取。|
@@ -25,7 +27,13 @@ if (wx.openEmbeddedMiniProgram) {
  }
 ```
 
+**演示:**
+
+![图片](./media/pptc-wxapp-plate.png)
+
 ## 2. 跳转缴费页面
+
+**跳转参数**
 
 |参数|必须|说明|
 |---|---|---|
@@ -46,3 +54,7 @@ if (wx.openEmbeddedMiniProgram) {
    })
  }
 ```
+
+**演示:**
+
+![图片](./media/pptc-wxapp-billing.png)
