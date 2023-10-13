@@ -11,27 +11,27 @@
 
 #### 参数
 
-| 参数 | 类型 | 必须 | 描述 | 示例值 |
-|-|-|-|-|-|
-| park_uuid      | string | Y    | 停车场编号       |        |
-| park_name      | string | Y    | 停车场名称       |        |
-| address        | string | Y    | 停车场地址       |        |
-| area_code      | string | Y    | 区域编码         |        |
-| latitude       | string | Y    | 纬度（WGS84） |        |
-| longitude      | string | Y    | 经度（WGS84） |        |
-| parking_serial | string | Y    | 平台停车流水     |        |
-| plate          | string | Y    | 车牌号           |        |
-| plate_color    | string | Y    | 车牌颜色，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8 ||
-| car_type       | string | Y    | 车类，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8 ||
-| car_desc       | string | N    | 车类描述         |        |
-| enter_time     | string | Y    | 入场时间戳，毫秒 |        |
-| enter_image    | string | N    | 入场图片地址     |        |
-| enter_gate     | string | N    | 入场通道编号     |        |
-| enter_security | string | N    | 入口管理员       |        |
-| vehicle_type   | string | N    | 车型，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8||
-| total_space   | string | Y    | 总车位 |        |
-| remain_space   | string | Y | 剩余车位 |        |
-| ...            |        |      |                  |        |
+| 参数 | 类型 | 必须 | 描述                                                                        | 示例值 |
+|-|-|-|---------------------------------------------------------------------------|-|
+| park_uuid      | string | Y    | 停车场编号                                                                     |        |
+| park_name      | string | Y    | 停车场名称                                                                     |        |
+| address        | string | Y    | 停车场地址                                                                     |        |
+| area_code      | string | Y    | 区域编码                                                                      |        |
+| latitude       | string | Y    | 纬度（WGS84）                                                                 |        |
+| longitude      | string | Y    | 经度（WGS84）                                                                 |        |
+| parking_serial | string | Y    | 平台停车流水                                                                    |        |
+| plate          | string | Y    | 车牌号                                                                       |        |
+| plate_color    | string | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#color_type">车牌颜色</a> ||
+| car_type       | string | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#car_type">车类</a>   ||
+| car_desc       | string | N    | 车类描述                                                                      |        |
+| enter_time     | string | Y    | 入场时间戳，毫秒                                                                  |        |
+| enter_image    | string | N    | 入场图片地址                                                                    |        |
+| enter_gate     | string | N    | 入场通道编号                                                                    |        |
+| enter_security | string | N    | 入口管理员                                                                     |        |
+| vehicle_type   | string | N    | <a href="https://doc.4pyun.com/openapi/appendix.html#vehicle_type">车型</a>    ||
+| total_space   | string | Y    | 总车位                                                                       |        |
+| remain_space   | string | Y | 剩余车位                                                                      |        |
+| ...            |        |      |                                                                           |        |
 
 #### 示例
 

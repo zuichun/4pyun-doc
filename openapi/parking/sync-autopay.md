@@ -10,14 +10,14 @@
 
 #### 参数
 
-| 参数 | 类型 | 必须 | 描述 | 示例值 |
-|-|-|-|-|-|
-| park_uuid      | string | Y    | 停车场编号       |        |
-| park_name      | string | Y    | 停车场名称       |        |
-| plate          | string | Y    | 车牌号           |        |
-| plate_color    | string | Y    | 车牌颜色，参考：https://pptingche.coding.net/s/7d8bdcd9-636e-4227-8f29-0eaac3c4eae8 ||
-| autopay_channel       | string | N    | 无感支付渠道。为空则表示无感关闭 ||
-| autopay_status       | string | Y | 无感状态。1：开通；0：关闭 |        |
+| 参数 | 类型 | 必须 | 描述                                                                        | 示例值 |
+|-|-|-|---------------------------------------------------------------------------|-|
+| park_uuid      | string | Y    | 停车场编号                                                                     |        |
+| park_name      | string | Y    | 停车场名称                                                                     |        |
+| plate          | string | Y    | 车牌号                                                                       |        |
+| plate_color    | string | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#color_type">车牌颜色</a> ||
+| autopay_channel       | string | N    | 无感支付渠道。为空则表示无感关闭                                                          ||
+| autopay_status       | string | Y | 无感状态。1：开通；0：关闭                                                            |        |
 
 #### 示例
 
