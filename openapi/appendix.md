@@ -87,7 +87,7 @@ trade_scene=LIVING 场景填写到extra字段
 
 
 
-## IV. 固定车类型
+## IV. 固定车类型 <a id="vip_type">`vip_type`</a>
 
 | 值    | 描述       |
 | ----- | ---------- |
@@ -99,9 +99,7 @@ trade_scene=LIVING 场景填写到extra字段
 | 6  | 季度卡 |
 | 7  | 半年卡 |
 
-## 颜色定义
-
-<a id="color_type">`color_type`</a>
+## 颜色定义 <a id="color_type">`color_type`</a>
 
 | 值  | 描述 |
 |----|----|
@@ -116,9 +114,7 @@ trade_scene=LIVING 场景填写到extra字段
 | 8  | 灰色 |
 | 9  | 橙色 |
 
-## 车类
-
-<a id="car_type">`car_type`</a>
+## 车类 <a id="car_type">`car_type`</a>
 
 | 值  | 描述      |
 |----|---------|
@@ -129,9 +125,7 @@ trade_scene=LIVING 场景填写到extra字段
 | 4  | 储值车辆    |
 
 
-## 车型
-
-<a id="vehicle_type">`vehicle_type`</a>
+## 车型 <a id="vehicle_type">`vehicle_type`</a>
 
 | 值  | 描述    |
 |----|-------|
