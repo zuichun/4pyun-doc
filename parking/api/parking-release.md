@@ -2,7 +2,7 @@
 
 ### 请求地址
 
-  POST https://api.4pyun.com/gate/1.0/parking/internal/release
+    POST https://api.4pyun.com/gate/1.0/parking/internal/release
 
 ### 特殊说明
 

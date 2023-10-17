@@ -2,7 +2,7 @@
 
 ### 请求方式
 
-  GET gate/1.0/parking/realtime/space
+    GET /gate/1.0/parking/realtime/space
 
 ### 请求
 
@@ -36,11 +36,12 @@ https://api.4pyun.com/gate/1.0/parking/realtime/space?app_id=op00961963581daa7&t
 | area_space | object[] | Y | 区域车位信息 |  |
 
 **区域信息：`area_space`**
+
 | 参数 | 类型 | 必须 | 描述 | 示例 |
 |-|-|-|-|-|
 | area_name | string | Y | 区域名称 | 地面 |
-| total_space | int | Y | 区域总车位数 | 0 |
-| remain_space | int | Y | 区域空余车位数 | 0 |
+| total_space | int | Y | 区域总车位数 | 100 |
+| remain_space | int | Y | 区域空余车位数 | 10 |
 
 #### 示例
 
