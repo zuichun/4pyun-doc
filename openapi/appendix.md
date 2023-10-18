@@ -27,6 +27,7 @@ trade_scene=PARKING 场景填写到extra字段
 | parking_time | 停车时长, 单位秒 | string | Y | 3600 |
 | free_value | 车场优惠金额, 单位分 | int | Y | 100 |
 | receipt | 微信点金计划页面显示按钮为`我要开票`, 1 显示, 其他无效 | string | N | 1 |
+| discount | 支付发起方立减金额, 单位分 | int | N | 100 |
 
 
 ### I.II 固定车续费
