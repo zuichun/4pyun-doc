@@ -77,7 +77,7 @@ public void testSelfSign() throws IOException {
 
 各版本对SSL的支持情况
 
-||JDK8|JDK7|JDK6|
+|类目|JDK8|JDK7|JDK6|
 |---|---|---|---|
 |TLS Protocols|TLSv1.2 (default)<br/>TLSv1.1<br/>TLSv1<br/>SSLv3|TLSv1.2<br/>TLSv1.1<br/>TLSv1 (default)<br/>SSLv3|TLS v1.1 (JDK 6 update 111 and above)<br/>TLSv1 (default)<br/>SSLv3|
 |JSSE Ciphers:|[Ciphers in JDK 8](https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites)|[Ciphers in JDK 7](https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#ciphersuites)|[Ciphers in JDK 6](https://docs.oracle.com/javase/6/docs/technotes/guides/security/StandardNames.html#SupportedCipherSuites)|
