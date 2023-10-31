@@ -10,24 +10,24 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 
 **请求参数**
 
-| 字段名称     | 字段说明     |  类型  | 必填 | 示例  |
-| :--- | :--- | :---: | :--: | :--- |
-| app_id | 平台分配的接入应用ID     | string |  Y   | op1234567723122   |
-| merchant     | 停车场商户号 | string |  Y   | 6262666666  |
-| pay_order    | 发起支付订单号同一个app_id下唯一不能重复   | string |  Y   | PAYORDER-XXXXXXXX |
-| subject      | 商品名称     | string |  Y   | 支付XX项目  |
-| value  | 支付金额, 单位分   | string |  Y   | 100   |
-| channel      | 支付渠道<br>普通微信支付宝被扫的时候不传其它类型类似银行被扫找研发同事提供, [参考附录定义](./../appendix.html) | string |  N   | 100001      |
-| body   | 商品描述     | string |  N   | XXX停车场XXX车牌停车缴费XX元  |
-| payer  | 付款方: 传入微信open_id小程序支付时必须传  | string |  N   | XXXXXXXXXXX |
-| callback_url | 支付成功返回前端页面     | string |  N   | https://a.b.c/backurl   |
-| auth_code    | 扣款授权码: 微信付款码/支付宝授权码(被扫必传    | string |  Y   | 2012312313213123213     |
-| notify_url   | 后端支付回调地址   | string |  Y   | https://a.b.c/notify    |
-|expire_time|交易失效时间, 单位ms, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z'|string|N|2021-09-02T09:36:46.020Z|
-|trade_scene| 交易场景值, 根据商户交易按要求传递, 未按要求传递将无法正常支付, [参考附录定义](./../appendix.html) | string | Y | -|
-| extra  | 根据交易场景传递, [参考附录定义](./../appendix.html)  | string |  N | {\"key1\":\"value1\",\"key2\":\"value2\"} |
-| manual_settle | 仅聚合到账有效, 手动清算标记: 1-手动清算, 0-自动清算(默认)| int | N | 0 |
-| sign   | 请求数据签名 | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39    |
+| 字段名称     | 字段说明                                                                                                              |  类型  | 必填 | 示例  |
+| :--- |:------------------------------------------------------------------------------------------------------------------| :---: | :--: | :--- |
+| app_id | 平台分配的接入应用ID                                                                                                       | string |  Y   | op1234567723122   |
+| merchant     | 停车场商户号                                                                                                            | string |  Y   | 6262666666  |
+| pay_order    | 发起支付订单号同一个app_id下唯一不能重复                                                                                           | string |  Y   | PAYORDER-XXXXXXXX |
+| subject      | 商品名称                                                                                                              | string |  Y   | 支付XX项目  |
+| value  | 支付金额, 单位分                                                                                                         | string |  Y   | 100   |
+| channel      | 支付渠道<br>普通微信支付宝被扫的时候不传其它类型类似银行被扫找研发同事提供, <a href="https://doc.4pyun.com/openapi/appendix.html#channel">参考附录定义</a> | string |  N   | 100001      |
+| body   | 商品描述                                                                                                              | string |  N   | XXX停车场XXX车牌停车缴费XX元  |
+| payer  | 付款方: 传入微信open_id小程序支付时必须传                                                                                         | string |  N   | XXXXXXXXXXX |
+| callback_url | 支付成功返回前端页面                                                                                                        | string |  N   | https://a.b.c/backurl   |
+| auth_code    | 扣款授权码: 微信付款码/支付宝授权码(被扫必传                                                                                          | string |  Y   | 2012312313213123213     |
+| notify_url   | 后端支付回调地址                                                                                                          | string |  Y   | https://a.b.c/notify    |
+|expire_time| 交易失效时间, 单位ms, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z'                                                            |string|N|2021-09-02T09:36:46.020Z|
+|trade_scene| 交易场景值, 根据商户交易按要求传递, 未按要求传递将无法正常支付, [参考附录定义](./../appendix.html)                                                   | string | Y | -|
+| extra  | 根据交易场景传递, [参考附录定义](./../appendix.html)                                                                            | string |  N | {\"key1\":\"value1\",\"key2\":\"value2\"} |
+| manual_settle | 仅聚合到账有效, 手动清算标记: 1-手动清算, 0-自动清算(默认)                                                                               | int | N | 0 |
+| sign   | 请求数据签名                                                                                                            | string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39    |
 
 
 **请求示例**
