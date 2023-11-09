@@ -17,6 +17,20 @@ P云将以固定频率调用该接口获取总停车位和收费标准的获取.
 | --- | --- | --- | --- |
 | park_uuid | string | Y | 停车场编号 |
 
+请求示例:
+
+```json
+POST https://xxxx/v1/gateway
+
+{
+  "charset" : "UTF-8",
+  "sign" : "B2B6A0FC5816B5174572172A777E8DD3",
+  "park_uuid" : "10315",
+  "service" : "service.parking.realtime",
+  "version" : "1.0"
+}
+```
+
 **应答参数:**
 
 | 字段 | 类型 | 必须 | 说明|
@@ -34,3 +48,18 @@ P云将以固定频率调用该接口获取总停车位和收费标准的获取.
 | parking | int | Y | 当前场中车辆数量. |
 | charge_json | string | Y | 收费规则数据JSON格式字符串, 按合作方自行组装, 例如: {"free_time":15,"max":3000,"more":{"price":300,"unit":60},"type":1} |
 | charge_depict | string | Y | 收费规则文字描述, 例如: 入场15分钟免费, 3元/小时。 |
+
+应答示例:
+
+```json
+{
+  "parking" : 3541,
+  "service" : "service.parking.realtime",
+  "charge_json" : "{\"data\":[{\"price\":5},{\"price\":5},{\"price\":10},{\"price\":10},{\"price\":10},{\"price\":10},{\"price\":10},{\"price\":10}],\"max\":0,\"free_time\":30,\"type\":5,\"addFlag\":false}",
+  "result_code" : "1001",
+  "message" : "成功",
+  "charge_depict" : "入场免费30分钟,一天最收费10元,",
+  "total" : 1000000,
+  "version" : "1.0"
+}
+```
