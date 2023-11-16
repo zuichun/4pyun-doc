@@ -48,7 +48,8 @@
             ]
         },
         "favicon-absolute":{
-            "favicon": "/assets/favicon.ico"
+            "favicon": "/assets/favicon.ico",
+            "appleTouchIconPrecomposed152": "/assets/apple-touch-icon-precomposed.png"
         },
         "bottom-navigation": {
             "borderColor": "#00BF70"
