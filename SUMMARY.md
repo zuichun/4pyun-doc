@@ -91,6 +91,7 @@
     - [4.1 发放停车优惠](parking/api/mcoupon-create.md)
     - [4.2 撤销停车优惠](parking/api/mcoupon-revoke.md)
     - [4.3 同步停车优惠状态](parking/api/mcoupon-sync.md)
+    - [4.4 商户优惠券状态核销](parking/api/mcoupon-sync-apply.md)
 
   - [5 预约停车](parking/reserve.md)
     - [5.1 预约停车申请](parking/api/reserve-apply.md)
