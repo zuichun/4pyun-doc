@@ -25,6 +25,8 @@
 | type          | int      | Y    | <a href="https://doc.4pyun.com/appendix#vip_type">月卡类型</a> |                 |
 | value         | int      | Y    | 续费面额                                                     |                 |
 | quantity      | int      | Y    | 续费数量                                                     |                 |
+| renewal_start_time      | datetime | Y    | 续费开始时间                                                    |                 |
+| renewal_end_time      | datetime | Y    | 续费结束时间                                                    |                 |
 | origin_value  | int      | Y    | 原始金额，分                                                 |                 |
 | pay_value     | int      | Y    | 支付金额，分                                                 |                 |
 | pay_time      | datetime | Y    | 支付时间                                                     |                 |
