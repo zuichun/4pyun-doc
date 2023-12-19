@@ -5,6 +5,7 @@
   - [1 接入指引](openapi/guideline/README.md)
     - [1.1 小程序插件支付接入](openapi/guideline/payment-wechatapp.md)
     - [1.2 点金计划页面定制支持](openapi/guideline/wechat-ticket.md)
+    - [1.3 用户授权](openapi/guideline/user-auth.md)
   - [2 聚合支付](openapi/payment.md)
     - [2.1 被扫交易请求](openapi/api/trade-authpay.md)
     - [2.2 发起交易预请求](openapi/api/trade-prepare.md)
@@ -120,9 +121,9 @@
 
   - [网络说明](parking/network.md)
   - [常见问题](parking/faq.md)
-* [商户管理平台](merchant/README.md)
-  - [1 聚合支付业务](merchant/payment/README.md)
-    - [1.1 交易退款操作说明](merchant/payment/trade-refund.md)
+<!-- * [商户管理平台](merchant/README.md) -->
+  <!-- - [1 聚合支付业务](merchant/payment/README.md) -->
+    <!-- - [1.1 交易退款操作说明](merchant/payment/trade-refund.md) -->
 * [知识库](knowledge/README.md)
   - [正确处理HTTPS证书](knowledge/https-certs.md)
   - [基于Redis实现分布式任务调度](knowledge/redis.md)
