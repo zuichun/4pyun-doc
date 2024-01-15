@@ -27,7 +27,7 @@
 | event_id | string | Y    | 活动编号,由P云分配                                           |
 | identity | string | Y    | ⽤户ID,登录授权获取                                          |
 | app_id   | string | Y    | 应⽤ID,由P云分配                                             |
-| openid   | string | Y    | 微信/⽀付宝OPENID                                            |
+| openid   | string | N    | 微信/⽀付宝OPENID                                            |
 | fields   | object | N    | 申请表内容。当合作方实现了回调时，需填充key为user_code, value为合作方用户标识的键值对 |
 | issuer   | string | N    | 发放⼈                                                       |
 | voucher  | string | N    | 凭证,例如业务订单号                                          |
