@@ -16,7 +16,7 @@
 #### 示例
 
 ```
-https://api.4pyun.com/gate/1.0/parking/realtime/space?app_id=op00961963581daa7&timestamp=1628087581124&sign=3A8A2161B6D46873FB35EC1683C7B69A&park_uuid=631edbdb-b2c2-4752-b12b-4bc3101aa0e2
+https://api.4pyun.com/gate/1.0/parking/realtime/space?app_id=XXXXXX&timestamp=1628087581124&sign=3A8A2161B6D46873FB35EC1683C7B69A&park_uuid=631edbdb-b2c2-4752-b12b-4bc3101aa0e2
 ```
 
 ### 响应
@@ -52,9 +52,8 @@ https://api.4pyun.com/gate/1.0/parking/realtime/space?app_id=op00961963581daa7&t
   "data_node": "CN-South/HS3-2",
   "time_cost": 35,
   "payload": {
-    "merchant": "42502219",
-    "park_uuid": "631edbdb-b2c2-4752-b12b-4bc3101aa0e2",
-    "park_name": "深圳图书馆-停车场",
+    "park_uuid": "xxxxxx-b2c2-4752-b12b-4bc3101aa0e2",
+    "park_name": "测试-停车场",
     "total_space": 238,
     "remain_space": 118,
     "mode": 0,
