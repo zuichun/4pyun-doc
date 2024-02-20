@@ -22,7 +22,7 @@ POST application/json请求示例代码：
 ```java
 				String appId = "op010728c14869c8bf4";
         String appSecret = "79B0F3EJF83JF272D9E74FABD95EDE";
-        
+
         Map<String, Object> params = new HashMap<>();
         params.put("app_id", appId);
         params.put("park_uuid", "e24deadf-1aa0-4981-bde5-f9c474c4f5f5");
@@ -70,7 +70,7 @@ POST application/json请求示例代码：
 
 | coordinate | 必填 | 说明                                                         | 类型   | 示例       |
 | :--------- | :--- | :----------------------------------------------------------- | :----- | :--------- |
-| type       | 是   | 坐标类型：WGS84-地球坐标系；BD09-百度坐标系；GCJ02-火星坐标系； | int    | GCJ02      |
+| type       | 是   | 坐标类型：WGS84-地球坐标系；BD09-百度坐标系；GCJ02-火星坐标系； | string    | GCJ02      |
 | latitude   | 是   | 纬度                                                         | double | 22.690244  |
 | longitude  | 是   | 经度                                                         | double | 113.937153 |
 
@@ -117,15 +117,15 @@ POST application/json请求示例代码：
 
  ```json
 {
-    "code": "1001", 
-    "seqno": "89515976959588414145524545375641", 
-    "data_node": "CN-South/DEV-1", 
-    "time_cost": 880, 
+    "code": "1001",
+    "seqno": "89515976959588414145524545375641",
+    "data_node": "CN-South/DEV-1",
+    "time_cost": 880,
     "payload": {
-        "park_code": "18695715", 
-        "park_uuid": "6e431a23-08cc-4b36-ad03-79f6fa643717", 
-        "park_name": "测试进件230404_1-停车场", 
-        "manager_account": "18695715", 
+        "park_code": "18695715",
+        "park_uuid": "6e431a23-08cc-4b36-ad03-79f6fa643717",
+        "park_name": "测试进件230404_1-停车场",
+        "manager_account": "18695715",
         "manager_mobile": "15914040963"
     }
 }
