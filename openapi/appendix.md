@@ -53,16 +53,6 @@ trade_scene=ENERGY 场景填写到extra字段
 
 | 字段名称         | 字段说明                  |   类型   | 必填 | 示例                     |
 |:-------------|-----------------------|:------:|:--:|:-----------------------|
-| plate        | 车牌                    | string | Y  | 川A660B1                |
-| plate_color  | 车牌颜色                  |  int   | Y  | 1                      |
-| device_no    | 桩设备编号                 | string | Y  |                        |
-| port_no      | 桩设备枪号                 | string | Y  |                        |
-| energy_code  | 桩类型；CN_AC：慢充；CN_DC：快充 | string | Y  | CN_AC                  |
-| start_time   | 充电开始时间                | string | Y  | 格式：yyyyMMddHHmmss      |
-| end_time     | 充电结束时间                | string | Y  | 格式：yyyyMMddHHmmss      |
-| quantity     | 充电电量                  |  int   | Y  | 单位：0.001度。例如1度需传递：1000 |
-| energy_value | 充电电费                  |  int   | Y  | 单位：分                   |
-| fee_value    | 充电服务费                 |  int   | Y  | 单位：分                   |
 
 ### I.IV 生活缴费
 ```
