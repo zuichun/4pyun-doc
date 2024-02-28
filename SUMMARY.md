@@ -51,6 +51,7 @@
     - [6.6 营销奖励核销回调](openapi/api/bonus-value-apply.md)
   - [7 充电业务](openapi/energy/README.md)
     - [7.1 推送充电记录](openapi/energy/replenish-sync.md)
+    - [7.2 上报设备状态](openapi/energy/device-sync.md)
   - [8 车联网业务](openapi/iov/README.md)
     - [8.1 车牌白名单同步](openapi/iov/whitelist-sync.md)
     - [8.2 车牌白名单删除](openapi/iov/whitelist-delete.md)
