@@ -43,14 +43,14 @@
 
 | 字段       | 示例值                           |
 | ---------- | -------------------------------- |
-| app_id     | op88641899bd20661                |
-| app_secret | 29b72e85f56f9d20b2303d5289fe78c9 |
+| app_id     | opXxxx                |
+| app_secret | XXXX |
 
 **输入参数：**
 
 | 字段       | 示例值                               |
 | ---------- | ------------------------------------ |
-| park_uuid  | 40e06b24-7320-4a61-8d97-7ebccb364a87 |
+| park_uuid  | xxxxxx |
 | plate      | 粤B660PP                             |
 | car_type   | 1                                    |
 | enter_time | 1563242533431                        |
@@ -59,7 +59,7 @@
 
 1. 参数排序后字符串拼接：
 ```
-app_id=op88641899bd20661&car_type=1&enter_time=1563242533431&park_uuid=40e06b24-7320-4a61-8d97-7ebccb364a87&plate=粤B660PP&sign_type=MD5&timestamp=1563242932357&app_secret=29b72e85f56f9d20b2303d5289fe78c9
+app_id=op88641899bd20661&car_type=1&enter_time=1563242533431&park_uuid=40e06b24-7320-4a61-8d97-7ebccb364a87&plate=粤B660PP&sign_type=MD5&timestamp=1563242932357&app_secret=XXX
 ```
 
 2. 使用 MD5 （32位不区分大小写）加密：
@@ -75,15 +75,15 @@ app_id=op88641899bd20661&car_type=1&enter_time=1563242533431&park_uuid=40e06b24-
 
 1. 先将所有业务参数按照参数名（不包括 sign）进行升序排序（若有多个相同参数名则继续按照其参数值进行升序排序）;
 2. 以 'http url' 参数风格拼接成待签名的字符串，如：a=v&b=0&c=1900000109&d=102
-3. 再将密钥拼接到待签名的字符串后面，如：a=v&b=0&c=1900000109&d=102&app_secret=7d15453e97507ef794cf7b0519d
+3. 再将密钥拼接到待签名的字符串后面，如：a=v&b=0&c=1900000109&d=102&app_secret=XXXXX
 4. 使用标准MD5算法对待签名字符串进行签名;
 5. 将签名值写入 'sign' 字段;
 
 URL传参请求示例代码：
 
 ```java
-String appId = "op010728c14869c8bf4";
-String appSecret = "79B0F3EJF83JF272D9E74FABD95EDE";
+String appId = "opxxxxx";
+String appSecret = "XXXXX";
 
 Map<String, String> params = new TreeMap<>();
 params.put("app_id",appId);
@@ -105,15 +105,15 @@ Response response = Request.Get(url).execute();
 
 对于通过HTTP Body以格式为**application/json**传参的请求，签名规则如下：
 
-1. 将密钥以“&”为分隔符添加到请求体中的JSON字符串后面，生成待签名字符串，如：{"a"="string", "b"=0, "c"= 1900000109}&app_secret=7d15453e97507ef794cf7b0519d
+1. 将密钥以“&”为分隔符添加到请求体中的JSON字符串后面，生成待签名字符串，如：{"a":"string","b":0,"c":1900000109}&app_secret=XXXXX
 2. 使用标准MD5算法对待签名字符串进行签名
 3. 将签名值写入请求头中的“Authorization”字段
 
 POST application/json请求示例代码：
 
 ```java
-String appId = "op010728c14869c8bf4";
-String appSecret = "79B0F3EJF83JF272D9E74FABD95EDE";
+String appId = "opXXXX";
+String appSecret = "XXXXX";
 
 Map<String, Object> params = new HashMap<>();
 params.put("app_id", appId);
