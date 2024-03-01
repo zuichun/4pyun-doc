@@ -37,7 +37,7 @@ npm install 4pyun-ad-sdk
 2. 页面的json文件中做如下配置
 
 ```
-//pages.json
+// pages.json
 {
   "pages": [
     {
@@ -51,7 +51,9 @@ npm install 4pyun-ad-sdk
   ]
 }
 ```
+
 3. 在页面中引入该组件
+
 ```
 <template>
   <4pyun-ad-sdk
@@ -81,6 +83,7 @@ npm install 4pyun-ad-sdk
   }
 </script>
 ```
+
 - 小程序原生
 1. 找到需要引入广告的页面
 2. 页面的json文件中做如下配置
@@ -93,6 +96,7 @@ npm install 4pyun-ad-sdk
     }
 }
 ```
+
 3. 在页面中引入该组件
 
 ```
@@ -118,7 +122,6 @@ data: {
     plate: '粤BAAAAA',
   }
 }
-
 ```
 
 ## 4.参数说明
@@ -164,6 +167,7 @@ data: {
 >
 </4pyun-ad-sdk>
 ```
+
 ```
 // index.js
 page({
