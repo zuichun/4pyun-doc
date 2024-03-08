@@ -4,6 +4,8 @@
 |---|---|---|
 |指令下发|tcp://xxxx.gate.4pyun.com:8661|用于本地车场和平台数据交互|
 |数据同步|https://api.4pyun.com/|用于本地推送出入场记录到平台|
+|数据存储|https://files.4pyun.com/|平台数据存储|
+|后端接口|https://mapi.4pyun.com/|商户平台后端接口服务|
 |商户平台|https://mch.4pyun.com/|用于本地访问平台管理车场数据|
 
 - IP请自己PING获取, 可能随业务调整变化，建议绑定域名。
