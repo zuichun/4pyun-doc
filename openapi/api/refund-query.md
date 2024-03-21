@@ -90,15 +90,12 @@
 | payload字段名称 | 字段说明 | 类型 | 必填 | 备注 |
 | --------------- | -------- | ---- | ---- | ---- |
 | merchant        | 商户号 | string | Y |      |
-| merchant_name   | 商户名称 | string | Y |      |
 | order           | 退款请求单号 | string | Y |  |
 | refund_order    | 退款订单号 | string | Y |      |
 | refund_serial   | 退款流水 | string | N |      |
 | reason   | 退款原因 | string | N |      |
 | receipt_url   | 退款凭证 | string | N |      |
 | pay_serial      | 原支付流水 | string | Y |      |
-| trade_subject      | 原交易主题 | string | Y |      |
-| trade_body      | 原交易内容 | string | Y |      |
 | value           | 退款金额(单位分) | int | Y |      |
 | process         | 退款进度: 0 退款中, 1 退款成功, -1 退款失败 | string | Y |      |
 | create_time     | 创建时间 | string | Y |      |
@@ -131,9 +128,6 @@
         "operator_name": "测试应用",
         "reason": "测试退款",
         "merchant": "97919537",
-        "merchant_name": "测试进件240206-1-停车场",
-        "trade_subject": "停车支付0.01元(粤BXXXXX)",
-        "trade_body": "【粤BXXXXX】在【测试进件240206-1-停车场】支付停车费0.01元",
         "receipt_url": ""
     }
 }
@@ -158,9 +152,6 @@
         "operator_name": "",
         "reason": "",
         "merchant": "",
-        "merchant_name": "",
-        "trade_subject": "",
-        "trade_body": "",
         "receipt_url": ""
     }
 }
@@ -186,9 +177,6 @@
         "operator_name": "",
         "reason": "",
         "merchant": "",
-        "merchant_name": "",
-        "trade_subject": "",
-        "trade_body": "",
         "receipt_url": ""
     }
 }
@@ -214,9 +202,6 @@
         "operator_name": "",
         "reason": "",
         "merchant": "",
-        "merchant_name": "",
-        "trade_subject": "",
-        "trade_body": "",
         "receipt_url": ""
     }
 }
