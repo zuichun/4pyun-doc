@@ -52,7 +52,7 @@
   			// 退款请求单号
         paramMap.put("order", "TEST_20240320145031953");
         
-        // 生成待签名参数
+  			// 生成待签名参数
         String str = StringUtils.join(paramMap, "&", "=") + "&app_secret=" + appSecret;
         System.out.println("encryptStr: " + str);
   
