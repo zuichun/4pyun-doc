@@ -44,24 +44,24 @@
         String appId = "op00961963581daa7";
         String appSecret = "6409292d66625a2a0912acfc61ed956c";
 
-	Map<String, String> paramMap = Maps.newTreeMap();
-	// 应用ID
+		Map<String, String> paramMap = Maps.newTreeMap();
+		// 应用ID
         paramMap.put("app_id", appId);
-	// 退款订单所属商户号
+		// 退款订单所属商户号
         paramMap.put("merchant", "62626601");
-	// 退款请求单号
+		// 退款请求单号
         paramMap.put("order", "TEST_20240320145031953");
         
-	// 生成待签名参数
+		// 生成待签名参数
         String str = StringUtils.join(paramMap, "&", "=") + "&app_secret=" + appSecret;
         System.out.println("encryptStr: " + str);
   
-	// 生成签名
+		// 生成签名
         String sign = MD5.encryptHEX(str);
         System.out.println("sign: " + sign);
         paramMap.put("sign", sign);
   
-	// 组装请求URL
+		// 组装请求URL
         String requestUrl = UrlUtils.build(url, paramMap);
 
         try {
