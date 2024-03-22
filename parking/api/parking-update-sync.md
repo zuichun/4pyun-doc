@@ -15,7 +15,7 @@
 | 字段名称   | 字段说明 |  类型  | 必填 | 示例  |
 | :--- | :--- | :---: | :--: | :--- |
 | app_id  | 平台分配的接入应用ID, 车场本地发起请求可不传递 | string |  N   | op1234567723122|
-| sign | 请求数据签名| string |  N   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
+| sign | 请求数据签名| string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
 | park_uuid  | 平台分配的停车场UUID | string |  Y   | PARKUUID-XXXX-XXX-XXX |
 | flow_no | 变更流水号, 相同 | string |  Y   | FLOW000001 |
 | parking_serial | 停车场端的停车流水, 一般为入场记录ID | string |  Y   | PARKINGSERIAL-123456789  |

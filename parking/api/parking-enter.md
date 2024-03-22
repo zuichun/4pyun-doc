@@ -32,7 +32,7 @@
 | 字段名称   | 字段说明 |  类型  | 必填 | 示例  |
 | :--- | :--- | :---: | :--: | :--- |
 | app_id  | 平台分配的接入应用ID, 车场本地发起请求可不传递   | string |  N   | op1234567723122|
-| sign | 请求数据签名| string |  N   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
+| sign | 请求数据签名| string |  Y   | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
 | merchant  | 平台分配的停车场商户号, `merchant`和`park_uuid`二选一必传 | string |  Y/N   | 62626601|
 | park_uuid  | 平台分配的停车场UUID, `merchant`和`park_uuid`二选一必传 | string |  N/Y   | PARKUUID-XXXX-XXX-XXX|
 | api_type   | 接口类型配合app_id使用不传app_id的不传该字段  | string |  Y   | XXX-SERVICE |
