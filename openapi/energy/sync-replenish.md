@@ -9,9 +9,8 @@
 
 ### 接口地址
 
-测试环境：`https://dev-api.4pyun.com/gate/1.0/energy/internal/replenish/sync`
-</br>
-生产环境：`https://api.4pyun.com/gate/1.0/energy/internal/replenish/sync`
+- 测试环境：`https://dev-api.4pyun.com/gate/1.0/energy/internal/replenish/sync`
+- 生产环境：`https://api.4pyun.com/gate/1.0/energy/internal/replenish/sync`
 
 ### 请求方式：`POST`
 ### 数据类型：`application/json; charset=utf-8`
