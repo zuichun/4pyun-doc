@@ -151,7 +151,7 @@ trade_scene=LIVING 场景填写到extra字段
 | 3  | 空占中 |
 | -1 | 故障  |
 
-## <a id="space_status">枪口状态</a>
+## <a id="space_status">车位状态</a>
 
 | 值  | 描述 |
 |----|----|
