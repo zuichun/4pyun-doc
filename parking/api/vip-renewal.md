@@ -22,7 +22,7 @@ P云发起请求, 对固定车进行充值续费。
 | pay_serial | string | Y | 支付流水, 用于对账. |
 | pay_value | int | Y | 客户支付金额, 单位分.|
 | type| int | Y | 固定车类型:<br/>1 月卡<br/>2 储值<br/>3 储次<br/>4 储天<br/>5 年卡<br/>6 季度卡<br/>7 半年卡<br/>0 免费停车  |
-| value | int | Y | 续费金额:<br/>储值: 续费金额, 单位分;<br/>储次:续费次数;<br/>储天:续费天数;<br/>月卡/年卡/半年卡/季度卡: 续费天数. |
+| value | int | Y | 续费金额:<br/>储值: 续费金额, 单位分;<br/>储次:续费次数;<br/><del>储天:续费天数;<br/>月卡/年卡/半年卡/季度卡: 续费天数. </del><br/> <spac style="color:red">注: 时间类续费根据`renewal_start_time`和`renewal_end_time`执行续费逻辑，时间类`value=DAYS(renewal_end_time - expire_time(续费前到期时间))`</span>|
 | quantity | int | Y | 续费数量:<br/>储值: 续费金额, 单位分;<br/>储次:续费次数;<br/>储天:续费天数;<br/>月卡:续费月数;<br/>年卡:续费年数;<br/>半年卡:续费半年数;<br/>季度卡:续费季度数.|
 | pay_origin | int | Y | 值 含义<br/>0    P云<br/>4   支付宝<br/>8    微信<br/>-     兼容其他未定义 |
 | pay_origin_desc | string | Y | 支付来源说明, 例如:P云 |
