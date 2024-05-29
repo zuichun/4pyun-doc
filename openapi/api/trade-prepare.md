@@ -27,9 +27,17 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/prepare
 | notify_url | 后端支付回调地址 | string |  Y | https://a.b.c/notify  |
 |expire_time|交易失效时间, 未设置默认3分钟失效, 格式: yyyy-MM-dd'T'HH:mm:ss'Z' <br>特别说明UTC时间和普通时间差8小时因为我们在东八区 2022-09-01T00:00:00.000Z 对应时间的时间是 2022-09-01 08:00:00|string|N|2021-09-02T09:36:46.020Z|
 |trade_scene| 交易场景值, 根据商户交易按要求传递, 未按要求传递将无法正常支付, [参考附录定义](./../appendix.html) | string | Y | -|
+|trade_item|交易事项, 适用于部分例如充电项目区分服务费和电费, 传递JSON字符串| string | N | -|
 | extra  | 根据交易场景传递, [参考附录定义](./../appendix.html)  | string |  N | {\"key1\":\"value1\",\"key2\":\"value2\"} |
 | manual_settle | 仅聚合到账有效, 手动清算标记: 1-手动清算, 0-自动清算(默认)| int | N | 0 |
 | sign | 请求数据签名 | string |  Y | C65FCAC2D3FB5E2D3D4AD93DD20C8C39  |
+
+**交易事项**
+
+| 字段名称 | 字段说明 |  类型  | 必填 | 示例  |
+| :--- | :--- | :---: | :--: | :--- |
+| key | 交易事项标识, 跟随交易场景设置, [参考附录定义](./../appendix.html) | string |  Y | energy_value |
+| value  | 交易金额, 单位: 分 | int |  Y | 10 |
 
 
 **请求示例**

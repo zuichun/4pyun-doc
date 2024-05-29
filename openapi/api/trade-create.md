@@ -104,23 +104,12 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/create
 **请求返回结果示例:**
 
 ```
-被扫正常返回扣款已经受理
+支付请求已受理
 {
 	"code": "1000",
 	"seqno": "9ce2f9ac8816496d",
 	"data_node": "CN-South/HS3-2",
-	"trade": "",
-	"pay_serial": "20210712215150075521111111"
-}
-```
-
-```
-被扫扣款成功
-{
-	"code": "1001",
-	"seqno": "9ce2f9ac8816496d",
-	"data_node": "CN-South/HS3-2",
-	"trade": "",
+	"trade" : "{\"appId\":\"wxxxxxxxxxxxx\",\"timeStamp\":\"1716945619\",\"nonceStr\":\"CtH7ANqVWu5l2BwoRookLAEJg9KR8aTG\",\"signType\":\"MD5\",\"paySign\":\"951EEC87A1CD4C7709EA69BA05AB91FB\",\"package\":\"prepay_id=xxxxxxxxxx\"}",
 	"pay_serial": "20210712215150075521111111"
 }
 ```
