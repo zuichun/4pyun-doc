@@ -20,7 +20,6 @@
 | version      | string | Y    | 会员权益版本号    |
 | type      | int | Y    | 购买类型: 1-新购、2-续费    |
 | quantity      | int | Y    | 购买月份数    |
-| quantity      | int | Y    | 购买月份数    |
 | pay_order     | string | Y    | 支付订单号     |
 | channel       | string | Y    | 支付渠道       |
 | pay_serial    | string | Y    | 平台支付流水   |
