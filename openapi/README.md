@@ -64,7 +64,7 @@ app_id=op88641899bd20661&car_type=1&enter_time=1563242533431&park_uuid=40e06b24-
 
 2. 使用 MD5 （32位不区分大小写）加密：
 ```
-1A6FE20BDD05B654F8FD33A299D75DF3
+c983693c5f603aef30514920fa3158ff
 ```
 
 
