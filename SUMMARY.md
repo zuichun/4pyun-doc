@@ -61,6 +61,8 @@
     - [8.3 停车场列表查询](openapi/iov/park-list.md)
     - [8.4 停车场详情查询](openapi/iov/park-detail.md)
     - [8.5 根据车牌查询停车信息并试算费用](openapi/iov/calculate.md)
+  - [9 超级会员业务](openapi/plus/README.md)
+    - [9.1 续费会员同步](openapi/plus/member-renewal-sync.md)
   - [X 附录](openapi/appendix.md)
 * [车场接入文档](parking/README.md)
   - [1 接入指引](parking/guideline/README.md)
