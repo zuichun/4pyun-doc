@@ -3,7 +3,7 @@
 * [平台简介](README.md)
 * [开放平台文档](openapi/README.md)
   - [1 接入指引](openapi/guideline/README.md)
-    - [1.1 小程序支付接入](openapi/guideline/payment-wechatapp.md)
+    - [1.1 小程序支付接入](openapi/guideline/payment-sapp.md)
     - [1.2 点金计划页面定制支持](openapi/guideline/wechat-ticket.md)
     - [1.3 用户授权](openapi/guideline/user-auth.md)
     - [1.4 支付接入要求](openapi/guideline/payment-policy.md)

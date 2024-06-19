@@ -15,20 +15,17 @@ P云支持通过以下方式接入，选择你需要的方式接入：
 - 跳转半屏小程序
 - 小程序插件
 
-### 2.1 跳转半屏小程序
-
+### 2.1 跳转半屏微信小程序
 
 #### 2.1.1 配置半屏跳转小程序信息
 
-如果需要实现跳转半屏小程序，需先在app.json做以下配置，[详见文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)
+需先在app.json做以下配置，[详见文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)
 
 ```json
 {
   "embeddedAppIdList": ["wxe5f52902cf4de896"]
 }
 ```
-
-#### 2.1.2 通过半屏跳转支付
 
 然后在需要跳转的时候添加以下代码，[详见文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.openEmbeddedMiniProgram.html)
 
@@ -39,7 +36,7 @@ wx.openEmbeddedMiniProgram({
 })
 ```
 
-#### 2.1.3 支付完成回调
+#### 2.1.2 支付完成回调
 
 支付成功后会返回对应的参数
 
@@ -53,7 +50,7 @@ wx.openEmbeddedMiniProgram({
 | trade_time | long   | Y    | 交易时间                             |
 
 
-### 2.2 小程序插件支付接入
+### 2.2 微信小程序插件支付接入
 
 #### 2.2.1 添加插件
 
@@ -86,3 +83,30 @@ wx.openEmbeddedMiniProgram({
     <button type="primary">去缴费</button>
 </navigator>
 ```
+
+### 2.3 跳转半屏支付宝小程序
+
+#### 2.3.1 跳转小程序信息
+
+然后在需要跳转的时候添加以下代码，[详见文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.openEmbeddedMiniProgram.html)
+
+```js
+my.openEmbeddedMiniProgram({
+        appId: '2021004130621008',
+        path: `/external/payment/trade/create/index?pay_id=xxxxxxxxxxxxxx`,
+ })
+```
+
+#### 2.3.2 支付完成回调
+
+支付成功后会返回对应的参数
+
+| 字段       | 类型   | 必须 | 说明                                 |
+| ---------- | ------ | ---- | ------------------------------------ |
+| pay_order  | string | Y    | 支付订单号                           |
+| channel    | string | Y    | 支付渠道                             |
+| pay_serial | string | Y    | 平台支付流水                         |
+| value      | string | Y    | 支付金额，单位：分                   |
+| status     | short  | Y    | 交易状态：1支付成功、-1失败、0支付中 |
+| trade_time | long   | Y    | 交易时间                             |
+
