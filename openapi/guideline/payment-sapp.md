@@ -50,7 +50,7 @@ wx.openEmbeddedMiniProgram({
 | trade_time | long   | Y    | 交易时间                             |
 
 
-### 2.2 微信小程序插件支付接入
+<!-- ### 2.2 微信小程序插件支付接入
 
 #### 2.2.1 添加插件
 
@@ -82,11 +82,11 @@ wx.openEmbeddedMiniProgram({
 <navigator url="plugin://pay-plugin/Create?pay_id=xxxxxxxxxxxxxx">
     <button type="primary">去缴费</button>
 </navigator>
-```
+``` -->
 
-### 2.3 跳转半屏支付宝小程序
+### 2.2 跳转半屏支付宝小程序
 
-#### 2.3.1 跳转小程序信息
+#### 2.2.1 跳转小程序信息
 
 然后在需要跳转的时候添加以下代码，[详见文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.openEmbeddedMiniProgram.html)
 
@@ -97,7 +97,7 @@ my.openEmbeddedMiniProgram({
  })
 ```
 
-#### 2.3.2 支付完成回调
+#### 2.2.2 支付完成回调
 
 支付成功后会返回对应的参数
 
