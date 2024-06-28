@@ -2,7 +2,7 @@
 
 ### 请求地址
 
-	https://api.4pyun.com/gate/1.0/invoice/detail
+	https://api.4pyun.com/gate/1.0/invoice/invoice
 
 ### 调用方式
 
