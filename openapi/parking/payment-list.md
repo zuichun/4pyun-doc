@@ -45,24 +45,24 @@
 
 #### 参数
 
-| 参数             | 类型       | 必须 | 描述                                                            | 示例值 |
-|----------------|----------|----|---------------------------------------------------------------|-----|
-| id             | string   | Y  | P云订单ID                                                        |     |
-| park_uuid      | string   | Y  | P云停车场编号                                                       |     |
-| park_name      | string   | Y  | P云停车场名称                                                       |     |
-| merchant       | string   | Y  | P云停车场商户号                                                      |     |
-| plate          | string   | Y  | 车牌号码                                                          |     |
-| plate_color    | int      | Y  | <a href="https://doc.4pyun.com/appendix#plate_color">车牌颜色</a> |     |
-| parking_serial | string   | Y  | 停车流水号                                                         |     |
-| enter_time     | datetime | Y  | 入场时间                                                          |     |
-| value          | int      | Y  | 订单总额, 单位分                                                     |     |
-| pay_value      | int      | Y  | 支付金额, 单位分                                                     |     |
-| free_value     | int      | Y  | 平台优惠金额, 单位分                                                   |     |
-| discount_value | int      | Y  | 车场商户折扣金额, 单位分                                                 |     |
-| pay_serial     | string   | Y  | 支付单号                                                          |     |
-| pay_time       | datetime | Y  | 支付时间                                                          |     |
-| pay_partner    | string   | Y  | 车场订单号                                                         |     |
-| ...            |          |    |                                                               |     |
+| 参数             | 类型       | 必须 | 描述                                                           | 示例值 |
+|----------------|----------|----|--------------------------------------------------------------|-----|
+| id             | string   | Y  | P云订单ID                                                       |     |
+| park_uuid      | string   | Y  | P云停车场编号                                                      |     |
+| park_name      | string   | Y  | P云停车场名称                                                      |     |
+| merchant       | string   | Y  | P云停车场商户号                                                     |     |
+| plate          | string   | Y  | 车牌号码                                                         |     |
+| plate_color    | int      | Y  | <a href="https://doc.4pyun.com/appendix#color_type">车牌颜色</a> |     |
+| parking_serial | string   | Y  | 停车流水号                                                        |     |
+| enter_time     | datetime | Y  | 入场时间                                                         |     |
+| value          | int      | Y  | 订单总额, 单位分                                                    |     |
+| pay_value      | int      | Y  | 支付金额, 单位分                                                    |     |
+| free_value     | int      | Y  | 平台优惠金额, 单位分                                                  |     |
+| discount_value | int      | Y  | 车场商户折扣金额, 单位分                                                |     |
+| pay_serial     | string   | Y  | 支付单号                                                         |     |
+| pay_time       | datetime | Y  | 支付时间                                                         |     |
+| pay_partner    | string   | Y  | 车场订单号                                                        |     |
+| ...            |          |    |                                                              |     |
 
 #### 示例
 
