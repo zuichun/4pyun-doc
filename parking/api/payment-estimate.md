@@ -17,6 +17,7 @@
 | --- | --- | --- | --- |
 | park_uuid | string | Y | 停车场编号 |
 | plate | string | Y | 车牌号码|
+| parking_serial | string | Y | 停车流水 |
 | free_time | int | Y | 减减免时间(不含已下发优惠), 单位: 分钟 |
 | free_value | int | Y | 减免金额(不含已下发优惠), 单位: 分 |
 
