@@ -84,6 +84,7 @@
     - [2.2 同步临停缴费通知](parking/api/payment-notify.md)
     - [2.3 无感/付款码扣款请求](parking/api/payment-prepay.md)
     - [2.4 停车订单查询](parking/api/payment-status.md)
+    - [2.5 停车费用计算](parking/api/payment-estimate.md)
 
   - [3 固定车管理](parking/vip.md)
     - [3.1 车辆信息查询](parking/api/vip-query.md)
