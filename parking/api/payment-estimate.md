@@ -8,7 +8,7 @@
 
 | 字段 | 类型 | 必须 | 说明|
 | --- | --- | --- | --- |
-| service | string | Y | 服务名: `service.parking.payment.result` |
+| service | string | Y | 服务名: `service.parking.payment.estimate` |
 | version | string | Y | 版本号:`1.0`|
 | charset | string | Y | 字符集:`UTF-8`|
 | sign | string | Y | 签名|
@@ -24,7 +24,7 @@
 
 | 字段 | 类型 | 必须 | 说明|
 | --- | --- | --- | --- |
-| service | string | Y | 服务名: `service.parking.payment.result` |
+| service | string | Y | 服务名: `service.parking.payment.estimate` |
 | version | string | Y | 版本号:`1.0`|
 | charset | string | Y | 字符集:`UTF-8`|
 | result_code | string | Y | 状态码<br/>值 含义<br/>1001  接口处理成功.<br/>1401  签名错误, 请检查配置.<br/>1403  订单已撤销.1.车辆出场2.参考7章节<br/>1500  接口内部处理失败. |
