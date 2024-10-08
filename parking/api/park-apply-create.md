@@ -62,7 +62,7 @@ POST application/json请求示例代码：
 | parking\_space    | 是   | 车位数                               | int  | 50            |
 | manager_mobile | 是   | 密保手机号，将用于创建超管账号       | string | 13600000162   |
 | service_phone     | 是   | 客服电话                             | string | 0755-28823700 |
-| type              | 是   | 车场分类：RESIDENCE-住宅；OFFICE-写字楼；COMMERCIAL_AREA-商业；PUBLIC_PLACE-公共；OTHER-其他；TEST-测试； | string | TEST |
+| type              | 是   | 车场分类：RESIDENCE-住宅；OFFICE-写字楼；MALL-商业；PUBLIC_PLACE-公共；OTHER-其他；TEST-测试； | string | TEST |
 | software_code     | 是 | 软件编码（联系技术确认）                 | string | PO9314 |
 | software_param     | 是  | 软件参数, 具体参数由软件编码决定（补充说明联系技术确认） | map<string, string> | {"app_secret": "lKdPpkhXUfeCyPXI"} |
 
