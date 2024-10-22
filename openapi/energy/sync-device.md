@@ -20,15 +20,17 @@
 
 ### 请求参数
 
-| 参数名称         | 类型     | 是否必须 | 说明                                                                          |
-|--------------|--------|------|-----------------------------------------------------------------------------|
-| app_id       | string | Y    | P云平台分配的应用标识                                                                 |
-| station_uuid | string | Y    | P云平台创建的充电站编号                                                                |
-| no           | string | Y    | 本地设备编号                                                                      |
-| state        | int    | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#device_state">设备状态</a> |
-| state_desc   | string | Y    | 设备状态描述                                                                      |
-| energy_code  | string | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#energy_code">设备类型</a>  |
-| port         | object | Y    | 枪口数据                                                                        |
+| 参数名称         | 类型     | 是否必须 | 说明                                                                             |
+|--------------|--------|------|--------------------------------------------------------------------------------|
+| app_id       | string | Y    | P云平台分配的应用标识                                                                    |
+| station_uuid | string | Y    | P云平台创建的充电站编号                                                                   |
+| no           | string | Y    | 本地设备编号                                                                         |
+| name         | string | N    | 设备名称                                                                           |
+| type         | int    | N    | <a href="https://doc.4pyun.com/openapi/appendix.html#device_type">设备类型</a>，默认0 |
+| state        | int    | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#device_state">设备状态</a>    |
+| state_desc   | string | Y    | 设备状态描述                                                                         |
+| energy_code  | string | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#energy_code">充电类型</a>     |
+| port         | object | Y    | 枪口数据                                                                           |
 
 `port`
 
@@ -63,8 +65,10 @@
 // 请求参数
 TreeMap<String, Object> args = new TreeMap<String, Object>() {{
     put("app_id", APP_ID);
-    put("station_uuid", "8f5fdb60-9374-4c11-bdc2-a32d8369258c");
+    put("station_uuid", "49f0cc52-e8c7-41e3-b54d-af666b8cc11a");
     put("no", "D012026");
+    put("name", "北门入口设备");
+    put("type", 0);
     put("state", 1);
     put("state_desc", "在线");
     put("energy_code", "CN_AC");

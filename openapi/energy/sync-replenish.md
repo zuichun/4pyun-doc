@@ -37,6 +37,7 @@
 | state        | int    | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#replenish_state">充电状态</a> |
 | state_desc   | string | Y    | 充电状态描述                                                                         |
 | device_no    | string | Y    | 本地设备编号                                                                         |
+| device_type  | int    | N    | <a href="https://doc.4pyun.com/openapi/appendix.html#device_type">设备类型</a>，默认0 |
 | port_no      | string | Y    | 本地枪口编号                                                                         |
 | energy_code  | string | Y    | <a href="https://doc.4pyun.com/openapi/appendix.html#energy_code">充电类型</a>     |
 | soc          | int    | N    | SOC，单位：百分比。例如100则表示百分百                                                         |
@@ -81,6 +82,7 @@ TreeMap<String, Object> args = new TreeMap<String, Object>() {{
     put("state", 3);
     put("state_desc", "充电完成");
     put("device_no", "D012026");
+    put("device_tyoe", 0);
     put("port_no", "D01202601");
     put("energy_code", "CN_AC");
     put("soc", 100);
