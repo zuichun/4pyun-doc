@@ -66,6 +66,7 @@
         app_id="{{app_id}}"
         provider_code="{{provider_code}}"
         personas="{{personas}}"
+        external="1"  
       >
       </4pyun-ad-sdk>
     </template>
@@ -133,12 +134,13 @@ data: {
 
 | 变量             | 类型     | 必填 | 可选值          | 说明                                        |
 | -------------- | ------ | -- | ------------ | ----------------------------------------- |
-| env            | string | 否  | release、test | 请求环境<br />release：正式环境（默认）<br />test：测试环境 |
-| space\_id      | string | 是  | -            | 由P云分配广告位ID                                |
-| openid         | string | 是  | -            | 合作方用户ID，用于精准投放追踪用户                        |
-| app\_id        | string | 是  | -            | 由P云分配接入应用ID                               |
-| provider\_code | string | 是  | -            | 流量主编号                                     |
-| personas       | object | 否  | -            | 为精准投放传入业务，详见下方说明                          |
+| env            | string | 否  | release、test   | 请求环境<br />release：正式环境（默认）<br />test：测试环境 |
+| space\_id      | string | 是  | -               | 由P云分配广告位ID                                |
+| openid         | string | 是  | -               | 合作方用户ID，用于精准投放追踪用户                        |
+| app\_id        | string | 是  | -               | 由P云分配接入应用ID                               |
+| provider\_code | string | 是  | -               | 流量主编号                                     |
+| personas       | object | 否  | -               | 为精准投放传入业务，详见下方说明                          |
+| external       | string | 否  |  '0'、'1'(默认) | 外部流量主标志: 0 否, 1是(仅当provider_code非P云提供设置为1) |
 
 ### personas参数说明
 
