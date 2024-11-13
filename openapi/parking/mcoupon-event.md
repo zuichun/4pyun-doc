@@ -5,7 +5,7 @@
 
 ### 1.1) 请求地址
 
-	https://api.4pyun.com/gate/1.0/parking/mcoupon/event/create
+	https://api.4pyun.com/gate/1.0/parking/mcoupon/event
 
 ### 1.2) 调用方式
 
@@ -25,7 +25,7 @@
 | 字段名称 | 类型 | 必填 | 字段说明 |
 | --- | --- | --- | --- |
 | app_id | string | true | 平台分配的接入应用ID |
-| api\_store\_code | string | true | 车场对应第三方平台ID |
+| api_store_code | string | true | 车场对应第三方平台ID |
 | api_type | string | true | 第三方服务类型(该字段由平台分配，固定) |
 | event_id | string | true | 第三方订单号, 需保证在第三方平台唯一 |
 | plate | string | true | 车牌号 |
