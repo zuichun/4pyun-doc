@@ -39,7 +39,7 @@ wx.openEmbeddedMiniProgram({
 
 #### 2.1.2 支付完成回调
 
-支付成功后会返回对应的参数
+支付成功后会返回对应的参数(目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据。) [详见文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)
 
 | 字段       | 类型   | 必须 | 说明                                 |
 | ---------- | ------ | ---- | ------------------------------------ |
