@@ -24,7 +24,7 @@
 
 ```json
 {
-  "embeddedAppIdList": ["wxe5f52902cf4de896"]
+  "embeddedAppIdList": ["wxa204074068ad40ef"]
 }
 ```
 
