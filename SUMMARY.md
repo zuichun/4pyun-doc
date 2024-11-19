@@ -19,6 +19,7 @@
     - [2.9 支付渠道配置信息查询](openapi/api/channel-config.md)
     <!-- - [2.9 原生交易请求](openapi/api/trade-create.md) -->
     - [2.10 触发交易清算](openapi/api/trade-settle.md)
+    - [2.11 分账交易同步](openapi/api/sharding-trade-sync.md)
   - [3 电子发票](openapi/invoice.md)
     - [3.1 提交开票申请](openapi/api/invoice-obtain.md)
     - [3.2 查询开票详情](openapi/api/invoice-query.md)
