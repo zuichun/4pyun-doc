@@ -24,8 +24,7 @@ P云发起请求, 强制更新存在车辆信息
 | operator | string | N | 操作员姓名 |
 | start_time | string | Y | 开始时间, 格式: `yyyyMMddHHmmss` |
 | end_time | string | Y | 结束时间, 格式: `yyyyMMddHHmmss` |
-| plate | string | Y | 主要车牌号码     |
-|vehicle| VEHICLE | Y | 车辆集合(一位多车场景) |
+| vehicle| VEHICLE | Y | 车辆集合(一位多车场景) |
 
 **VEHICLE对象**
 
