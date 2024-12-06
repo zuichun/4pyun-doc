@@ -44,9 +44,9 @@
     - [5.13 黑名单车辆删除](openapi/parking/blacklist-delete.md)
     - [5.14 预约停车申请](openapi/parking/reserve-apply.md)
     - [5.15 预约取消申请](openapi/parking/reserve-cancel.md)
-    - [5.16 月卡查询](openapi/parking/vip-query.md)
+    <!-- - [5.16 月卡查询](openapi/parking/vip-query.md)
     - [5.17 月卡续费](openapi/parking/vip-recharge.md)
-    - [5.18 临停订单列表查询](openapi/parking/payment-list.md)
+    - [5.18 临停订单列表查询](openapi/parking/payment-list.md) -->
   - [6 营销平台](openapi/bonus.md)
     - [6.1 营销活动参与申请](openapi/api/bonus-event-apply.md)
     - [6.2 查询营销活动查询奖励](openapi/api/bonus-bonus.md)
