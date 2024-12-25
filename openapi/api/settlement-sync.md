@@ -28,7 +28,7 @@
 | status | short |Y |结算状态: 1 已清算; 0 未清算|
 |type |short| Y | 结算类型: 1正常, 2补款, -1扣款, -2退款|
 |transfer_status |short| Y | 划账状态: 0, 未划账; 1, 已划账；-1, 划账异常; |
-|trade_list | list(Payment) | Y |关联支付记录|
+|trade_list | list(Payment) | N |关联支付记录, 仅在未划账会携带该字段, 后续同步划账状态不在携带该字段!!! |
 
 **支付记录**
 
