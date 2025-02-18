@@ -21,7 +21,7 @@ trade_scene=PARKING 场景填写到extra字段
 | plate_type | 车牌类型: 0-中国大陆车牌, 1-境外车牌(含港澳车牌), 2-两轮车(电动车/摩托车等) | string | N | 1 |
 | card_id | 停车卡ID, 无车牌可传递 | string | N | ABDDS |
 | gate_id | 缴费通道ID | string | N | 001 |
-| parking_serial | 一次停车唯一ID | string | Y | XXXXX-ID |
+| parking_serial | 一次停车唯一ID(和进出场记录推送parking_serial保持一致) | string | Y | XXXXX-ID |
 | park_name | 停车场名称 | string | Y | XXXX-停车场 |
 | enter_time | 入场时间, 单位毫秒 | string | Y | 1552976318722 |
 | parking_time | 停车时长, 单位秒 | string | Y | 3600 |
