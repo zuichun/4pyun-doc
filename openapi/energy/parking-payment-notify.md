@@ -12,12 +12,14 @@
 `application/x-www-form-urlencoded`
 
 ## 请求参数
-| 参数        |    类型    | 是否必须 | 说明       | 备注       |
-|:----------|:--------:|:----:|----------|----------|
-| pay_order |  string  |  Y   | P云平台占位单号 |          |
-| pay_value |  int32   |  Y   | 支付金额，分   |          |
-| pay_time  | datetime |  Y   | 实付时间     | 需传递UTC时间 |
-| trade_no  |  string  |  Y   | 第三方支付单号  |          |
+| 参数            |    类型    | 是否必须 | 说明                                                                      | 备注       |
+|:--------------|:--------:|:----:|-------------------------------------------------------------------------|----------|
+| pay_order     |  string  |  Y   | P云平台占位单号                                                                |          |
+| pay_value     |  int32   |  Y   | 支付金额，分                                                                  |          |
+| pay_time      | datetime |  Y   | 实付时间                                                                    | 需传递UTC时间 |
+| trade_no      |  string  |  Y   | 第三方支付单号                                                                 |          |
+| pay_mode      |  string  |  Y   | <a href="https://doc.4pyun.com/openapi/appendix.html#pay_mode">到账方式</a> |          |
+| pay_mode_desc |  string  |  Y   | 到账方式描述                                                                  |          |
 
 ## 响应参数
 `无`
