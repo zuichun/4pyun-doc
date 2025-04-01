@@ -56,6 +56,8 @@
     - [7.1 充电减免停车费](openapi/energy/replenish-parking.md)
     - [7.2 同步充电记录](openapi/energy/sync-replenish.md)
     - [7.3 同步设备](openapi/energy/sync-device.md)
+    - [7.4 占位订单查询](openapi/energy/parking-payment-billing.md)
+    - [7.5 占位订单支付成功通知](openapi/energy/parking-payment-notify.md)
   - [8 车联网业务](openapi/iov/README.md)
     - [8.1 车牌白名单同步](openapi/iov/whitelist-sync.md)
     - [8.2 车牌白名单删除](openapi/iov/whitelist-delete.md)
