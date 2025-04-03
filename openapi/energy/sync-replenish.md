@@ -27,7 +27,7 @@
 | order        | string | Y  | 本地充电单号                                                                         |                                                        |
 | start_time   | string | Y  | 充电开始时间，UTC时间                                                                   | 例如：`2024-04-14T16:00:00.000Z` 表示 `2024-04-15 00:00:00` |
 | end_time     | string | Y  | 充电开始时间，UTC时间                                                                   | 例如：`2024-04-14T16:00:00.000Z` 表示 `2024-04-15 00:00:00` |
-| vin          | string | N  | 车辆识别码                                                                          |                                                        |
+| vin          | string | N  | 车架号                                                                          |                                                        |
 | plate        | string | N  | 车牌号码                                                                           |                                                        |
 | quantity     |  int   | Y  | 充电量，单位：0.001Kwh                                                                | 1表示0.001Kwh。例如1度则传递1000                                |
 | energy_value |  int   | Y  | 充电电费，单位：分                                                                      |                                                        |
