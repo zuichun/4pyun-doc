@@ -83,7 +83,7 @@
 | --- | --- | --- | --- |
 | plate | string | N | 识别车牌号码.|
 | card_id | string | N | 无牌车获取订单返回本地的虚拟卡ID/虚拟车牌.|
-| **parking_serial** | string | Y | **<font color="red">停车流水, 标识具体某次停车事件, 需保证该停车场下唯一, 付费入场可不返回。和进出场上报`parking_serial`保持一致!!!</font>**|
+| **parking_serial** | string | Y | <p style="color:red">**停车流水, 标识具体某次停车事件, 需保证该停车场下唯一, 付费入场可不返回。和进出场上报`parking_serial`保持一致!!!**</p>|
 | parking_order | string | Y | 停车支付订单号, 需保证该停车场下唯一.注:同一停车场内不可重复！|
 | enter_time | string | Y | 入场时间, 格式`yyyyMMddHHmmss`.|
 | parking_time | int | Y | 停车时长(单位秒)|
