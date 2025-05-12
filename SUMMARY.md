@@ -29,6 +29,7 @@
     - [4.2 小程序接入广告](openapi/api/adverting-sapp.md)
     - [4.3 流量主信息同步接口](openapi/api/adverting-provider.md)
     - [4.4 同步广告推广意向](openapi/api/adverting-intention.md)
+    - [4.5 会员券包产品接入](openapi/api/adverting-plus.md)
   - [5 停车业务](openapi/parking/README.md)
     - [5.1 获取实时车位](openapi/parking/realtime-space.md)
     - [5.2 停车优惠发放](openapi/parking/mcoupon-grant.md)
