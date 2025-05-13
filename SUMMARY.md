@@ -80,6 +80,7 @@
     - [1.8 现金找零接入指引](parking/guideline/change.md)
     - [1.9 接入PP停车小程序](parking/guideline/pptc-wxapp.md)
     - [1.10 付费入场接入指引](parking/guideline/enterpay.md)
+    - [1.11 互联互通接入指引](parking/guideline/plink.md)
 
   - [2 临停缴费](parking/payment.md)
     - [2.1 获取临停缴费订单](parking/api/payment-billing.md)
