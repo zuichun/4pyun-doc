@@ -1,39 +1,87 @@
-## 会员券包产品接入
+# 会员券包产品接入指南
 
-1. 支付按钮点击需添加广告拦截逻辑
-2. 拦截回调`event.action == 'REDIRECT'`时通过`event.redirect(args)`完成购买支付跳转
+本文档介绍如何接入会员券包产品的支付流程，并在支付按钮点击时添加广告拦截逻辑。
+
+---
+
+## 接入流程
+
+### 1. 广告拦截逻辑
+
+在支付按钮点击时，需调用广告拦截逻辑 `pyun.advertingIntercept`。根据拦截回调的 `event.action` 值，执行不同的业务逻辑：
+
+- **`REDIRECT`**：用户确认购买，业务方需下单并通过广告组件完成支付跳转。
+- **其他值**：用户取消购买，业务方继续自己的支付流程。
+
+以下是代码示例：
 
 ```js
-// STEP-1. 拦截广告流程
+// STEP-1: 拦截广告流程
 pyun.advertingIntercept((event) => {
-    if (event.action == 'REDIRECT') {
+    if (event.action === 'REDIRECT') {
         // 用户确认购买
-        alert('ACTION=' + event.action + ", 用户确认购买，业务方下单后由广告组建跳转完成业务支付+广告产品购买!");
+        alert(`ACTION=${event.action}, 用户确认购买，业务方下单后由广告组件跳转完成业务支付和广告产品购买!`);
         this.doRealPay(event);
     } else {
-        // 用户取消购买，业务方继续自己的支付流程即可
-        alert('ACTION=' + event.action + ", 用户取消购买，业务方继续自己的支付流程即可!");
+        // 用户取消购买
+        alert(`ACTION=${event.action}, 用户取消购买，业务方继续自己的支付流程即可!`);
         this.doRealPay();
     }
-})
+});
+```
 
+---
+
+### 2. 支付逻辑实现
+
+在广告拦截回调中，调用 `doRealPay` 方法完成支付逻辑。以下是支付逻辑的实现示例：
+
+```js
 function doRealPay(event) {
-    // 
+    // 调用支付接口
     payment((reply) => {
         /**
-         * 参数二选一
-         * depute_serial - 托收订单编号
-         * depute_id - 托收订单ID
+         * 参数说明（以下参数二选一）：
+         * - `depute_serial`：托收订单编号
+         * - `depute_id`：托收订单ID
          */
         let args = {
             depute_serial: reply.payload.pay_serial,
         };
-        // STEP-2. 拦截调用!!!
+
+        // STEP-2: 根据拦截结果跳转支付
         if (event) {
-            event.redirect(args);
+            event.redirect(args); // 广告组件跳转支付
         } else {
-            // 正常跳转支付
+            // 正常支付流程
+            console.log('正常跳转支付');
         }
-    })
-},
+    });
+}
 ```
+
+---
+
+## 注意事项
+
+1. **拦截回调处理**：
+   - 确保在 `event.action === 'REDIRECT'` 时调用 `event.redirect(args)`，完成支付跳转。
+   - 其他情况下，需根据业务需求处理支付流程。
+
+2. **参数校验**：
+   - `depute_serial` 和 `depute_id` 必须二选一传递，确保支付接口调用成功。
+
+3. **用户体验**：
+   - 在支付流程中，建议添加加载提示或进度条，提升用户体验。
+
+---
+
+## 示例场景
+
+- 用户点击支付按钮后，广告拦截逻辑会判断用户是否确认购买。
+- 如果用户确认购买，广告组件将跳转至支付页面完成支付。
+- 如果用户取消购买，业务方可继续执行自己的支付流程。
+
+---
+
+以上是会员券包产品接入的完整流程。如有疑问，请联系技术支持。

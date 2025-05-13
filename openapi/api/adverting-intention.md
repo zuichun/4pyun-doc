@@ -1,59 +1,94 @@
-# 修改广告推广意向
+# 修改广告推广意向接口文档
+
+该文档介绍如何通过接口修改推广需求下属关联的所有投放广告的曝光定向。
+
+---
+
+## 接口地址
 
 ```
 POST https://api.4pyun.com/gate/1.0/adverting/advertising/demand/intention
 ```
 
-**接口说明**
+---
 
-	修改推广需求下属关联的所有投放广告的曝光定向
+## 接口说明
 
-**请求参数**
+该接口用于修改推广需求下属关联的所有投放广告的曝光定向。
 
-| 字段名称 | 字段说明 |  类型  | 必填 | 示例  |
-| :--- | :--- | :---: | :---: | :--- |
-| app_id | 平台分配的接入应用ID | string |  Y | op1234567723122 |
-| demand_id | 平台提供的推广需求ID | string |  Y | 77896521112  |
-| intention  | 业务参数 | Array |  Y | 参见intention参数示例 |
+---
 
-​ intention
+## 请求参数
 
-| 字段名称 | 字段说明 |  类型  | 必填 | 示例  |
-| :--- | :--- | :---: | :---: | :--- |
-| key | 定向KEY | string |  Y | 参见intention.key-value参数值说明 |
-| value | 定向值 | string |  Y | 参见intention.key-value参数值说明  |
-| reverse  | 类型 | int |  Y | 0：选中 1：过滤 |
+### 主体参数
 
-​ intention.key-value参数值说明
+| 字段名称   | 字段说明                     | 类型    | 必填 | 示例值                |
+|------------|------------------------------|---------|------|-----------------------|
+| app_id     | 平台分配的接入应用 ID        | string  | Y    | op1234567723122       |
+| demand_id  | 平台提供的推广需求 ID        | string  | Y    | 77896521112           |
+| intention  | 业务参数                     | Array   | Y    | 参见 `intention` 参数 |
 
-| key | key值说明 | value | value值说明 |
-| :---: | :--- | :---: | :--- |
-| ip_location | IP归属地 | 广东省:440000<br>广东省深圳市:440000,440300<br>广东省深圳市南山区:440000,440300,440305 | 省市区行政编码（省市区之间用 , 分隔） |
+### `intention` 参数说明
 
-**请求示例**
+| 字段名称 | 字段说明   | 类型   | 必填 | 示例值                              |
+|----------|------------|--------|------|-------------------------------------|
+| key      | 定向 KEY   | string | Y    | 参见 `intention.key-value` 参数说明 |
+| value    | 定向值     | string | Y    | 参见 `intention.key-value` 参数说明 |
+| reverse  | 类型       | int    | Y    | 0：选中，1：过滤                    |
 
-​ 广告定向投放IP归属地: 广东省深圳市南山区和广西省
+### `intention.key-value` 参数值说明
+
+| key          | key 值说明 | value 示例值                                                                 | value 值说明                  |
+|--------------|------------|------------------------------------------------------------------------------|-------------------------------|
+| ip_location  | IP 归属地  | 广东省:440000<br>广东省深圳市:440000,440300<br>广东省深圳市南山区:440000,440300,440305 | 省市区行政编码（用 `,` 分隔） |
+
+---
+
+## 请求示例
+
+### 广告定向投放 IP 归属地：广东省深圳市南山区和广西省
+
 ```json
-{"app_id":"op1234567723122","demand_id":77896521112,"intention":[{"key":"area_code","value":"440000,440300,440305","reverse":0},{"key":"area_code","value":"450000","reverse":0}]}
+{
+    "app_id": "op1234567723122",
+    "demand_id": 77896521112,
+    "intention": [
+        { "key": "area_code", "value": "440000,440300,440305", "reverse": 0 },
+        { "key": "area_code", "value": "450000", "reverse": 0 }
+    ]
+}
 ```
 
-​ 广告定向过滤IP归属地: 广西省
+### 广告定向过滤 IP 归属地：广西省
+
 ```json
-{"app_id":"op1234567723122","demand_id":77896521112,"intention":[{"key":"area_code","value":"450000","reverse":1}]}
+{
+    "app_id": "op1234567723122",
+    "demand_id": 77896521112,
+    "intention": [
+        { "key": "area_code", "value": "450000", "reverse": 1 }
+    ]
+}
 ```
 
-**请求返回结果参数说明**
+---
 
-| 字段名称   | 字段说明     |  类型  | 必填 | 备注   |
-| :--- | :--- | :---: | :---: | :--- |
-| code | 请求状态码 | string | Y | 1001-成功<br>其它-读取message |
-| message | 返回描述 | string | N | 返回描述 |
-| hint | 返回错误说明 | string | N | 返回具体错误描述指导 |
-| seqno | 服务器日志标示 | string | Y | 服务器日志标示编码 |
+## 返回结果参数说明
 
-**请求返回结果示例:**
+| 字段名称 | 字段说明         | 类型    | 必填 | 备注                                   |
+|----------|------------------|---------|------|----------------------------------------|
+| code     | 请求状态码       | string  | Y    | 1001-成功<br>其它-读取 `message`       |
+| message  | 返回描述         | string  | N    | 返回描述信息                           |
+| hint     | 返回错误说明     | string  | N    | 返回具体错误描述指导                   |
+| seqno    | 服务器日志标识   | string  | Y    | 服务器日志标识编码                     |
+| data_node| 数据节点信息     | string  | N    | 返回数据节点所在位置                   |
+| time_cost| 请求耗时（毫秒） | int     | N    | 请求处理耗时                           |
 
-​ 请求成功
+---
+
+## 返回结果示例
+
+### 请求成功
 
 ```json
 {
@@ -64,7 +99,7 @@ POST https://api.4pyun.com/gate/1.0/adverting/advertising/demand/intention
 }
 ```
 
-​ 请求失败
+### 请求失败
 
 ```json
 {
@@ -76,3 +111,24 @@ POST https://api.4pyun.com/gate/1.0/adverting/advertising/demand/intention
     "path": "POST /gate/1.0/adverting/advertising/demand/intention"
 }
 ```
+
+---
+
+## 注意事项
+
+1. **参数校验**：
+   - `app_id` 和 `demand_id` 为必填参数，确保正确传递。
+   - `intention` 数组中的 `key` 和 `value` 必须符合 `intention.key-value` 参数说明。
+
+2. **定向逻辑**：
+   - `reverse` 参数为 `0` 表示选中定向，`1` 表示过滤定向。
+
+3. **错误处理**：
+   - 如果返回 `code` 非 `1001`，请根据 `message` 和 `hint` 提示检查请求参数。
+
+4. **性能优化**：
+   - 建议批量修改时，合理控制 `intention` 数组的长度，避免请求超时。
+
+---
+
+以上是修改广告推广意向接口的完整文档。如有疑问，请联系技术支持。
