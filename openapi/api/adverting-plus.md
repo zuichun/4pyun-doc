@@ -21,12 +21,11 @@ pyun.advertingIntercept((event) => {
     if (event.action === 'REDIRECT') {
         // 用户确认购买
         alert(`ACTION=${event.action}, 用户确认购买，业务方下单后由广告组件跳转完成业务支付和广告产品购买!`);
-        this.doRealPay(event);
     } else {
         // 用户取消购买
         alert(`ACTION=${event.action}, 用户取消购买，业务方继续自己的支付流程即可!`);
-        this.doRealPay();
     }
+    this.doRealPay(event);
 });
 ```
 
@@ -50,7 +49,7 @@ function doRealPay(event) {
         };
 
         // STEP-2: 根据拦截结果跳转支付
-        if (event) {
+        if (event && event.action === 'REDIRECT') {
             event.redirect(args); // 广告组件跳转支付
         } else {
             // 正常支付流程
