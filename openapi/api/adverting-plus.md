@@ -17,16 +17,21 @@
 
 ```js
 // STEP-1: 拦截广告流程
-pyun.advertingIntercept((event) => {
-    if (event.action === 'REDIRECT') {
-        // 用户确认购买
-        alert(`ACTION=${event.action}, 用户确认购买，业务方下单后由广告组件跳转完成业务支付和广告产品购买!`);
-    } else {
-        // 用户取消购买
-        alert(`ACTION=${event.action}, 用户取消购买，业务方继续自己的支付流程即可!`);
-    }
+if (pyun) {
+    pyun.advertingIntercept((event) => {
+        if (event.action === 'REDIRECT') {
+            // 用户确认购买
+            alert(`ACTION=${event.action}, 用户确认购买，业务方下单后由广告组件跳转完成业务支付和广告产品购买!`);
+        } else {
+            // 用户取消购买
+            alert(`ACTION=${event.action}, 用户取消购买，业务方继续自己的支付流程即可!`);
+        }
+        this.doRealPay(event);
+    });
+} else {
+    // 说明JS SDK未正确加载，需检查原因，业务方继续自己的支付流程即可!
     this.doRealPay(event);
-});
+}
 ```
 
 ---

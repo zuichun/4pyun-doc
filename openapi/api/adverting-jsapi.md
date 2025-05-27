@@ -8,7 +8,8 @@
 
 ### 1. 引入 SDK
 
-在页面中引入 P 云提供的 JS SDK：
+在页面中引入 P云提供的 JS SDK：
+- 切勿直接把文件保存本地引入将无法收到安全更新!!!
 
 ```html
 <script src="https://assets.4pyun.com/js/4pyun-sdk-1.0.0.min.js"></script>
