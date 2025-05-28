@@ -57,15 +57,14 @@ POST application/json请求示例代码：
 | app_id            | 是   | 平台分配应用ID                       | string | op72****24    |
 | parent            | 是   | 平台分配厂商商户号                   | string | PV3***4       |
 | park_name         | 是   | 车场名称，在平台中要求唯一，不可重复 | string | 测试-停车场   |
-| address           | 是  | 详细地址                             | string | 讯美科技广场  |
+| address           | 是  | 详细地址                             | string | 广东省深圳市深圳湾科技生态园10栋A2401  |
 | coordinate        | 是   | 经纬度坐标                           | object |               |
 | parking\_space    | 是   | 车位数                               | int  | 50            |
 | manager_mobile | 是   | 密保手机号，将用于创建超管账号       | string | 13600000162   |
 | service_phone     | 是   | 客服电话                             | string | 0755-28823700 |
-| type              | 是   | 车场分类：RESIDENCE-住宅；OFFICE-写字楼；MALL-商业；PUBLIC_PLACE-公共；OTHER-其他；TEST-测试； | string | TEST |
-| software_code     | 是 | 软件编码（联系技术确认）                 | string | PO9314 |
-| software_param     | 是  | 软件参数, 具体参数由软件编码决定（补充说明联系技术确认） | map<string, string> | {"app_secret": "lKdPpkhXUfeCyPXI"} |
-
+| type              | 是   | 车场分类：RESIDENCE-住宅；OFFICE-写字楼；MALL-商业；PUBLIC_PLACE-公共；OTHER-其他；TEST-测试； | string | OFFICE |
+| software_code     | 是 | 软件编码（联系技术确认）                 | string | POXXXXX |
+| software_param     | 是  | 软件参数, 具体参数由软件编码决定（补充说明联系技术确认） | map<string, string> | {"app_secret": "XXXXXX"} |
 
 
 | coordinate | 必填 | 说明                                                         | 类型   | 示例       |
