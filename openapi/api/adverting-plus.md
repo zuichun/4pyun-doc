@@ -13,9 +13,9 @@
 - **`REDIRECT`**：用户确认购买，业务方需下单并通过广告组件完成支付跳转。
 - **其他值**：用户取消购买，业务方继续自己的支付流程。
 
-以下是代码示例：
+**代码示例：**
 
-```js
+```javascript
 // STEP-1: 拦截广告流程
 if (pyun) {
     pyun.advertingIntercept((event) => {
@@ -40,7 +40,7 @@ if (pyun) {
 
 在广告拦截回调中，调用 `doRealPay` 方法完成支付逻辑。以下是支付逻辑的实现示例：
 
-```js
+```javascript
 function doRealPay(event) {
     // 调用支付接口
     payment((reply) => {
@@ -62,6 +62,40 @@ function doRealPay(event) {
         }
     });
 }
+```
+
+---
+
+## 方法说明
+
+广告事件拦截（如会员券包购买拦截弹窗）。
+
+**方法签名：**
+```javascript
+pyun.advertingIntercept(callback, enforce)
+```
+
+**参数说明：**
+
+- `callback` (Function)：拦截回调函数，参数为对象，常见字段如下：
+  - `action`：'REDIRECT'（跳转购买）或 'NONE'（放弃）
+  - `redirect`：跳转方法（当 action 为 'REDIRECT' 时可用）
+- `enforce` (Boolean)：是否强制执行拦截（可选，默认 false）
+
+**返回值：**
+- 无
+
+**使用示例：**
+```javascript
+pyun.advertingIntercept(function(res) {
+  if (res.action === 'REDIRECT') {
+    // 跳转购买
+    res.redirect({depute_id: 'xxx'});
+  } else {
+    // 用户放弃
+    console.log('用户放弃购买');
+  }
+});
 ```
 
 ---
