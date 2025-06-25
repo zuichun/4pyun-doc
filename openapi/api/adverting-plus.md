@@ -108,6 +108,7 @@ pyun.advertingIntercept(function(res) {
 
 2. **参数校验**：
    - `depute_serial` 和 `depute_id` 必须二选一传递，确保支付接口调用成功。
+   - `depute_id`取[交易预请求](./trade-prepare.html)返回的`pay_id`子弹
 
 3. **用户体验**：
    - 在支付流程中，建议添加加载提示或进度条，提升用户体验。
