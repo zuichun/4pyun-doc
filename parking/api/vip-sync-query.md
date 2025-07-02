@@ -55,7 +55,8 @@
 
 <font color='red'>注: 若月卡当前到期则balance=0, 若昨天过期balance=-1, 按照此规则计算</font>
 
-*应答示例*
+*SDK接入应答示例*
+
 
 ```json
 {
@@ -65,5 +66,33 @@
   "charset" : "UTF-8",
   "message" : "O.K.",
   "version" : "1.0"
+}
+```
+
+*HTTP接入应答示例*
+
+```json{
+  "row" : [
+    {
+      "charge_price" : 20000,
+      "card_no" : "100766",
+      "mobile" : "13632693491",
+      "id_card" : "511622199108272837",
+      "card_id" : "10760",
+      "balance" : 0,
+      "charge_desc" : "包月车_小型车",
+      "charge_type" : "22",
+      "plate" : "粤BN1B64",
+      "realname" : "唐泽轩",
+      "type" : 1,
+      "create_time" : "20210401090814",
+      "expire_time" : "20210401235959"
+    }
+  ],
+  "message" : "O.K.",
+  "result_code" : "1001",
+  "version" : "1.0",
+  "service" : "service.parking.vip.sync",
+  "charset" : "UTF-8"
 }
 ```
