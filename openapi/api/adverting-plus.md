@@ -4,9 +4,28 @@
 
 ---
 
-## 接入流程
+# 1. 方法说明
 
-### 1. 广告拦截逻辑
+广告事件拦截（如会员券包/权益购买拦截弹窗）。
+
+**方法签名：**
+```javascript
+/**
+ * Function callback：拦截回调函数，参数为对象，常见字段如下：
+ * - action：`REDIRECT`（跳转购买）或 `NONE`（放弃）
+ * - redirect：跳转方法（当 action 为 `REDIRECT` 时可用）
+ * Boolean enforce：是否强制执行拦截（可选，默认 false）
+ */
+advertingIntercept(callback, enforce)
+```
+
+---
+
+# 2 接入流程
+
+## 2.1 H5接入指引
+
+### 2.1.1 交互逻辑
 
 在支付按钮点击时，需调用广告拦截逻辑 `pyun.advertingIntercept`。根据拦截回调的 `event.action` 值，执行不同的业务逻辑：
 
@@ -36,7 +55,7 @@ if (pyun) {
 
 ---
 
-### 2. 支付逻辑实现
+### 2.1.2 支付逻辑实现
 
 在广告拦截回调中，调用 `doRealPay` 方法完成支付逻辑。以下是支付逻辑的实现示例：
 
@@ -47,10 +66,10 @@ function doRealPay(event) {
         /**
          * 参数说明（以下参数二选一）：
          * - `depute_serial`：托收订单编号
-         * - `depute_id`：托收订单ID
+         * - `depute_id`：托收订单ID, 交易预下单返回
          */
         let args = {
-            depute_serial: reply.payload.pay_serial,
+            depute_id: reply.payload.pay_id,
         };
 
         // STEP-2: 根据拦截结果跳转支付
@@ -64,43 +83,81 @@ function doRealPay(event) {
 }
 ```
 
----
+## 2.2 小程序接入指引
 
-## 方法说明
+### 2.2.1 半屏小程序的申请
+1. 打开 [微信公众平台](https://mp.weixin.qq.com/)
+2. 登录微信公众平台后，找到 **设置**-**第三方设置** 滑到页面下方找到**半屏小程序管理**-**我调用的**-**添加**
+3. 输入PP停车的小程序APPID：**wxa204074068ad40ef** 并添加即可
 
-广告事件拦截（如会员券包购买拦截弹窗）。
+### 2.2.2 交互逻辑
 
-**方法签名：**
-```javascript
-pyun.advertingIntercept(callback, enforce)
+在支付按钮点击时，需调用选中广告节点执行拦截逻辑 `advertingIntercept`。根据拦截回调的 `event.action` 值，执行不同的业务逻辑：
+
+- **`REDIRECT`**：用户确认购买，业务方需下单并通过广告组件完成支付跳转。
+- **其他值**：用户取消购买，业务方继续自己的支付流程。
+
+**代码示例：**
+
+
+```
+index.wxml
+
+<pp-adv
+    id="pyun"
+    ...其余广告参数
+/>
+
 ```
 
-**参数说明：**
 
-- `callback` (Function)：拦截回调函数，参数为对象，常见字段如下：
-  - `action`：'REDIRECT'（跳转购买）或 'NONE'（放弃）
-  - `redirect`：跳转方法（当 action 为 'REDIRECT' 时可用）
-- `enforce` (Boolean)：是否强制执行拦截（可选，默认 false）
-
-**返回值：**
-- 无
-
-**使用示例：**
 ```javascript
-pyun.advertingIntercept(function(res) {
-  if (res.action === 'REDIRECT') {
-    // 跳转购买
-    res.redirect({depute_id: 'xxx'});
-  } else {
-    // 用户放弃
-    console.log('用户放弃购买');
-  }
-});
+index.js
+
+// STEP-1: 拦截广告流程
+this.selectComponent('#pyun').advertingIntercept((event) => {
+    if (event.action === 'REDIRECT') {
+        // 用户确认购买
+        console.log(`ACTION=${event.action}, 用户确认购买，业务方下单后由广告组件跳转完成业务支付和广告产品购买!`);
+    } else {
+        // 用户取消购买
+        console.log(`ACTION=${event.action}, 用户取消购买，业务方继续自己的支付流程即可!`);
+    }
+    this.doRealPay(event);
+})
+```
+
+### 2.2.3 支付逻辑实现
+
+在广告拦截回调中，调用 `doRealPay` 方法完成支付逻辑。以下是支付逻辑的实现示例：
+
+```javascript
+doRealPay(event) {
+    // 调用支付接口
+    payment((reply) => {
+        /**
+         * 参数说明（以下参数二选一）：
+         * - `depute_serial`：托收订单编号
+         * - `depute_id`：托收订单ID, 交易预下单返回
+         */
+        let args = {
+            depute_id: reply.payload.pay_id,
+        };
+
+        // STEP-2: 根据拦截结果跳转支付
+        if (event && event.action === 'REDIRECT') {
+            event.redirect(args); // 广告组件跳转支付(将会执行小程序跳转，需要申请半屏跳转，下面会说明)
+        } else {
+            // 正常支付流程
+            console.log('正常跳转支付');
+        }
+    });
+}
 ```
 
 ---
 
-## 注意事项
+# 3 注意事项
 
 1. **拦截回调处理**：
    - 确保在 `event.action === 'REDIRECT'` 时调用 `event.redirect(args)`，完成支付跳转。
@@ -123,4 +180,4 @@ pyun.advertingIntercept(function(res) {
 
 ---
 
-以上是会员券包产品接入的完整流程。如有疑问，请联系技术支持。
+以上是会员券包/权益产品接入的完整流程。如有疑问，请联系技术支持。
