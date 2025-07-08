@@ -156,6 +156,20 @@ doRealPay(event) {
 ```
 
 ---
+#### 2.1.4 支付完成回调
+
+支付成功后会返回对应的参数(目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据。) [详见文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)
+
+| 字段       | 类型   | 必须 | 说明                                 |
+| ---------- | ------ | ---- | ------------------------------------ |
+| pay_order  | string | Y    | 支付订单号                           |
+| channel    | string | Y    | 支付渠道                             |
+| pay_serial | string | Y    | 平台支付流水                         |
+| value      | string | Y    | 支付金额，单位：分                   |
+| status     | short  | Y    | 交易状态：1支付成功、-1失败、0支付中 |
+| trade_time | long   | Y    | 交易时间                             |
+
+---
 
 # 3 注意事项
 
