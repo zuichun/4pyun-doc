@@ -155,6 +155,12 @@ doRealPay(event) {
 }
 ```
 
+#### 2.2.4 小程序支付回调
+
+支付成功后会返回对应的参数(目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据。) [详见文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)
+
+返回参数参考[支付结果异步通知](./../api/trade-notify.html)
+
 ---
 
 # 3 注意事项
