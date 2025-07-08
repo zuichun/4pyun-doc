@@ -146,7 +146,7 @@ doRealPay(event) {
 
         // STEP-2: 根据拦截结果跳转支付
         if (event && event.action === 'REDIRECT') {
-            event.redirect(args); // 广告组件跳转支付(将会执行小程序跳转，需要申请半屏跳转，下面会说明)
+            event.redirect(args); // 广告组件跳转支付(将会执行小程序跳转，需要申请半屏跳转)
         } else {
             // 正常支付流程
             console.log('正常跳转支付');
