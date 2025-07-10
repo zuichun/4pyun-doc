@@ -66,7 +66,10 @@ if (pyun) {
 
 ```javascript
 function doRealPay(event) {
-    // 调用支付接口
+    /**
+     * 调用支付接口
+     * 示例函数, 替换成自己的方法!!!
+     */
     payment((reply) => {
         /**
          * 参数说明（以下参数二选一）：
@@ -138,7 +141,10 @@ this.selectComponent('#pyun').advertingIntercept((event) => {
 
 ```javascript
 doRealPay(event) {
-    // 调用支付接口
+    /**
+     * 调用支付接口
+     * 示例函数, 替换成自己的方法!!!
+     */
     payment((reply) => {
         /**
          * 参数说明（以下参数二选一）：
