@@ -65,12 +65,13 @@
   - [9 超级会员业务](openapi/plus/README.md)
     - [9.1 续费会员同步](openapi/plus/member-renewal-sync.md)
   - [X 附录](openapi/appendix.md)
+  
 * [充电业务接入](energy/README.md)
-  - [1 接入指引](energy/guideline/README.md)
-
-    - [7.1 充电减免停车费](energy/api/replenish-parking.md)
-    - [7.2 同步充电记录](energy/api/sync-replenish.md)
-    - [7.3 同步设备](energy/api/sync-device.md)
+  - [1 站点信息](energy/guideline/README.md)
+    - [1.1 同步充电设备](energy/api/sync-device.md)
+  - [2 充电过程](energy/guideline/README.md)
+    - [2.1 推送充电记录](energy/api/sync-replenish.md)
+    - [2.2 充电减免停车费](energy/api/replenish-parking.md)
 
 * [停车业务接入](parking/README.md)
   - [1 接入指引](parking/guideline/README.md)
