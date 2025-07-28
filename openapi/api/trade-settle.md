@@ -14,6 +14,7 @@ POST https://api.4pyun.com/gate/1.0/payment/trade/settle
 | sharding_value | 订单可分账金额，分（传递实际清算金额即可）                |  int   | Y  | 1                                                                           |
 | trade_item     | 交易事项, 适用于部分例如充电项目区分服务费和电费, 传递JSON字符串 | string | N  | `[{"key":"energy_value","value":2103},{"key":"service_value","value":100}]` |
 | reason         | 清算原因说明                               | string | Y  | 充电结束退款剩余金额                                                                  |
+| extra  | 根据交易场景传递, [参考附录定义](./../appendix.html)  | string |  Y | `{\"key1\":\"value1\",\"key2\":\"value2\"}` |
 | sign           | 签名                                   | string | Y  | C65FCAC2D3FB5E2D3D4AD93DD20C8C39                                            |
 
 
