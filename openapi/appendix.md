@@ -58,7 +58,7 @@ trade_scene=ENERGY 场景填写到extra字段
 | vendor_order   | 第三方充电单号                    | string | Y  |           |
 | quantity       | 充电电量。0.001度。例如1度传递1000     |  int   | Y  |           |
 | energy_value   | 电费。分                       |  int   | Y  |           |
-| fee_value      | 服务费。分                      |  int   | Y  |           |
+| service_value  | 服务费。分                      |  int   | Y  |           |
 | start_time     | 开始充电时间。yyyy-MM-dd HH:mm:ss | string | Y  |           |
 | end_time       | 结束充电时间。yyyy-MM-dd HH:mm:ss | string | Y  |           |
 | replenish_time | 充电时长。秒                     |  int   | Y  |           |
