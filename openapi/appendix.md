@@ -51,8 +51,26 @@ trade_scene=RECHARGE 场景填写到extra字段
 trade_scene=ENERGY 场景填写到extra字段
 ```
 
-| 字段名称         | 字段说明                  |   类型   | 必填 | 示例                     |
-|:-------------|-----------------------|:------:|:--:|:-----------------------|
+| 字段名称           | 字段说明                       |   类型   | 必填 | 示例        |
+|:---------------|----------------------------|:------:|:--:|:----------|
+| device_no      | 充电桩号                       | string | Y  |           |
+| port_no        | 充电枪号                       | string | Y  |           |
+| vendor_order   | 第三方充电单号                    | string | Y  |           |
+| quantity       | 充电电量。0.001度。例如1度传递1000     |  int   | Y  |           |
+| energy_value   | 电费。分                       |  int   | Y  |           |
+| fee_value      | 服务费。分                      |  int   | Y  |           |
+| start_time     | 开始充电时间。yyyy-MM-dd HH:mm:ss | string | Y  |           |
+| end_time       | 结束充电时间。yyyy-MM-dd HH:mm:ss | string | Y  |           |
+| replenish_time | 充电时长。秒                     |  int   | Y  |           |
+| soc            | SOC。百分比。例如1=1%             |  int   | Y  | 100       |
+| state          | 充电状态。-1=充电异常；3=充电完成；       |  int   | Y  |           |
+| state_desc     | 充电状态描述                     | string | Y  | APP主动停止充电 |
+| replenish_type | 充电方式。1=扫码；2=刷卡；3=VIN码；     |  int   | Y  |           |
+| energy_code    | 充电类型。CN_AC=交流；CN_DC=直流；    | string | Y  |           |
+| device_type    | 设备类型。0=汽车；1=电瓶车；           |  int   | Y  |           |
+| plate          | 车牌号码                       | string | Y  |           |
+| identity       | 用户标识。可传手机号或用户ID            | string | Y  |           |
+
 
 ####  I.III.I 充电业务交易事项
 
