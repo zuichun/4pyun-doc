@@ -41,7 +41,7 @@ advertingIntercept(callback, enforce)
 
 ```javascript
 // STEP-1: 拦截广告流程
-if (pyun) {
+if (pyun && typeof pyun.advertingIntercept == 'function') {
     pyun.advertingIntercept((event) => {
         if (event.action === 'REDIRECT') {
             // 用户确认购买
