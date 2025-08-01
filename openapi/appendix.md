@@ -60,7 +60,7 @@ trade_scene=ENERGY 场景填写到extra字段
 | service_value  | 服务费, 单位: 分                   |  int   | Y  |           |
 | start_time     | 开始充电时间, 格式: yyyy-MM-dd HH:mm:ss | string | Y  |           |
 | end_time       | 结束充电时间, 格式: yyyy-MM-dd HH:mm:ss | string | Y  |           |
-| replenish_time | 充电时长, 单位: 秒                     |  int   | Y  |           |
+| replenish_time | 实际充电时长, 单位: 秒         |  int   | Y  |           |
 | state          | 充电状态: -1=充电异常、3=充电完成     |  int   | Y  |           |
 | state_desc     | 充电状态描述                     | string | Y  | APP主动停止充电 |
 | replenish_type | 充电方式: 1=扫码、2=刷卡、3=VIN码    |  int   | Y  |           |
