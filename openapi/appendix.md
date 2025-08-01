@@ -53,6 +53,8 @@ trade_scene=ENERGY 场景填写到extra字段
 
 | 字段名称           | 字段说明                       |   类型   | 必填 | 示例        |
 |:---------------|----------------------------|:------:|:--:|:----------|
+| plate          | 车牌号码                       | string | N  |           |
+| mobile         | 手机号码                   | string | N  |           |
 | device_no      | 充电桩号                       | string | Y  |           |
 | port_no        | 充电枪号                       | string | Y  |           |
 | quantity       | 充电电量(单位:0.001度), 例如1度传递1000     |  int   | Y  |           |
@@ -61,13 +63,11 @@ trade_scene=ENERGY 场景填写到extra字段
 | start_time     | 开始充电时间, 格式: yyyy-MM-dd HH:mm:ss | string | Y  |           |
 | end_time       | 结束充电时间, 格式: yyyy-MM-dd HH:mm:ss | string | Y  |           |
 | replenish_time | 实际充电时长, 单位: 秒         |  int   | Y  |           |
-| state          | 充电状态: -1=充电异常、3=充电完成     |  int   | Y  |           |
-| state_desc     | 充电状态描述                     | string | Y  | APP主动停止充电 |
-| replenish_type | 充电方式: 1=扫码、2=刷卡、3=VIN码    |  int   | Y  |           |
-| energy_code    | 充电类型: CN_AC=交流、CN_DC=直流    | string | Y  |           |
-| device_type    | 设备类型: 0=汽车、1=电瓶车        |  int   | Y  |           |
-| plate          | 车牌号码                       | string | N  |           |
-| mobile         | 手机号码                   | string | N  |           |
+| replenish_type | 充电方式: 1=扫码(默认)、2=刷卡、3=VIN码    |  int   | N  |           |
+| energy_code    | 充电类型: CN_AC=交流(默认)、CN_DC=直流    | string | N  |           |
+| device_type    | 设备类型: 0=汽车(默认)、1=电瓶车        |  int   | N  |           |
+| state          | 充电状态: -1=充电异常、3=充电完成(默认)     |  int   | N  |           |
+| state_desc     | 充电状态描述            | string | N  | APP主动停止充电 |
 
 
 ####  I.III.I 充电业务交易事项
