@@ -48,7 +48,7 @@
           "path": "4pyun-ad-sdk/4pyun-ad-sdk,
           "style": {
               "usingComponents": {
-                  "4pyun-ad-sdk": "/wxcomponents/4pyun-ad-sdk/index"
+                  "pyun-ad-sdk": "/wxcomponents/4pyun-ad-sdk/index"
               }
           }
         }
@@ -60,7 +60,7 @@
 
 
     <template>
-      <4pyun-ad-sdk 
+      <pyun-ad-sdk 
         space_id="{{space_id}}" 
         openid="{{openid}}"
         app_id="{{app_id}}"
@@ -68,7 +68,7 @@
         personas="{{personas}}"
         external="1"  
       >
-      </4pyun-ad-sdk>
+      </pyun-ad-sdk>
     </template>
 
     <script>
@@ -98,7 +98,7 @@
     // index.json
     {
         "usingComponents": {
-            "4pyun-ad-sdk": "4pyun-ad-sdk"
+            "pyun-ad-sdk": "4pyun-ad-sdk"
         }
     }
 
@@ -107,14 +107,14 @@
 ```
 // index.wxml
 
-<4pyun-ad-sdk 
+<pyun-ad-sdk 
   space_id="{{space_id}}" 
   openid="{{openid}}"
   app_id="{{app_id}}"
   provider_code="{{provider_code}}"
   personas="{{personas}}"
 >
-</4pyun-ad-sdk>
+</pyun-ad-sdk>
 
 // index.js
 data: {
