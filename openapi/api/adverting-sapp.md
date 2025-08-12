@@ -2,20 +2,20 @@
 
 ## 1.引入npm包
 
-    npm install 4pyun-ad-sdk
+    npm install ad-4pyun-sdk
 
 ## 2.构建
 
 *   uni-app框架：[小程序自定义组件支持](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subject.html#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81/)
 
 1.  在根目录新建wxcomponents文件夹
-2.  打开node\_modules/4pyun-ad-sdk文件，copy目录中整个src文件到wxcomponents目录下，按需重命名使用
+2.  打开node\_modules/ad-4pyun-sdk文件，copy目录中整个src文件到wxcomponents目录下，按需重命名使用
 3.  目录结构
 
 
 
     ┌─wxcomponents              微信小程序自定义组件存放目录
-    │   └──4pyun-ad-sdk      微信小程序自定义组件
+    │   └──ad-4pyun-sdk      微信小程序自定义组件
     │        ├─index.js
     │        ├─index.wxml
     │        ├─index.json
@@ -45,10 +45,10 @@
     {
       "pages": [
         {
-          "path": "4pyun-ad-sdk/4pyun-ad-sdk,
+          "path": "ad-4pyun-sdk/ad-4pyun-sdk,
           "style": {
               "usingComponents": {
-                  "4pyun-ad-sdk": "/wxcomponents/4pyun-ad-sdk/index"
+                  "ad-4pyun-sdk": "/wxcomponents/ad-4pyun-sdk/index"
               }
           }
         }
@@ -60,7 +60,7 @@
 
 
     <template>
-      <4pyun-ad-sdk 
+      <ad-4pyun-sdk 
         space_id="{{space_id}}" 
         openid="{{openid}}"
         app_id="{{app_id}}"
@@ -68,7 +68,7 @@
         personas="{{personas}}"
         external="1"  
       >
-      </4pyun-ad-sdk>
+      </ad-4pyun-sdk>
     </template>
 
     <script>
@@ -98,7 +98,7 @@
     // index.json
     {
         "usingComponents": {
-            "4pyun-ad-sdk": "4pyun-ad-sdk"
+            "ad-4pyun-sdk": "ad-4pyun-sdk"
         }
     }
 
@@ -107,14 +107,14 @@
 ```
 // index.wxml
 
-<4pyun-ad-sdk 
+<ad-4pyun-sdk 
   space_id="{{space_id}}" 
   openid="{{openid}}"
   app_id="{{app_id}}"
   provider_code="{{provider_code}}"
   personas="{{personas}}"
 >
-</4pyun-ad-sdk>
+</ad-4pyun-sdk>
 
 // index.js
 data: {
